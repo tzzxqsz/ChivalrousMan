@@ -42,6 +42,8 @@
   <key>XBArrow</key>
   <string>Skill/XBArrow/</string>
   <!-- 按钮 -->
+  <key>GiveUpBtn</key>
+  <string>button/giveUpBtn.png</string>
   <key>TeamOkBtn</key>
   <string>button/AccessBtn.png</string>
   <key>TeamRefuseBtn</key>

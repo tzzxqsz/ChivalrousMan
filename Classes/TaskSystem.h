@@ -72,6 +72,12 @@ class TaskSystem
 	int havePickedupTask(const std::string& name);
 
 	/*
+	*移除已经接取的任务
+	*@param index:任务索引
+	*/
+	void removePickUpTask(const int& index);
+
+	/*
 	*checkKillMonster(const std::string& name);
 	*检查击杀的怪物是否为任务所需
 	*/

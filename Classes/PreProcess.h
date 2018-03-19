@@ -78,6 +78,20 @@ fin >> tmp; \
 fin >> tmp; \
 m_##NAME = std::stof(tmp)
 
+#define DEC_REFLECT_FUNC(__TYPE__)    \
+friend Npc* ReflectClass##__TYPE__();
+
+#define DEF_REFLECT_FUNC(__TYPE__) \
+Npc* ReflectClass##__TYPE__() \
+{ \
+	return (new __TYPE__); \
+}
+
+#define REG_REFLECT_CLASS(__TYPE__) \
+ReflectNpc::getInstance()->registerReflectClass(#__TYPE__,&ReflectClass##__TYPE__)
+
+#define GET_REFLECT_OBJECT ReflectNpc::getInstance()->getReflectObject
+
 enum class Dir
 {
 	Dir_Left,

@@ -1,7 +1,8 @@
 #pragma once
 #ifndef __TCP_CLIENT_H__
 #define __TCP_CLIENT_H__
-#include<WinSock2.h>
+//#include<WinSock2.h>
+#include"PreProcess.h"
 #include<string>
 #include<thread>
 #include"public.h"

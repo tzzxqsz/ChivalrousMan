@@ -264,3 +264,15 @@ void ObjectLayer::moveOtherPlayer(const std::string& playername, const std::stri
 		}
 	}
 }
+
+Npc* ObjectLayer::findNpcByName(const std::string& name)
+{
+	for (auto var : m_npcList)
+	{
+		if (var->getName() == name)
+		{
+			return var;
+		}
+	}
+	return nullptr;
+}

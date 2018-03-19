@@ -2,7 +2,6 @@
 #ifndef __NPC_H__
 #define __NPC_H__
 #include"PreProcess.h"
-#include"ReflectNpc.h"
 #include<initializer_list>
 #include<fstream>
 #include<vector>
@@ -83,7 +82,16 @@ public:
 	*/
 	void initNoEndTaskTalk();
 	
+	/*
+	*初始化任务对话
+	*@param filename:保存任务对话的文件名
+	*/
 	void initTaskTalk(const std::string& filename);
+
+	/*
+	*重置Npc状态
+	*/
+	void resetNpcState();
 protected:
 	//Npc表象
 	cocos2d::Sprite* m_face;
@@ -91,7 +99,6 @@ protected:
 	std::vector<std::string> m_tmptalk;
 	
 	int index = 0;
-	bool pickup = true;
 	
 	PROPERTY__REF(int, m_taskindex, TaskIndex)
 	PROPERTY__REF(int,m_state,State)

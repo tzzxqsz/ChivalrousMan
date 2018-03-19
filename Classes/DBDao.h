@@ -1,12 +1,13 @@
 #pragma once
 #ifndef __DB_INTERFACE_H__
 #define __DB_INTERFACE_H__
-#include<WinSock2.h>
+#include"PreProcess.h"
 #include<mysql.h>
 #include<mysqld_error.h>
 #include<string>
 #include<initializer_list>
 #include<vector>
+#include<fstream>
 
 #pragma comment(lib,"ws2_32.lib")
 #pragma comment(lib,"libmysql.lib")
@@ -14,6 +15,7 @@
 #define INSERT 2
 #define DELETE 3
 #define UPDATE 4
+#define DBCFGFILE "DB.cfg"
 
 /*
 *class DBDao
@@ -92,6 +94,12 @@ private:
 
 	std::string generateUpdate();
 
+	/*
+	*initDefaultCfg()
+	*初始化默认配置
+	*/
+	void initDefaultCfg();
+
 	MYSQL* m_sqlCon;   //数据库连接句柄
 	std::string m_host;    //主机名
 	std::string m_username;      //用户名
@@ -103,12 +111,9 @@ private:
 };
 
 template<typename Model>
-DBDao<Model>::DBDao():
-	m_host("47.93.235.6"),
-	m_passwd("3252918599lsy"),
-	m_username("game"),
-	m_dbname("chivalrousman")
+DBDao<Model>::DBDao()
 {
+	initDefaultCfg();
 	initConnect();
 }
 
@@ -126,6 +131,29 @@ template<typename Model>
 DBDao<Model>::~DBDao()
 {
 	mysql_close(m_sqlCon);
+}
+
+template<typename Model>
+void DBDao<Model>::initDefaultCfg()
+{
+	std::ifstream fin;
+	fin.open(DBCFGFILE, std::ios::in);
+	if (fin.fail())
+	{
+		return;
+	}
+	std::string tmp;
+	fin >> tmp;
+	fin >> m_host;
+	fin >> tmp;
+	fin >> m_port;
+	fin >> tmp;
+	fin >> m_username;
+	fin >> tmp;
+	fin >> m_passwd;
+	fin >> tmp;
+	fin >> m_dbname;
+	fin.close();
 }
 
 template<typename Model>

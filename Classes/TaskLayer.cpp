@@ -23,7 +23,7 @@ bool TaskLayer::init()
 	return false;
 }
 
-void  TaskLayer::initTaskItem(cocos2d::Vec2 basePos)
+void TaskLayer::initTaskItem(cocos2d::Vec2 basePos)
 {
 	basePos.y += 202;
 	int index = 0;
@@ -32,10 +32,29 @@ void  TaskLayer::initTaskItem(cocos2d::Vec2 basePos)
 		TaskItem* taskitem = TaskItem::create(var);
 		taskitem->setPosition(basePos.x, basePos.y - index * 80);
 		this->addChild(taskitem);
+		m_itemlist.push_back(taskitem);
 		++index;
 		if (index > 6)
 		{
 			return;
+		}
+	}
+}
+
+void TaskLayer::removeTaskItem(TaskItem* item)
+{
+	for (auto it = m_itemlist.begin(); it != m_itemlist.end();)
+	{
+		if (*it == item)
+		{
+			it = m_itemlist.erase(it);
+			this->removeChild(item);
+		}
+		else
+		{
+			auto move = MoveBy::create(0.2, ccp(0, 80));
+			(*it)->runAction(move);
+			++it;
 		}
 	}
 }

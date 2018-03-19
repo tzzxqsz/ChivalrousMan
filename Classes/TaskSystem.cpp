@@ -195,3 +195,15 @@ int TaskSystem::checkTask(int index,std::string& name)
 	}
 	return -1;
 }
+
+void TaskSystem::removePickUpTask(const int& index)
+{
+	for (auto it = m_pickedupTask.begin(); it != m_pickedupTask.end(); ++it)
+	{
+		if (it->index == index)
+		{
+			m_pickedupTask.erase(it);
+			return;
+		}
+	}
+}

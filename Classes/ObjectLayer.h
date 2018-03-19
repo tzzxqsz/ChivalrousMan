@@ -55,6 +55,8 @@ public:
 	*@param playername:玩家名称
 	*@param rolenmae:角色名称
 	*@param target：目标位置
+	*@param less：标记是否少移动一格位置，less为0表示不少移动，
+	*less为1表示少移动一格
 	*/
 	void moveOtherPlayer(const std::string& playername, const std::string& rolename, const cocos2d::Vec2& target, int less = 0);
 	
@@ -91,7 +93,16 @@ public:
 	*/
 	void initOtherPlayer(float dt);
 
+	/*
+	*清理对象层的其它玩家
+	*/
 	void clearOtherPlayer();
+
+	/*
+	*通过Npc的名称来获取对象层的Npc
+	*@param name：npc的名称
+	*/
+	Npc* findNpcByName(const std::string& name);
 private:
 	/*
 	*checkmissedTask();

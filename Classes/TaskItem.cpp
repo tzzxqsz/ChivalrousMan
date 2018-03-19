@@ -1,6 +1,10 @@
 #include"TaskItem.h"
 #include"Commen.h"
 #include"GameData.h"
+#include"GameScene.h"
+#include"ObjectLayer.h"
+#include"TaskLayer.h"
+#include"Npc.h"
 
 TaskItem*  TaskItem::create(const TaskInfo& tinfo)
 {
@@ -22,6 +26,8 @@ bool TaskItem::init(const TaskInfo& tinfo)
 {
 	if (Node::init())
 	{
+		m_index = tinfo.index;
+		m_submitMen = tinfo.destwho;
 		auto bg = Sprite::create(StringValue("TaskItemBg"));
 		this->addChild(bg);
 		
@@ -76,7 +82,30 @@ bool TaskItem::init(const TaskInfo& tinfo)
 		labelexp->setAnchorPoint(ccp(1, 0.5));
 		labelexp->setPosition(170, 0);
 		this->addChild(labelexp);
+
+		auto menu = Menu::create();
+		menu->setPosition(0, 0);
+		this->addChild(menu);
+		auto giveupBtn = MenuItemImage::create(StringValue("GiveUpBtn"), StringValue("GiveUpBtn"),
+			this, menu_selector(TaskItem::onGiveUpBtnClick));
+		giveupBtn->setPosition(40, -20);
+		menu->addChild(giveupBtn);
 		return true;
 	}
 	return false;
+}
+
+void TaskItem::onGiveUpBtnClick(cocos2d::CCObject* sender)
+{
+	ClickAction(sender);
+	if (IDYES == MessageBoxEx(NULL, L"是否放弃该任务?", L"提示", MB_YESNO, 0))
+	{
+		auto npc = dynamic_cast<GameScene*>(Director::getInstance()->getRunningScene())->getObjectLayer()->findNpcByName(m_submitMen);
+		if (npc != nullptr)
+		{
+			npc->resetNpcState();
+		}
+		TaskSystem::getInstance()->removePickUpTask(m_index);
+		dynamic_cast<TaskLayer*>(getParent())->removeTaskItem(this);
+	}
 }

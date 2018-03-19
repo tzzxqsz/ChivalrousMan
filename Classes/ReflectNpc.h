@@ -2,26 +2,19 @@
 #ifndef __REFLECT_NPC_H__
 #define __REFLECT_NPC_H__
 #include"PreProcess.h"
+#include"NpcBlue.h"
+#include"NpcEquip.h"
+#include"NpcManmom.h"
+#include"NpcMonk.h"
+#include"NpcPink.h"
+#include"NpcSkill.h"
+#include"NpcVallige.h"
 #include<map>
 #include<string>
 
 class Npc;
 
 typedef Npc* (*Sel_NpcCallFunc)();
-
-#define DEC_REFLECT_FUNC(__TYPE__)    \
-friend Npc* ReflectClass##__TYPE__();
-
-#define DEF_REFLECT_FUNC(__TYPE__) \
-Npc* ReflectClass##__TYPE__() \
-{ \
-	return (new __TYPE__); \
-}
-
-#define REG_REFLECT_CLASS(__TYPE__) \
-ReflectNpc::getInstance()->registerReflectClass(#__TYPE__,&ReflectClass##__TYPE__)
-
-#define GET_REFLECT_OBJECT ReflectNpc::getInstance()->getReflectObject
 
 /*
 *ReflectNpc

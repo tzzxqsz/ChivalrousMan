@@ -26,7 +26,7 @@ bool BackPackLayer::init()
 		m_menu = Menu::create();
 		m_menu->setPosition(0, 0);
 		this->addChild(m_menu);
-
+		
 		auto sellBtn = MenuItemImage::create(StringValue("SellBtn"), StringValue("SellBtn"),
 			this, menu_selector(BackPackLayer::sellBtnCallback));
 		float sellX = backpackGrid->getPositionX() + backpackGrid->getContentSize().width*0.5 - sellBtn->getContentSize().width;

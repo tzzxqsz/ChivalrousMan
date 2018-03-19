@@ -64,12 +64,12 @@ std::string Npc::getNextTalkMsg()
 
 void Npc::changeState(int state,int index)
 {
-	if(m_state == state&&pickup)
+	m_taskindex = index;
+	if(m_state == state)
 	{
 		return;
 	}
 	m_state = state;
-	m_taskindex = index;
 	m_face->removeChildByName("TaskState");
 	switch (m_state)
 	{
@@ -87,7 +87,6 @@ void Npc::changeState(int state,int index)
 		taskicon->setName("TaskState");
 		taskicon->setPosition(40, 150);
 		m_face->addChild(taskicon);
-		pickup = false;
 	}
 		break;
 	case NS_STASK:
@@ -96,7 +95,6 @@ void Npc::changeState(int state,int index)
 		taskicon->setName("TaskState");
 		taskicon->setPosition(40, 150);
 		m_face->addChild(taskicon);
-		pickup = false;
 	}
 		break;
 	default:
@@ -110,10 +108,7 @@ void  Npc::talkEndEvent()
 	{
 	case NS_STASK:
 		TaskSystem::getInstance()->submitTask(CurGameScene(), m_taskindex);
-		changeState(NS_FREE, 0);
-		m_talkmsg.clear();
-		m_talkmsg = m_tmptalk;
-		pickup = true;
+		resetNpcState();
 		break;
 	case NS_HTASK:
 	{
@@ -176,4 +171,13 @@ void Npc::initTaskTalk(const std::string& filename)
 		m_talkmsg[0] += "?";
 	}
 	fin.close();
+}
+
+void Npc::resetNpcState()
+{
+	m_state = NS_FREE;
+	m_taskindex = 0;
+	m_face->removeChildByName("TaskState");
+	m_talkmsg.clear();
+	m_talkmsg = m_tmptalk;
 }

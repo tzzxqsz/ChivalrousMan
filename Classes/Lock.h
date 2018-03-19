@@ -1,7 +1,7 @@
 #pragma once
 #ifndef __LOCK_H__
 #define __LOCK_H__
-#include<WinSock2.h>
+#include"PreProcess.h"
 
 namespace Net
 {
