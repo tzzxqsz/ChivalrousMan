@@ -14,7 +14,7 @@
     <ProjectGuid>{76A39BB2-9B84-4C65-98A5-654D86B86F2A}</ProjectGuid>
     <RootNamespace>test_win32</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -66,8 +66,8 @@
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>E:\Cocos2dx-Project\ChivalrousMan\lib;$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>E:\Cocos2dx-Project\ChivalrousMan\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\lsylovews-ChivalrousMan-xianjie\ChivalrousMan\lib;$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\lsylovews-ChivalrousMan-xianjie\ChivalrousMan\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LibraryPath>E:\Cocos2dx-Project\ChivalrousMan\lib;$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
@@ -168,6 +168,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\EndScene.cpp" />
     <ClCompile Include="..\Classes\EquipMent.cpp" />
     <ClCompile Include="..\Classes\EquipmentManager.cpp" />
+    <ClCompile Include="..\Classes\Event.cpp" />
+    <ClCompile Include="..\Classes\EventManager.cpp" />
     <ClCompile Include="..\Classes\ExcessiveScene.cpp" />
     <ClCompile Include="..\Classes\FightLayer.cpp" />
     <ClCompile Include="..\Classes\FindRoad.cpp" />
@@ -178,6 +180,9 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\GameUILayer.cpp" />
     <ClCompile Include="..\Classes\HurtValueLayer.cpp" />
+    <ClCompile Include="..\Classes\jsonCpp\json_reader.cpp" />
+    <ClCompile Include="..\Classes\jsonCpp\json_value.cpp" />
+    <ClCompile Include="..\Classes\jsonCpp\json_writer.cpp" />
     <ClCompile Include="..\Classes\LightStrike.cpp" />
     <ClCompile Include="..\Classes\LoadingLayer.cpp" />
     <ClCompile Include="..\Classes\Lock.cpp" />
@@ -260,6 +265,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\EndScene.h" />
     <ClInclude Include="..\Classes\EquipMent.h" />
     <ClInclude Include="..\Classes\EquipmentManager.h" />
+    <ClInclude Include="..\Classes\Event.h" />
+    <ClInclude Include="..\Classes\EventManager.h" />
     <ClInclude Include="..\Classes\ExcessiveScene.h" />
     <ClInclude Include="..\Classes\FightLayer.h" />
     <ClInclude Include="..\Classes\FindRoad.h" />
@@ -270,6 +277,18 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\GameUILayer.h" />
     <ClInclude Include="..\Classes\HurtValueLayer.h" />
+    <ClInclude Include="..\Classes\jsonCpp\allocator.h" />
+    <ClInclude Include="..\Classes\jsonCpp\assertions.h" />
+    <ClInclude Include="..\Classes\jsonCpp\autolink.h" />
+    <ClInclude Include="..\Classes\jsonCpp\config.h" />
+    <ClInclude Include="..\Classes\jsonCpp\features.h" />
+    <ClInclude Include="..\Classes\jsonCpp\forwards.h" />
+    <ClInclude Include="..\Classes\jsonCpp\json.h" />
+    <ClInclude Include="..\Classes\jsonCpp\json_tool.h" />
+    <ClInclude Include="..\Classes\jsonCpp\reader.h" />
+    <ClInclude Include="..\Classes\jsonCpp\value.h" />
+    <ClInclude Include="..\Classes\jsonCpp\version.h" />
+    <ClInclude Include="..\Classes\jsonCpp\writer.h" />
     <ClInclude Include="..\Classes\LightStrike.h" />
     <ClInclude Include="..\Classes\LoadingLayer.h" />
     <ClInclude Include="..\Classes\Lock.h" />
@@ -344,6 +363,10 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\game.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\jsonCpp\json_valueiterator.inl" />
+    <None Include="..\Classes\jsonCpp\version.h.in" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
