@@ -169,7 +169,6 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\EquipMent.cpp" />
     <ClCompile Include="..\Classes\EquipmentManager.cpp" />
     <ClCompile Include="..\Classes\Event.cpp" />
-    <ClCompile Include="..\Classes\EventManager.cpp" />
     <ClCompile Include="..\Classes\ExcessiveScene.cpp" />
     <ClCompile Include="..\Classes\FightLayer.cpp" />
     <ClCompile Include="..\Classes\FindRoad.cpp" />
@@ -196,6 +195,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\Monster.cpp" />
     <ClCompile Include="..\Classes\MsgItem.cpp" />
     <ClCompile Include="..\Classes\MsgListLayer.cpp" />
+    <ClCompile Include="..\Classes\NetWorkManager.cpp" />
     <ClCompile Include="..\Classes\PickupTaskLayer.cpp" />
     <ClCompile Include="..\Classes\Player.cpp" />
     <ClCompile Include="..\Classes\PlayerData.cpp" />
@@ -206,6 +206,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\RecallCountermand.cpp" />
     <ClCompile Include="..\Classes\RoleInfoLayer.cpp" />
     <ClCompile Include="..\Classes\SealOfTheBlade.cpp" />
+    <ClCompile Include="..\Classes\Signal.cpp" />
     <ClCompile Include="..\Classes\Skill.cpp" />
     <ClCompile Include="..\Classes\SkillFactory.cpp" />
     <ClCompile Include="..\Classes\SkillManager.cpp" />
@@ -253,6 +254,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\BackPackManager.h" />
     <ClInclude Include="..\Classes\BeginLayer.h" />
     <ClInclude Include="..\Classes\BeginScene.h" />
+    <ClInclude Include="..\Classes\cHas.h" />
+    <ClInclude Include="..\Classes\cHash_Map.h" />
     <ClInclude Include="..\Classes\CMClient.h" />
     <ClInclude Include="..\Classes\Commen.h" />
     <ClInclude Include="..\Classes\CrackIt.h" />
@@ -266,7 +269,6 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\EquipMent.h" />
     <ClInclude Include="..\Classes\EquipmentManager.h" />
     <ClInclude Include="..\Classes\Event.h" />
-    <ClInclude Include="..\Classes\EventManager.h" />
     <ClInclude Include="..\Classes\ExcessiveScene.h" />
     <ClInclude Include="..\Classes\FightLayer.h" />
     <ClInclude Include="..\Classes\FindRoad.h" />
@@ -302,6 +304,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\Monster.h" />
     <ClInclude Include="..\Classes\MsgItem.h" />
     <ClInclude Include="..\Classes\MsgListLayer.h" />
+    <ClInclude Include="..\Classes\NetWorkManager.h" />
     <ClInclude Include="..\Classes\PickupTaskLayer.h" />
     <ClInclude Include="..\Classes\Player.h" />
     <ClInclude Include="..\Classes\PlayerData.h" />
@@ -313,9 +316,11 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\RoleInfoLayer.h" />
     <ClInclude Include="..\Classes\SealOfTheBlade.h" />
     <ClInclude Include="..\Classes\ShareData.h" />
+    <ClInclude Include="..\Classes\Signal.h" />
     <ClInclude Include="..\Classes\Skill.h" />
     <ClInclude Include="..\Classes\SkillFactory.h" />
     <ClInclude Include="..\Classes\SkillManager.h" />
+    <ClInclude Include="..\Classes\SlotListener.h" />
     <ClInclude Include="..\Classes\TaskItem.h" />
     <ClInclude Include="..\Classes\TaskLayer.h" />
     <ClInclude Include="..\Classes\TeamLayer.h" />

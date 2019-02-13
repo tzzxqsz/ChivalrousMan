@@ -393,9 +393,6 @@
     <ClCompile Include="..\Classes\Event.cpp">
       <Filter>src\Tool\private</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\EventManager.cpp">
-      <Filter>src\Tool\private</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\jsonCpp\json_reader.cpp">
       <Filter>src\Json</Filter>
     </ClCompile>
@@ -404,6 +401,12 @@
     </ClCompile>
     <ClCompile Include="..\Classes\jsonCpp\json_writer.cpp">
       <Filter>src\Json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NetWorkManager.cpp">
+      <Filter>src\Net\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Signal.cpp">
+      <Filter>src\Tool\private</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -692,9 +695,6 @@
     <ClInclude Include="..\Classes\Event.h">
       <Filter>src\Tool\public</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\EventManager.h">
-      <Filter>src\Tool\public</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\jsonCpp\json_tool.h">
       <Filter>src\Json</Filter>
     </ClInclude>
@@ -730,6 +730,21 @@
     </ClInclude>
     <ClInclude Include="..\Classes\jsonCpp\writer.h">
       <Filter>src\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NetWorkManager.h">
+      <Filter>src\Net\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Signal.h">
+      <Filter>src\Tool\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SlotListener.h">
+      <Filter>src\Tool\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cHas.h">
+      <Filter>src\Tool\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cHash_Map.h">
+      <Filter>src\Tool\public</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

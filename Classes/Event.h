@@ -1,7 +1,11 @@
 #pragma once
+/*
+*事件槽一个事件一个槽
+*/
 #ifndef __EVENT_H__
 #define __EVENT_H__
 #include"PreProcess.h"
+#include"SlotListener.h"
 #include<iostream>
 #include<functional>
 
@@ -15,39 +19,33 @@ typedef struct _Event{
 	SEL_EventFunc func;
 }EventHandler;
 
- enum class Event
-{
-	 
-};
-
  class Slot
  {
  public:
-	 Slot(EventHandler evh, bool once = false);
+	 Slot(SlotListener* listener, const EventHandler& evh, const bool& once = false);
 
-	 Slot(std::function<void(void)> func, bool once = false);
+	 Slot(SlotListener* listener,const std::function<void(void)>& func, const bool& once = false);
 
-	 ~Slot() {}
+	 virtual ~Slot() {}
 
-	 void Dispatch();
+	 virtual void dispatch();
 
 	 bool operator==(const Slot& slot);
 
-	 void Remove();
+	 long long int getId() const;
 
-	 long long int GetId() const;
+	 void remove();
  private:
 	 long long int id;
 	 bool flag = 0;
 	 EventHandler evh;
 	 std::function<void(void)> func;
 	 bool once;
+	 SlotListener* listener;
 	 
 	 static long long int count;
  };
 
- Slot Handler(EventHandler);
-
- Slot Handler(std::function<void(void)>);
+ EventHandler Handler(cocos2d::Ref* ref, SEL_EventFunc func, void* param = nullptr);
 
 #endif // !__EVENT_H__
