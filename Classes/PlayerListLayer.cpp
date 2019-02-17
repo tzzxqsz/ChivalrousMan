@@ -3,7 +3,8 @@
 #include"GameData.h"
 #include"GameDynamicData.h"
 #include"PlayerItem.h"
-#include"CMClient.h"
+#include"SocketManager.h"
+#include"PlayerManager.h"
 
 bool PlayerListLayer::init()
 {
@@ -44,7 +45,7 @@ void PlayerListLayer::initPlayerItem()
 	m_basePos.x -= 15;
 	m_basePos.y += 190;
 	int index = 0;
-	for (auto var : CMClient::getInstance()->getPlayerList())
+	for (auto var : PlayerManager::getInstance()->getPlayerList())
 	{
 		if (var.curmap == GetIntData("CurMap"))
 		{

@@ -7,7 +7,8 @@
 #include"MapInfo.h"
 #include"TaskSystem.h"
 #include"Player.h"
-#include"CMClient.h"
+#include"SocketManager.h"
+#include"PlayerManager.h"
 #include"FindRoad.h"
 #include<fstream>
 
@@ -90,7 +91,7 @@ void ObjectLayer::initNpcObject(const int& level)
 
 void ObjectLayer::initOtherPlayer(float dt)
 {
-	for (auto var : CMClient::getInstance()->getPlayerList())
+	for (auto var : PlayerManager::getInstance()->getPlayerList())
 	{
 		if (var.curmap == GetIntData("CurMap"))
 		{
@@ -239,7 +240,7 @@ void ObjectLayer::verifyPlayerPos(const std::string& playername, const std::stri
 	}
 }
 
-void ObjectLayer::updatePlayerData(const std::string& playername, const std::string& rolename, UpdateData_Msg msg)
+void ObjectLayer::updatePlayerData(const std::string& playername, const std::string& rolename, Player_Info msg)
 {
 	for (auto var : m_playerlist)
 	{
@@ -276,3 +277,4 @@ Npc* ObjectLayer::findNpcByName(const std::string& name)
 	}
 	return nullptr;
 }
+

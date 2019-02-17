@@ -8,7 +8,8 @@
 #include"GameUILayer.h"
 #include"ObjectLayer.h"
 #include"Commen.h"
-#include"CMClient.h"
+#include"SocketManager.h"
+#include"PlayerManager.h"
 
 GameScene*  GameScene::createWithLevel(const int& level)
 {
@@ -68,7 +69,8 @@ void GameScene::initScene()
 	this->addChild(m_uiLayer);
 	SetIntData("Save", 1);
 	SetIntData("IsHaveGameScene", 1);
-	CMClient::getInstance()->SendInitPos();
+	PlayerManager::getInstance()->c2sInitPos();
+	//SocketManager::getInstance()->SendInitPos();
 }
 
 void GameScene::pauseAllActions(cocos2d::Node* hoster,cocos2d::Node* except)

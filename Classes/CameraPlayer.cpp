@@ -15,8 +15,10 @@
 #include"SkillManager.h"
 #include"EquipmentManager.h"
 #include"TeamManager.h"
-#include"CMClient.h"
+#include"SocketManager.h"
 #include"FindRoad.h"
+#include"PlayerManager.h"
+#include"TeamManager.h"
 #include<map>
 
 CameraPlayer* CameraPlayer::m_instance = nullptr;
@@ -283,7 +285,8 @@ bool CameraPlayer::moveTo(cocos2d::Vec2 targetPos, int less)
 	fdroad.ExecuteAStar();
 	if (fdroad.isHasRoad())
 	{
-		CMClient::getInstance()->SendMoveToMsg(tmp, less);
+		PlayerManager::getInstance()->c2sMoveTo(tmp, less);
+		//SocketManager::getInstance()->SendMoveToMsg(tmp, less);
 		setMoveRoad(fdroad.GetRoadList());
 		return true;
 	}
@@ -294,6 +297,6 @@ void CameraPlayer::moveTeamMembers(cocos2d::Vec2 target)
 {
 	for (auto var : TeamManager::getInstance()->getTeamMembers())
 	{
-		CMClient::getInstance()->sendTeamMoveMsg(target, var.first);
+		TeamManager::getInstance()->c2sTeamMove(target, var.first);
 	}
 }

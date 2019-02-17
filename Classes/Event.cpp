@@ -1,4 +1,5 @@
 #include"Event.h"
+using namespace Json;
 
 long long int Slot::count = 0;
 
@@ -10,7 +11,7 @@ Slot::Slot(SlotListener* listener,const EventHandler& evh,const bool& once)
 	this->id = count++;
 }
 
-Slot::Slot(SlotListener* listener, const std::function<void(void)>& func, const bool& once) {
+Slot::Slot(SlotListener* listener, const std::function<void(Json::Value&)>& func, const bool& once) {
 	this->listener = listener;
 	flag = true;
 	this->func = func;
@@ -18,12 +19,12 @@ Slot::Slot(SlotListener* listener, const std::function<void(void)>& func, const 
 	this->id = count++;
 }
 
-void Slot::dispatch()
+void Slot::dispatch(Json::Value& message)
 {
 	if (flag)
-		func();
+		func(message);
 	else
-		(evh.handler->*evh.func)(evh.param);
+		(evh.handler->*evh.func)(message);
 	if (once)
 		this->remove();
 }
@@ -44,11 +45,10 @@ void Slot::remove()
 }
 
 
-EventHandler Handler(cocos2d::Ref* ref,SEL_EventFunc func,void* param)
+EventHandler handler(cocos2d::CCObject* CCObject,SEL_EventFunc func)
 {
 	EventHandler evh;
-	evh.handler = ref;
+	evh.handler = CCObject;
 	evh.func = func;
-	evh.param = param;
 	return evh;
 }

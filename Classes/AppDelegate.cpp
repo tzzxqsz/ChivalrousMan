@@ -7,7 +7,7 @@
 #include"Commen.h"
 #include"AudioSystem.h"
 #include"ReflectNpc.h"
-#include"CMClient.h"
+#include"SocketManager.h"
 #include"EquipmentManager.h"
 #include"SkillManager.h"
 #include"BackPackManager.h"
@@ -47,7 +47,7 @@ AppDelegate::~AppDelegate()
 	HelpToolSystem::releaseAudioSystem();
 	MapInfo::release();
 	ReflectNpc::release();
-	CMClient::release();
+	SocketManager::release();
 	EquipmentManager::realse();
 	SkillManager::release();
 	BackPackManager::release();
@@ -87,7 +87,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     FileUtils::getInstance()->addSearchPath("res");
 
     // create a scene. it's an autorelease object
-	CMClient::getInstance();
+	SocketManager::getInstance();
 	registerReflectClass();
 	LoadResource();
 	HelpToolSystem::getInstance();

@@ -3,12 +3,12 @@
 #include"GameData.h"
 #include"TeamManager.h"
 #include"TeamLayer.h"
-#include"CMClient.h"
+#include"SocketManager.h"
 
 #define DISSOLVE_TEAM()    \
 for (auto var : TeamManager::getInstance()->getTeamMembers())  \
 {   \
-	CMClient::getInstance()->SendTeamDissolveMsg(var.first);   \
+	TeamManager::getInstance()->c2sTeamDissolve(var.first);   \
 }  \
 TeamManager::getInstance()->dissolveTeam()
 

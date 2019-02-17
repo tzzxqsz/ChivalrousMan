@@ -567,6 +567,7 @@ inline  typename cHash_Map<Key, T, Compare, Hash>::value_type* cHash_Map<Key, T,
 	{
 		m_Buckets[hashKey].push_back(value);
 		++m_size;
+		return (value_type*)&(value);
 	}
 	else
 	{

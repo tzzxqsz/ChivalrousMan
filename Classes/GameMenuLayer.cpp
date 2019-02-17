@@ -7,10 +7,11 @@
 #include"GameUILayer.h"
 #include"StartMenu.h"
 #include"CameraPlayer.h"
-#include"CMClient.h"
+#include"SocketManager.h"
+#include"PlayerManager.h"
 
 #define LEAVE_AND_SAVE_DATA()   \
-CMClient::getInstance()->SendPlayerLeaveMsg();   \
+PlayerManager::getInstance()->c2sPlayerLeave();   \
 CameraPlayer::getPlayerInstance()->SaveGameData();   \
 SetIntData("IsHaveGameScene", 0)
 

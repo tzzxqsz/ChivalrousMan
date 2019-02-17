@@ -1,7 +1,9 @@
 #include"PrivateTalkLayer.h"
 #include"Commen.h"
 #include"GameData.h"
-#include"CMClient.h"
+#include"SocketManager.h"
+#include"PlayerManager.h"
+#include"TalkManager.h"
 #include<functional>
 
 PrivateTalkLayer* PrivateTalkLayer::create(const int& fd)
@@ -32,7 +34,7 @@ bool PrivateTalkLayer::init(const int& fd)
 		this->addChild(bg);
 		setName("PrivateTalkLayer");
 		
-		auto info = CMClient::getInstance()->findPlayerInfoByFd(fd);
+		auto info = PlayerManager::getInstance()->findPlayerInfoByFd(fd);
 		auto namelabel = LabelTTF::create(info.rolename, "¿¬Ìå", 30);
 		namelabel->setColor(Color3B::ORANGE);
 		namelabel->setPosition(size.width*0.5, size.height*0.5 + bg->getContentSize().height*0.5 - 23);
@@ -93,13 +95,7 @@ bool PrivateTalkLayer::onTextFieldDetachWithIME(cocos2d::TextFieldTTF * sender)
 
 void PrivateTalkLayer::onSendBtnClick(cocos2d::CCObject* sender)
 {
-	PrivateTalk_Msg msg;
-	msg.type = M_PrivateTalk;
-	msg.fd = -1;
-	msg.dest = m_fd;
-	strcpy_s(msg.msg, m_editFrame->getString().c_str());
-	CMClient::getInstance()->SendMsg((char*)&msg, sizeof(msg));
-	CMClient::getInstance()->addPrivateTalkMsg(&msg);
+	TalkManager::getInstance()->c2sPrivateTalk(m_editFrame->getString(), m_fd);
 	m_editFrame->setString("");
 }
 
@@ -120,10 +116,10 @@ void PrivateTalkLayer::onCloseBtnClick(cocos2d::CCObject* sender)
 
 void PrivateTalkLayer::initMsgList()
 {
-	if (CMClient::getInstance()->getPrivateMsgs().find(m_fd) == CMClient::getInstance()->getPrivateMsgs().end())
+	if (TalkManager::getInstance()->getPrivateMsgs().find(m_fd) == TalkManager::getInstance()->getPrivateMsgs().end())
 		return;
 	int index = 0;
-	for (auto var = CMClient::getInstance()->getPrivateMsgs()[m_fd].rbegin(); var != CMClient::getInstance()->getPrivateMsgs()[m_fd].rend(); ++var)
+	for (auto var = TalkManager::getInstance()->getPrivateMsgs()[m_fd].rbegin(); var != TalkManager::getInstance()->getPrivateMsgs()[m_fd].rend(); ++var)
 	{
 		auto msglabel = LabelTTF::create(var->rolename + ":" + var->msg, "¿¬Ìå", 20);
 		msglabel->setAnchorPoint(ccp(0, 0.5));

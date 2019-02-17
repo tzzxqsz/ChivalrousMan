@@ -19,11 +19,11 @@ public:
 
 	Slot* addOnce(const EventHandler& handler);
 
-	Slot* add(const std::function<void(void)>&);
+	Slot* add(const std::function<void(Json::Value&)>&);
 
-	Slot* addOnce(const std::function<void(void)>& func);
+	Slot* addOnce(const std::function<void(Json::Value&)>& func);
 
-	void dispatch();
+	void dispatch(Json::Value & message);
 private:
 	std::list<Slot*> m_slots;
 };

@@ -1,0 +1,27 @@
+#pragma once
+#ifndef __MESSAGE_CONST_H__
+#define __MESSAGE_CONST_H__
+
+const int MESSAGE_INIT_DATA = 101;
+const int MESSAGE_WORLD_TALK = 102;
+const int MESSAGE_INIT_POS = 103;
+const int MESSAGE_PLAYER_LEAVE = 104;
+const int MESSAGE_MOVE_TO = 105;
+const int MESSAGE_VERIFY_POS = 106;
+const int MESSAGE_UPDATE_DATA = 107;
+const int MESSAGE_TEAM_APPLY = 108;
+const int MESSAGE_REFUSE_TEAM = 109;
+const int MESSAGE_AGREE_TEAM = 110;
+const int MESSAGE_TEAM_MOVE = 111;
+const int MESSAGE_TEAM_GOTO_MAP = 112;
+const int MESSAGE_DISSOLVE_TEAM = 113;
+const int MESSAGE_TEAM_FIGHT = 114;
+const int MESSAGE_PLAYER_ATTACK = 115;
+const int MESSAGE_MONSTER_ATTACK = 116;
+const int MESSAGE_PLAYER_RUN = 117;
+const int MESSAGE_USE_MEDICATION = 118;
+const int MESSAGE_PLAYER_DIE = 119;
+const int MESSAGE_PRIVATE_TALK = 120;
+
+#endif // !__MESSAGE_CONST_H__
+

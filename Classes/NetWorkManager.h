@@ -5,6 +5,8 @@
 #include"Signal.h"
 #include"cHash_Map.h"
 
+using NetMsg = std::map<std::string, std::string>;
+
 class NetWorkManager 
 {
 	GET_SINGLE_OBJECT(NetWorkManager)
@@ -12,9 +14,13 @@ public:
 	NetWorkManager(const NetWorkManager&) = delete;
 	NetWorkManager& operator=(const NetWorkManager&) = delete;
 
-	void add(const int& messageId);
+	Slot* add(const int& messageId, const EventHandler& evHandler);
+
+	Slot* add(const int& messageId, const std::function<void(Json::Value&)>&);
 	
-	void dispatch(const int& messageId);
+	void dispatch(const int& messageId,Json::Value& message);
+
+	void send(const int& messageId, const std::map<std::string, std::string>& msg);
 private:
 	NetWorkManager() {}
 	~NetWorkManager() {}

@@ -6,7 +6,7 @@
 #include"CameraPlayer.h"
 #include"GameLogicLayer.h"
 #include"Door.h"
-#include"CMClient.h"
+#include"SocketManager.h"
 #include<sstream>
 
 #define UpdateSpeed 60

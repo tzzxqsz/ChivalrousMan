@@ -9,7 +9,7 @@
 #include"GameScene.h"
 #include"ObjectLayer.h"
 #include"FightLayer.h"
-#include"CMClient.h"
+#include"SocketManager.h"
 #include"TeamManager.h"
 #include"TipLayer.h"
 #include<stack>
@@ -209,15 +209,15 @@ std::string  GameLogicLayer::monsterName()
 
 void GameLogicLayer::checkGotoMap()
 {
-	if (CMClient::getInstance()->getGotoMapMsgs().size() > 0)
+	if (TeamManager::getInstance()->getGotoMapMsgs().size() > 0)
 	{
-		TeamGotoMap_Msg msg = CMClient::getInstance()->getGotoMapMsgs().back();
+		TeamGotoMap_Msg msg = TeamManager::getInstance()->getGotoMapMsgs().back();
 		SetFloatData("DestX", msg.x);
 		SetFloatData("DestY", msg.y);
 		SetIntData("IsDoor", 1);
 		unscheduleUpdate();
 		gotoDestMap(msg.map);
-		CMClient::getInstance()->getGotoMapMsgs().clear();
+		TeamManager::getInstance()->getGotoMapMsgs().clear();
 	}
 }
 
@@ -227,7 +227,7 @@ void GameLogicLayer::checkTeamEntryFight(const std::string& name, const int& num
 	{
 		for (auto var : TeamManager::getInstance()->getTeamMembers())
 		{
-			CMClient::getInstance()->sendTeamFightMsg(var.first, name, nums);
+			TeamManager::getInstance()->c2sTeamFight(var.first, name, nums);
 		}
 	}
 }

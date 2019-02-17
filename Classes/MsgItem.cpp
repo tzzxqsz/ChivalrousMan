@@ -1,8 +1,10 @@
 #include"MsgItem.h"
 #include"Commen.h"
 #include"GameData.h"
-#include"CMClient.h"
+#include"SocketManager.h"
 #include"MsgListLayer.h"
+#include"PlayerManager.h"
+#include"TalkManager.h"
 #include<functional>
 
 MsgItem* MsgItem::create(const int& fd)
@@ -31,7 +33,7 @@ bool MsgItem::init(const int& fd)
 		this->setSelectedImage(bg);
 		this->setDisabledImage(bg);
 
-		auto info = CMClient::getInstance()->findPlayerInfoByFd(fd);
+		auto info = PlayerManager::getInstance()->findPlayerInfoByFd(fd);
 		auto headFrame = Sprite::create(StringValue("HeadFrame"));
 		headFrame->setPosition(40, 30);
 		headFrame->setScale(0.8, 0.8);
@@ -52,7 +54,7 @@ bool MsgItem::init(const int& fd)
 		gradelabel->setPosition(head->getPositionX() + 34, 15);
 		this->addChild(gradelabel);
 
-		bool flag = CMClient::getInstance()->getPrivateMsgs()[fd][0].change;
+		bool flag = TalkManager::getInstance()->getPrivateMsgs()[fd][0].change;
 		m_redspot = Sprite::create(StringValue("MsgTip"));
 		m_redspot->setPosition(bg->getPositionX() + bg->getContentSize().width - 20, 50);
 		this->addChild(m_redspot);

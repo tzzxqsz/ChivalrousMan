@@ -2,7 +2,7 @@
 #include"Commen.h"
 #include"GameData.h"
 #include"GameDynamicData.h"
-#include"CMClient.h"
+#include"SocketManager.h"
 #include"TeamLayer.h"
 #include"TeamManager.h"
 #include"CameraPlayer.h"
@@ -10,6 +10,7 @@
 #include"TipLayer.h"
 #include"GameScene.h"
 #include"Player.h"
+#include"PlayerManager.h"
 #include<functional>
 #include<list>
 
@@ -34,7 +35,7 @@ bool TeamMsgItem::init(const int& fd)
 	if (Node::init())
 	{
 		m_fd = fd;
-		Player_Info info = CMClient::getInstance()->findPlayerInfoByFd(m_fd);
+		Player_Info info = PlayerManager::getInstance()->findPlayerInfoByFd(m_fd);
 		ITEM_COMMEN(TeamMsgItem, StringValue("MsgItemBg"), -110);
 
 		auto OkBtn = MenuItemImage::create(StringValue("TeamOkBtn"), StringValue("TeamOkBtn"), 
@@ -60,18 +61,13 @@ void TeamMsgItem::onHeadClick(cocos2d::CCObject* sender)
 void TeamMsgItem::onOkBtnClick(cocos2d::CCObject* sender)
 {
 	ClickAction(sender);
-	auto info = CMClient::getInstance()->findPlayerInfoByFd(m_fd);
+	auto info = PlayerManager::getInstance()->findPlayerInfoByFd(m_fd);
 	if (info.curmap == GetIntData("CurMap"))
 	{
 		std::function<void(float)> func = [this](float) {
 			((TeamLayer*)this->getParent())->removeMsgItem(this);
-			AgreeTeam_Msg msg;
-			msg.dest = this->m_fd;
-			CMClient::getInstance()->getApplyTeamList().remove(this->m_fd);
-			CMClient::getInstance()->SendMsg((char*)&msg, sizeof(msg));
-			TeamManager::getInstance()->createTeam(this->m_fd, P_STATUS_HEADER);
-			CameraPlayer::getPlayerInstance()->setTeamStatus(P_STATUS_MEMBER);
-			auto info = CMClient::getInstance()->findPlayerInfoByFd(this->m_fd);
+			TeamManager::getInstance()->c2sAgreeTeam(this->m_fd);
+			auto info = PlayerManager::getInstance()->findPlayerInfoByFd(this->m_fd);
 			auto it = CurGameScene()->getObjectLayer()->existPlayer(info.playername, info.rolename);
 			CameraPlayer::getPlayerInstance()->moveTo((*it)->getWorldPos(), 1);
 		};
@@ -89,10 +85,7 @@ void TeamMsgItem::onRefuseBtnClick(cocos2d::CCObject* sender)
 	ClickAction(sender);
 	std::function<void(float)> func = [this](float) {
 		((TeamLayer*)this->getParent())->removeMsgItem(this);
-		RefuseTeam_Msg msg;
-		msg.dest = this->m_fd;
-		CMClient::getInstance()->getApplyTeamList().remove(this->m_fd);
-		CMClient::getInstance()->SendMsg((char*)&msg, sizeof(msg));
+		TeamManager::getInstance()->c2sRefuseTeam(this->m_fd);
 	};
 	scheduleOnce(func, 0.2, "func");
 }

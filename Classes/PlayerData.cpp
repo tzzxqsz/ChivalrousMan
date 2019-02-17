@@ -1,8 +1,9 @@
 #include"PlayerData.h"
 #include"Commen.h"
-#include"CMClient.h"
+#include"SocketManager.h"
 #include"GameDynamicData.h"
 #include"GameData.h"
+#include"PlayerManager.h"
 
 PlayerData::PlayerData()
 {
@@ -71,5 +72,5 @@ void PlayerData::addProperty(float blood, float mana, float attack, float defens
 	m_mana += mana;
 	m_attack += attack;
 	m_defense += defense;
-	CMClient::getInstance()->updatePlayerData();
+	PlayerManager::getInstance()->c2sUpdatePlayerData();
 }

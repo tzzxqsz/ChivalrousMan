@@ -5,7 +5,8 @@
 #include"PrivateTalkLayer.h"
 #include"GameDynamicData.h"
 #include"GameScene.h"
-#include"CMClient.h"
+#include"SocketManager.h"
+#include"TalkManager.h"
 #include<functional>
 
 bool MsgListLayer::init()
@@ -36,7 +37,7 @@ void MsgListLayer::initMsgItem(cocos2d::Vec2 basePos)
 	this->addChild(menu);
 	basePos.y -= 75;
 	int index = 0;
-	for (const auto& var:CMClient::getInstance()->getPrivateMsgs())
+	for (const auto& var:TalkManager::getInstance()->getPrivateMsgs())
 	{
 		auto item = MsgItem::create(var.first);
 		item->setTarget(this, menu_selector(MsgListLayer::onItemClickCallback));
@@ -54,7 +55,7 @@ void MsgListLayer::onItemClickCallback(cocos2d::CCObject* sender)
 	((MenuItemImage*)sender)->runAction(Sequence::createWithTwoActions(move, move1));
 	std::function<void(float)> func = [this, sender](float) {
 		int fd = ((MsgItem*)sender)->getFd();
-		CMClient::getInstance()->getPrivateMsgs()[fd][0].change = false;
+		TalkManager::getInstance()->getPrivateMsgs()[fd][0].change = false;
 		((MsgItem*)sender)->setRedSpot(false);
 		auto ptlayer = PrivateTalkLayer::create(fd);
 		CurGameScene()->addChild(ptlayer);

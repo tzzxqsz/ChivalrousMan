@@ -5,7 +5,9 @@
 #include"SimpleAudioEngine.h"
 #include"TeamManager.h"
 #include"CameraPlayer.h"
-#include"CMClient.h"
+#include"SocketManager.h"
+#include"PlayerManager.h"
+#include"TeamManager.h"
 #include"MapInfo.h"
 
 using namespace CocosDenshion;
@@ -44,19 +46,20 @@ void HelpToolSystem::WorkThread()
 		count2++;
 		if (count >= 180&&GetIntData("IsHaveGameScene")==1)
 		{
-			CMClient::getInstance()->VerifyPlayerPos();
+			PlayerManager::getInstance()->c2sVerifyPlayerPos();
+			//SocketManager::getInstance()->VerifyPlayerPos();
 			count = 0;
 		}
 		if (count2 >= 4 && PlayerTeamStatus() == P_STATUS_HEADER)
 		{
 			for (auto var : TeamManager::getInstance()->getTeamMembers())
 			{
-				auto info = CMClient::getInstance()->findPlayerInfoByFd(var.first);
+				auto info = PlayerManager::getInstance()->findPlayerInfoByFd(var.first);
 				int  mapindex=GetIntData("CurMap");
 				if (info.curmap != mapindex)
 				{
 					Vec2 target{ GetFloatData("DestX"),GetFloatData("DestY") };
-					CMClient::getInstance()->sendTeamGotoMapMsg("map" + NTS(mapindex), target, var.first);
+					TeamManager::getInstance()->c2sTeamGotoMap("map" + NTS(mapindex), target, var.first);
 				}
 			}
 			count2 = 0;

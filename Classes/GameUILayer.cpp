@@ -15,7 +15,8 @@
 #include"PlayerListLayer.h"
 #include"MsgListLayer.h"
 #include"TeamLayer.h"
-#include"CMClient.h"
+#include"SocketManager.h"
+#include"TalkManager.h"
 #include<string>
 
 #define SHOW_AND_DELETE_LAYER(__LAYER__)  \
@@ -39,6 +40,7 @@ bool GameUILayer::init()
 {
 	if (Layer::init())
 	{
+		setName("GameUILayer");
 		generateUserInterface();
 		return true;
 	}
@@ -218,12 +220,7 @@ void GameUILayer::onSendClickCallBack(cocos2d::CCObject* sender)
 	ClickAction();
 	if (m_editFrame->getString() != "")
 	{
-		WorldTalk_Msg msg;
-		msg.type = M_WorldTalk;
-		msg.fd = -1;
-		strcpy_s(msg.msg, m_editFrame->getString().c_str());
-		CMClient::getInstance()->addWorldTalkMsg(&msg);
-		CMClient::getInstance()->SendMsg((char*)&msg, sizeof(msg));
+		TalkManager::getInstance()->c2sWorkTalk(m_editFrame->getString());
 		m_editFrame->setString("");
 	}
 }

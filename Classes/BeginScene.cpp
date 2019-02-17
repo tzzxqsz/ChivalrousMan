@@ -1,6 +1,6 @@
 #include"BeginScene.h"
 #include"BeginLayer.h"
-#include"CMClient.h"
+#include"SocketManager.h"
 #include"GameData.h"
 #include"GameDynamicData.h"
 #include"Commen.h"
@@ -21,7 +21,7 @@ bool BeginScene::init()
 			loadinglayer->setName("loadinglayer");
 			this->addChild(loadinglayer);
 			auto func = [beginlayer, this] {
-				if (CMClient::getInstance()->Connect())
+				if (SocketManager::getInstance()->Connect())
 				{
 					beginlayer->showBtn();
 					SetIntData("IsConnectNet", 1);

@@ -76,7 +76,7 @@ public:
 	*@param rolename:角色名称
 	*@param msg:保存玩家新数据的消息
 	*/
-	void updatePlayerData(const std::string& playername, const std::string& rolename, UpdateData_Msg msg);
+	void updatePlayerData(const std::string& playername, const std::string& rolename, Player_Info msg);
 
 	/*
 	*判断对应玩家角色是否已经存在对象层中

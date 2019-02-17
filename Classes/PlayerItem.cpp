@@ -6,7 +6,8 @@
 #include"GameScene.h"
 #include"PrivateTalkLayer.h"
 #include"CameraPlayer.h"
-#include"CMClient.h"
+#include"SocketManager.h"
+#include"TeamManager.h"
 
 PlayerItem* PlayerItem::create(const Player_Info& info)
 {
@@ -63,9 +64,7 @@ void PlayerItem::onMakeTeamClick(cocos2d::CCObject* sender)
 	ClickAction(sender);
 	if (PlayerTeamStatus() == P_STATUS_NORMAL)
 	{
-		TeamApply_Msg msg;
-		msg.dest = m_fd;
-		CMClient::getInstance()->SendMsg((char*)&msg, sizeof(msg));
+		TeamManager::getInstance()->c2sTeamApply(m_fd);
 	}
 	else
 	{

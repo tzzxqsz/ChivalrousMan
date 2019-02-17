@@ -9,7 +9,8 @@
 #include"Model.h"
 #include"CameraPlayer.h"
 #include"PlayerData.h"
-#include"CMClient.h"
+#include"SocketManager.h"
+#include"PlayerManager.h"
 #include<functional>
 #include<sstream>
 
@@ -103,7 +104,8 @@ void NewGameLayer::onConfirmCallBack(cocos2d::CCObject* sender)
 		}
 		addRoleNums();
 		SetStringData("rolename", name);
-		CMClient::getInstance()->SendInitPlayerData();
+		PlayerManager::getInstance()->c2sInitPlayerData();
+		//SocketManager::getInstance()->SendInitPlayerData();
 		auto gamescene = GameScene::createWithLevel(LEVEL_ONE);
 		CC_SAFE_RETAIN(gamescene);
 		std::function<bool(void)> func = [] {return true; };

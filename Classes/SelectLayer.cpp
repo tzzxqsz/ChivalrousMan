@@ -12,7 +12,8 @@
 #include"SkillManager.h"
 #include"EquipmentManager.h"
 #include"TaskSystem.h"
-#include"CMClient.h"
+#include"SocketManager.h"
+#include"PlayerManager.h"
 #include<functional>
 
 #define ARROW_H 0.28
@@ -131,5 +132,6 @@ void  SelectLayer::initPlayerData(PlayerInfo& info)
 	BackPackManager::getInstance()->readBackpackInfo();
 	EquipmentManager::getInstance()->readEquipmentInfo();
 	SkillManager::getInstance()->readSkillInfo();
-	CMClient::getInstance()->SendInitPlayerData();
+	PlayerManager::getInstance()->c2sInitPlayerData();
+	//SocketManager::getInstance()->SendInitPlayerData();
 }

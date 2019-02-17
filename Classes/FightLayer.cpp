@@ -13,8 +13,10 @@
 #include"SkillManager.h"
 #include"TeamManager.h"
 #include"Player.h"
-#include"CMClient.h"
+#include"SocketManager.h"
 #include"GameLogicLayer.h"
+#include"PlayerManager.h"
+#include"FightManager.h"
 #include<random>
 #include<functional>
 #include<algorithm>
@@ -437,7 +439,7 @@ void FightLayer::playerAttackMonster()
 	{
 		for (auto var : TeamManager::getInstance()->getTeamMembers())
 		{
-			CMClient::getInstance()->sendPlayerAtkMsg("null", 0,var.first, m_selectedMonster->getTag());
+			FightManager::getInstance()->c2sPlayerAtk("null", 0, var.first, m_selectedMonster->getTag());
 		}
 	}
 	m_isPlayer = false;
@@ -560,7 +562,7 @@ void FightLayer::onMedication(cocos2d::CCObject* sender)
 			{
 				for (auto var : TeamManager::getInstance()->getTeamMembers())
 				{
-					CMClient::getInstance()->sendUseMedicationMsg(var.first);
+					FightManager::getInstance()->c2sUseMedication(var.first);
 				}
 			}
 			m_isPlayer = false;
@@ -599,7 +601,7 @@ void FightLayer::onSkill(cocos2d::CCObject* sender)
 			{
 				for (auto var : TeamManager::getInstance()->getTeamMembers())
 				{
-					CMClient::getInstance()->sendPlayerAtkMsg(dynamic_cast<Skill*>(sender)->getname(), dynamic_cast<Skill*>(sender)->getgrade(),var.first, m_selectedMonster->getTag());
+					FightManager::getInstance()->c2sPlayerAtk(dynamic_cast<Skill*>(sender)->getname(), dynamic_cast<Skill*>(sender)->getgrade(),var.first, m_selectedMonster->getTag());
 				}
 			}
 			SetOtherPalyerAction();
@@ -695,7 +697,7 @@ void  FightLayer::checkFightEnd()
 			if (!m_isDie)
 			{
 				for (auto var : TeamManager::getInstance()->getTeamMembers())
-					CMClient::getInstance()->sendPlayerDieMsg(var.first);
+					FightManager::getInstance()->c2sPlayerDie(var.first);
 			}
 			if (m_otherPlayerDie || m_otherNoAction)
 			{
@@ -730,7 +732,7 @@ void FightLayer::initPlayer()
 		int index = 0;
 		for (auto var : TeamManager::getInstance()->getTeamMembers())
 		{
-			Player_Info info = CMClient::getInstance()->findPlayerInfoByFd(var.first);
+			Player_Info info = PlayerManager::getInstance()->findPlayerInfoByFd(var.first);
 			auto otherplayer = XGamePlayer::create(info, 1);
 			otherplayer->setPosition(size.width - 100, size.height*0.5 + index * 125);
 			this->addChild(otherplayer);
@@ -766,7 +768,7 @@ void FightLayer::notifyOtherPlayerMonsterAtk(int who,int towho)
 {
 	for (auto var : TeamManager::getInstance()->getTeamMembers())
 	{
-		CMClient::getInstance()->sendMonsterAtkMsg(var.first, who, towho == -1 ? -1 : m_otherPlayers[towho]->getFd());
+		FightManager::getInstance()->c2sMonsterAtk(var.first, who, towho == -1 ? -1 : m_otherPlayers[towho]->getFd());
 	}
 }
 
@@ -786,7 +788,7 @@ void FightLayer::notifyOtherPlayerRunAway(int flag)
 {
 	for (auto var : TeamManager::getInstance()->getTeamMembers())
 	{
-		CMClient::getInstance()->sendPlayerRunMsg(var.first, flag);
+		FightManager::getInstance()->c2sPlayerRun(var.first, flag);
 	}
 }
 

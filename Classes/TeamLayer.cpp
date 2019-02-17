@@ -7,7 +7,8 @@
 #include"GameDynamicData.h"
 #include"CameraPlayer.h"
 #include"TeamManager.h"
-#include"CMClient.h"
+#include"SocketManager.h"
+#include"PlayerManager.h"
 
 bool TeamLayer::init()
 {
@@ -44,7 +45,7 @@ bool TeamLayer::init()
 void TeamLayer::initApplyList(const cocos2d::Vec2& basePos)
 {
 	int index = 0;
-	for (auto var : CMClient::getInstance()->getApplyTeamList())
+	for (auto var : TeamManager::getInstance()->getApplyTeamList())
 	{
 		auto item = TeamMsgItem::create(var);
 		item->setPosition(basePos.x, basePos.y - index * 80);
@@ -67,7 +68,7 @@ void TeamLayer::initTeamMember(const cocos2d::Vec2& basePos)
 	int index = 1;
 	for (auto var : TeamManager::getInstance()->getTeamMembers())
 	{
-		info = CMClient::getInstance()->findPlayerInfoByFd(var.first);
+		info = PlayerManager::getInstance()->findPlayerInfoByFd(var.first);
 		item = MemberItem::create(info, var.second, PlayerTeamStatus() == P_STATUS_HEADER ? TB_KICKOUT : TB_NULL);
 		item->setPosition(basePos.x, basePos.y - index * 80);
 		this->addChild(item);

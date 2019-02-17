@@ -6,16 +6,17 @@
 #define __EVENT_H__
 #include"PreProcess.h"
 #include"SlotListener.h"
+#include"jsonCpp/reader.h"
+#include"jsonCpp/value.h"
 #include<iostream>
 #include<functional>
 
-#define SEL_EVENTFUNC(func) static<cocos2d::Ref::*SEL_EventFunc>(&func)
+#define SEL_EVENTFUNC(func) static_cast<SEL_EventFunc>(&func)
  
-typedef void (cocos2d::Ref::*SEL_EventFunc)(void*);
+typedef void (cocos2d::CCObject::*SEL_EventFunc)(Json::Value&);
 
 typedef struct _Event{
-	cocos2d::Ref* handler;
-	void* param;
+	cocos2d::CCObject* handler;
 	SEL_EventFunc func;
 }EventHandler;
 
@@ -24,11 +25,11 @@ typedef struct _Event{
  public:
 	 Slot(SlotListener* listener, const EventHandler& evh, const bool& once = false);
 
-	 Slot(SlotListener* listener,const std::function<void(void)>& func, const bool& once = false);
+	 Slot(SlotListener* listener,const std::function<void(Json::Value&)>& func, const bool& once = false);
 
 	 virtual ~Slot() {}
 
-	 virtual void dispatch();
+	 virtual void dispatch(Json::Value& message);
 
 	 bool operator==(const Slot& slot);
 
@@ -39,13 +40,13 @@ typedef struct _Event{
 	 long long int id;
 	 bool flag = 0;
 	 EventHandler evh;
-	 std::function<void(void)> func;
+	 std::function<void(Json::Value&)> func;
 	 bool once;
 	 SlotListener* listener;
 	 
 	 static long long int count;
  };
 
- EventHandler Handler(cocos2d::Ref* ref, SEL_EventFunc func, void* param = nullptr);
+ EventHandler handler(cocos2d::CCObject* CCObject, SEL_EventFunc func);
 
 #endif // !__EVENT_H__

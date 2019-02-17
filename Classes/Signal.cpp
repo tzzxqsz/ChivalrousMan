@@ -1,4 +1,6 @@
 #include"Signal.h"
+#include"jsonCpp/reader.h"
+#include"jsonCpp/value.h"
 
 Signal::Signal()
 {
@@ -15,12 +17,13 @@ Signal::~Signal()
 
 void Signal::removeSlot(const long long int & slotId)
 {
-	for (auto it = m_slots.begin(); it != m_slots.end(); ++it)
+	for (auto var : m_slots)
 	{
-		if ((*it)->getId() == slotId)
+		if (var->getId() == slotId)
 		{
-			m_slots.erase(it);
-			return;
+			m_slots.remove(var);
+			delete var;
+			var = nullptr;
 		}
 	}
 }
@@ -39,24 +42,24 @@ Slot * Signal::addOnce(const EventHandler & handler)
 	return slot;
 }
 
-Slot * Signal::add(const std::function<void(void)>& func)
+Slot * Signal::add(const std::function<void(Json::Value&)>& func)
 {
 	Slot* slot = new Slot(this, func);
 	m_slots.push_back(slot);
 	return slot;
 }
 
-Slot * Signal::addOnce(const std::function<void(void)>& func)
+Slot * Signal::addOnce(const std::function<void(Json::Value&)>& func)
 {
 	Slot* slot = new Slot(this, func, true);
 	m_slots.push_back(slot);
 	return slot;
 }
 
-void Signal::dispatch()
+void Signal::dispatch(Json::Value& message)
 {
 	for (auto var : m_slots)
 	{
-		var->dispatch();
+		var->dispatch(message);
 	}
 }
