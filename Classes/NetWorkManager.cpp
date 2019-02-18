@@ -7,14 +7,25 @@ DEFINE_SINGLE_ATTRIBUTES(NetWorkManager);
 
 Slot* NetWorkManager::add(const int & messageId, const EventHandler& evHandler)
 {
-	Signal signal = m_signals[messageId];
-	return signal.add(evHandler);
+
+	if (m_signals.find(messageId) != m_signals.end())
+		return m_signals[messageId].add(evHandler);
+	else
+	{
+		m_signals[messageId] = Signal();
+		return m_signals[messageId].add(evHandler);
+	}
 }
 
 Slot * NetWorkManager::add(const int & messageId, const std::function<void(Json::Value&)>& func)
 {
-	Signal signal = m_signals[messageId];
-	return signal.add(func);
+	if (m_signals.find(messageId) != m_signals.end())
+		return m_signals[messageId].add(func);
+	else
+	{
+		m_signals[messageId] = Signal();
+		return m_signals[messageId].add(func);
+	}
 }
 
 void NetWorkManager::dispatch(const int & messageId,Json::Value& message)

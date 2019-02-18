@@ -42,6 +42,8 @@ public:
 	void LoadAnimationFromFile(const char* filename, char* key, int num, float delay);
 
 	void LoadSkillAnimation();
+
+	void instanceManager();
 };
 
 #endif // _APP_DELEGATE_H_

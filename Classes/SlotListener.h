@@ -1,5 +1,6 @@
 #pragma once
 #ifndef __SLOT_LISTENER_H__
+#define __SLOT_LISTENER_H__
 
 class SlotListener
 {

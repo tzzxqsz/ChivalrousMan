@@ -13,6 +13,9 @@
 #include"BackPackManager.h"
 #include"TeamManager.h"
 #include"TaskLayer.h"
+#include"TalkManager.h"
+#include"PlayerManager.h"
+#include"FightManager.h"
 #include"RealSkill.h"
 
 #define LoadPlayerAnimation(player)    \
@@ -88,6 +91,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
 	SocketManager::getInstance();
+	instanceManager();
 	registerReflectClass();
 	LoadResource();
 	HelpToolSystem::getInstance();
@@ -175,4 +179,12 @@ void AppDelegate::LoadSkillAnimation()
 	{
 		RealSkill::loadAnimation(StringValue(skill[i]) + skill[i], nums[i], 0.15);
 	}
+}
+
+void AppDelegate::instanceManager()
+{
+	PlayerManager::getInstance();
+	TalkManager::getInstance();
+	TeamManager::getInstance();
+	FightManager::getInstance();
 }

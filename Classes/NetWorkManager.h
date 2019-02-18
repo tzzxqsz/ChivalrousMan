@@ -3,7 +3,6 @@
 #define __NET_WORK_MANAGER_H__
 #include"PreProcess.h"
 #include"Signal.h"
-#include"cHash_Map.h"
 
 using NetMsg = std::map<std::string, std::string>;
 
@@ -24,7 +23,7 @@ public:
 private:
 	NetWorkManager() {}
 	~NetWorkManager() {}
-	cHash_Map<int, Signal> m_signals;
+	std::map<int, Signal> m_signals;
 
 	SINGLE_ATTRIBUTES(NetWorkManager);
 };
