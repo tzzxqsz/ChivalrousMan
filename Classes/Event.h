@@ -38,7 +38,7 @@ typedef struct _Event{
 	 void remove();
  private:
 	 long long int id;
-	 bool flag = 0;
+	 bool flag = false;
 	 EventHandler evh;
 	 std::function<void(Json::Value&)> func;
 	 bool once;

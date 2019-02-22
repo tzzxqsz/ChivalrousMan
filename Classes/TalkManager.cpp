@@ -20,17 +20,17 @@ TalkManager::~TalkManager()
 }
 void TalkManager::c2sWorkTalk(const std::string& content)
 {
-	std::map<std::string, std::string> msg;
-	msg["fd"] = NTS(-1);
+	NetMsg msg;
+	msg["fd"] = -1;
 	msg["msg"] = content;
 	NetWorkManager::getInstance()->send(MESSAGE_WORLD_TALK, msg);
 }
 
 void TalkManager::c2sPrivateTalk(const std::string & content, const int & dest)
 {
-	std::map<std::string, std::string> msg;
-	msg["fd"] = NTS(-1);
-	msg["dest"] = NTS(dest);
+	NetMsg msg;
+	msg["fd"] =-1;
+	msg["dest"] = dest;
 	msg["msg"] = content;
 	NetWorkManager::getInstance()->send(MESSAGE_PRIVATE_TALK, msg);
 }

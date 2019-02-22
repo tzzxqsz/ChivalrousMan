@@ -159,6 +159,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\BeginLayer.cpp" />
     <ClCompile Include="..\Classes\BeginScene.cpp" />
     <ClCompile Include="..\Classes\FightManager.cpp" />
+    <ClCompile Include="..\Classes\LogUtil.cpp" />
     <ClCompile Include="..\Classes\PlayerManager.cpp" />
     <ClCompile Include="..\Classes\SocketManager.cpp" />
     <ClCompile Include="..\Classes\CrackIt.cpp" />
@@ -260,6 +261,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\cHas.h" />
     <ClInclude Include="..\Classes\cHash_Map.h" />
     <ClInclude Include="..\Classes\FightManager.h" />
+    <ClInclude Include="..\Classes\LogUtil.h" />
     <ClInclude Include="..\Classes\SocketManager.h" />
     <ClInclude Include="..\Classes\Commen.h" />
     <ClInclude Include="..\Classes\CrackIt.h" />

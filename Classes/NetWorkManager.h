@@ -4,7 +4,7 @@
 #include"PreProcess.h"
 #include"Signal.h"
 
-using NetMsg = std::map<std::string, std::string>;
+using NetMsg = Json::Value;
 
 class NetWorkManager 
 {
@@ -20,6 +20,8 @@ public:
 	void dispatch(const int& messageId,Json::Value& message);
 
 	void send(const int& messageId, const std::map<std::string, std::string>& msg);
+
+	void send(const int& messageId, Json::Value& msg);
 private:
 	NetWorkManager() {}
 	~NetWorkManager() {}

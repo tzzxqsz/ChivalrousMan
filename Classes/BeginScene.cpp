@@ -5,6 +5,7 @@
 #include"GameDynamicData.h"
 #include"Commen.h"
 #include"LoadingLayer.h"
+#include"NetWorkManager.h"
 #include<thread>
 #include<functional>
 
@@ -23,6 +24,9 @@ bool BeginScene::init()
 			auto func = [beginlayer, this] {
 				if (SocketManager::getInstance()->Connect())
 				{
+					//NetMsg msg;
+					//msg["qw"] =12.0f;
+					//NetWorkManager::getInstance()->send(12, msg);
 					beginlayer->showBtn();
 					SetIntData("IsConnectNet", 1);
 					this->removeChildByName("loadinglayer");

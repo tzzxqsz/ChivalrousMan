@@ -420,6 +420,9 @@
     <ClCompile Include="..\Classes\FightManager.cpp">
       <Filter>src\Logic\Fight</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\LogUtil.cpp">
+      <Filter>src\Tool\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -769,6 +772,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\FightManager.h">
       <Filter>src\Logic\Fight</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LogUtil.h">
+      <Filter>src\Tool\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

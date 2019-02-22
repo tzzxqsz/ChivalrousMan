@@ -39,7 +39,7 @@ void TeamManager::c2sTeamApply(const int& dest)
 
 void TeamManager::c2sRefuseTeam(const int& dest)
 {
-	std::map<std::string, std::string> msg;
+	NetMsg msg;
 	msg["dest"] = dest;
 	m_applyTeamList.remove(dest);
 	NetWorkManager::getInstance()->send(MESSAGE_REFUSE_TEAM, msg);
@@ -47,8 +47,8 @@ void TeamManager::c2sRefuseTeam(const int& dest)
 
 void TeamManager::c2sAgreeTeam(const int& dest)
 {
-	std::map<std::string, std::string> msg;
-	msg["dest"] = NTS(dest);
+	NetMsg msg;
+	msg["dest"] =dest;
 	m_applyTeamList.remove(dest);
 	NetWorkManager::getInstance()->send(MESSAGE_AGREE_TEAM, msg);
 	createTeam(dest, P_STATUS_HEADER);
@@ -57,36 +57,36 @@ void TeamManager::c2sAgreeTeam(const int& dest)
 
 void TeamManager::c2sTeamMove(cocos2d::Vec2 target, int dest)
 {
-	std::map<std::string, std::string> msg;
-	msg["x"] = NTS(target.x);
-	msg["y"] = NTS(target.y);
-	msg["dest"] = NTS(dest);
+	NetMsg msg;
+	msg["x"] = target.x;
+	msg["y"] = target.y;
+	msg["dest"] = dest;
 	NetWorkManager::getInstance()->send(MESSAGE_TEAM_MOVE, msg);
 }
 
 void TeamManager::c2sTeamGotoMap(std::string map, cocos2d::Vec2 target, int dest)
 {
-	std::map<std::string, std::string> msg;
-	msg["dest"] = NTS(dest);
+	NetMsg msg;
+	msg["dest"] =dest;
 	msg["map"] = map;
-	msg["x"] = NTS(target.x);
-	msg["y"] = NTS(target.y);
+	msg["x"] = target.x;
+	msg["y"] = target.y;
 	NetWorkManager::getInstance()->send(MESSAGE_TEAM_GOTO_MAP, msg);
 }
 
 void TeamManager::c2sTeamDissolve(const int & dest)
 {
-	std::map<std::string, std::string> msg;
-	msg["dest"] = NTS(dest);
+	NetMsg msg;
+	msg["dest"] = dest;
 	NetWorkManager::getInstance()->send(MESSAGE_DISSOLVE_TEAM, msg);
 }
 
 void TeamManager::c2sTeamFight(int dest, std::string name, int nums)
 {
-	std::map<std::string, std::string> msg;
-	msg["dest"] = NTS(dest);
+	NetMsg msg;
+	msg["dest"] = dest;
 	msg["name"] = name;
-	msg["nums"] = NTS(nums);
+	msg["nums"] = nums;
 	NetWorkManager::getInstance()->send(MESSAGE_TEAM_FIGHT, msg);
 }
 

@@ -5,6 +5,7 @@ long long int Slot::count = 0;
 
 Slot::Slot(SlotListener* listener,const EventHandler& evh,const bool& once)
 {
+	this->flag = false;
 	this->listener = listener;
 	this->evh = evh;
 	this->once = once;

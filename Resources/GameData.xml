@@ -159,7 +159,8 @@
   <string>我</string>
   <key>NearPlayerText</key>
   <string>周围玩家</string>
-  <key>NetConnectText</key>
+  <key>Net
+  Text</key>
   <string>连接网络中......</string>
   <key>PickTaskText</key>
   <string>是否接取该任务？</string>

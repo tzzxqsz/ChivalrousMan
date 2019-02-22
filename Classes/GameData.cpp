@@ -63,3 +63,15 @@ std::string GameData::numberToString(float number)
 	ss >> res;
 	return res;
 }
+
+bool GameData::isNum(const std::string & number)
+{
+	stringstream sin(number);
+	double d;
+	char c;
+	if (!(sin >> d))
+		return false;
+	if (sin >> c)
+		return false;
+	return true;
+}

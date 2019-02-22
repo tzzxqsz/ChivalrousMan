@@ -29,66 +29,66 @@ PlayerManager::~PlayerManager()
 
 void PlayerManager::c2sInitPlayerData()
 {
-	std::map<std::string, std::string> msg;
+	NetMsg msg;
 	m_playerlist.clear();
 	msg["playername"] = GetStringData("playername");
 	msg["rolename"] = GetStringData("rolename");
 	msg["playertype"] = GetStringData("PlayerType");
-	msg["curmap"] = NTS(GetIntData("CurMap"));
-	msg["attack"] = NTS(GetPlayerData().getattack());
-	msg["blood"] = NTS(GetPlayerData().getblood());
-	msg["defense"] = NTS(GetPlayerData().getdefense());
-	msg["mana"] = NTS(GetPlayerData().getmana());
-	msg["grade"] = NTS(GetPlayerData().getgrade());
-	msg["fd"] = NTS(-1);
+	msg["curmap"] = GetIntData("CurMap");
+	msg["attack"] = GetPlayerData().getattack();
+	msg["blood"] = GetPlayerData().getblood();
+	msg["defense"] =GetPlayerData().getdefense();
+	msg["mana"] =GetPlayerData().getmana();
+	msg["grade"] = GetPlayerData().getgrade();
+	msg["fd"] = -1;
 	NetWorkManager::getInstance()->send(MESSAGE_INIT_DATA, msg);
 }
 
 void PlayerManager::c2sInitPos()
 {
-	std::map<std::string, std::string> msg;
-	msg["x"] = NTS(PlayerPos.x);
-	msg["y"] = NTS(PlayerPos.y);
-	msg["fd"] = NTS(-1);
+	NetMsg msg;
+	msg["x"] = PlayerPos.x;
+	msg["y"] = PlayerPos.y;
+	msg["fd"] = -1;
 	msg["curmap"] = GetIntData("CurMap");
 	NetWorkManager::getInstance()->send(MESSAGE_INIT_POS, msg);
 }
 
 void PlayerManager::c2sMoveTo(const cocos2d::Vec2 & pos, int less)
 {
-	std::map<std::string, std::string> msg;
-	msg["fd"] = NTS(-1);
-	msg["x"] = NTS(pos.x);
-	msg["y"] = NTS(pos.y);
+	NetMsg msg;
+	msg["fd"] = -1;
+	msg["x"] = pos.x;
+	msg["y"] = pos.y;
 	msg["less"] = less;
 	NetWorkManager::getInstance()->send(MESSAGE_MOVE_TO, msg);
 }
 
 void PlayerManager::c2sPlayerLeave()
 {
-	std::map<std::string, std::string> msg;
-	msg["fd"] = NTS(-1);
+	NetMsg msg;
+	msg["fd"] = -1;
 	NetWorkManager::getInstance()->send(MESSAGE_PLAYER_LEAVE, msg);
 }
 
 void PlayerManager::c2sVerifyPlayerPos()
 {
-	std::map<std::string, std::string> msg;
-	msg["x"] = NTS(PlayerPos.x);
-	msg["y"] = NTS(PlayerPos.y);
-	msg["fd"] = NTS(-1);
+	NetMsg msg;
+	msg["x"] = PlayerPos.x;
+	msg["y"] = PlayerPos.y;
+	msg["fd"] = -1;
 	NetWorkManager::getInstance()->send(MESSAGE_VERIFY_POS, msg);
 }
 
 void PlayerManager::c2sUpdatePlayerData()
 {
-	std::map<std::string, std::string> msg;
-	msg["attack"] = NTS(GetPlayerData().getattack());
-	msg["blood"] = NTS(GetPlayerData().getblood());
-	msg["defense"] = NTS(GetPlayerData().getdefense());
-	msg["fd"] = NTS(-1);
-	msg["grade"] = NTS(GetPlayerData().getgrade());
-	msg["mana"] = NTS(GetPlayerData().getmana());
+	NetMsg msg;
+	msg["attack"] = GetPlayerData().getattack();
+	msg["blood"] = GetPlayerData().getblood();
+	msg["defense"] =GetPlayerData().getdefense();
+	msg["fd"] =-1;
+	msg["grade"] = GetPlayerData().getgrade();
+	msg["mana"] = GetPlayerData().getmana();
 	NetWorkManager::getInstance()->send(MESSAGE_UPDATE_DATA, msg);
 }
 

@@ -22,43 +22,43 @@ FightManager::~FightManager()
 void FightManager::c2sPlayerAtk(const std::string& skill, const int& grade, const int& dest, const int& towho)
 {
 	NetMsg msg;
-	msg["fd"] = NTS(-1);
-	msg["grade"] = NTS(grade);
-	msg["dest"] = NTS(dest);
+	msg["fd"] = -1;
+	msg["grade"] = grade;
+	msg["dest"] = dest;
 	msg["skill"] = skill;
-	msg["towho"] = NTS(towho);
+	msg["towho"] = towho;
 	NetWorkManager::getInstance()->send(MESSAGE_PLAYER_ATTACK, msg);
 }
 
 void FightManager::c2sMonsterAtk(const int & dest, const int & who, const int & towho)
 {
 	NetMsg msg;
-	msg["dest"] = NTS(dest);
-	msg["fd"] = NTS(-1);
-	msg["who"] = NTS(who);
-	msg["towho"] = NTS(towho);
+	msg["dest"] = dest;
+	msg["fd"] = -1;
+	msg["who"] = who;
+	msg["towho"] = towho;
 	NetWorkManager::getInstance()->send(MESSAGE_MONSTER_ATTACK, msg);
 }
 
 void FightManager::c2sPlayerRun(const int & dest, const int & flag)
 {
 	NetMsg msg;
-	msg["dest"] = NTS(dest);
-	msg["flag"] = NTS(flag);
+	msg["dest"] = dest;
+	msg["flag"] = flag;
 	NetWorkManager::getInstance()->send(MESSAGE_PLAYER_RUN, msg);
 }
 
 void FightManager::c2sUseMedication(const int & dest)
 {
 	NetMsg msg;
-	msg["dest"] = NTS(dest);
+	msg["dest"] = dest;
 	NetWorkManager::getInstance()->send(MESSAGE_USE_MEDICATION, msg);
 }
 
 void FightManager::c2sPlayerDie(const int & dest)
 {
 	NetMsg msg;
-	msg["dest"] = NTS(dest);
+	msg["dest"] = dest;
 	NetWorkManager::getInstance()->send(MESSAGE_PLAYER_DIE, msg);
 }
 
@@ -73,20 +73,20 @@ void FightManager::s2cPlayerAtk(Json::Value & msg)
 
 void FightManager::s2cMonsterAtk(Json::Value & msg)
 {
-	auto ftLayer = cocos2d::Director::getInstance()->getRunningScene()->getChildByName("FightLayer");
-	if (ftLayer != nullptr)
-	{
-		int towho;
-		if (msg["towho"].asInt() == -1)
-		{
-			towho = ((FightLayer*)ftLayer)->findOtherPlayerIndexByFd(msg["fd"].asInt());
-		}
-		else
-		{
-			towho = ((FightLayer*)ftLayer)->findOtherPlayerIndexByFd(msg["towho"].asInt());
-		}
-		((FightLayer*)ftLayer)->monsterAttackPlayer(msg["towho"].asInt(), towho);
-	}
+	 auto ftLayer = cocos2d::Director::getInstance()->getRunningScene()->getChildByName("FightLayer");
+	 if (ftLayer != nullptr)
+	 {
+		 int towho;
+		 if (msg["towho"].asInt() == -1)
+		 {
+			 towho = ((FightLayer*)ftLayer)->findOtherPlayerIndexByFd(msg["fd"].asInt());
+		 }
+		 else
+		 {
+			 towho = ((FightLayer*)ftLayer)->findOtherPlayerIndexByFd(msg["towho"].asInt());
+		 }
+		 ((FightLayer*)ftLayer)->monsterAttackPlayer(msg["who"].asInt(), towho);
+	 }
 }
 
 void FightManager::s2cPlayerRun(Json::Value & msg)

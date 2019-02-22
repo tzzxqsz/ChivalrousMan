@@ -12,6 +12,7 @@
 #define FloatValue GameData::getInstance()->getFloatByKey
 #define NumberToString GameData::getInstance()->numberToString
 #define NTS NumberToString
+#define IS_NUM GameData::getInstance()->isNum
 
 class GameData:public cocos2d::CCObject
 {
@@ -26,6 +27,8 @@ public:
 	float getFloatByKey(const std::string& key);
 
 	std::string numberToString(float number);
+
+	bool isNum(const std::string& number);
 
 	static void release();
 private:
