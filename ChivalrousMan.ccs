@@ -3,8 +3,15 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Image Name="HelloWorld.png" />
-        <Project Name="MainScene.csd" Type="Scene" />
+        <Folder Name="font">
+          <TTF Name="font2.ttf" />
+        </Folder>
+        <Folder Name="friend">
+          <Project Name="FriendView.csd" Type="Layer" />
+        </Folder>
+        <Folder Name="res">
+          <Image Name="TaskBg.png" />
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>
