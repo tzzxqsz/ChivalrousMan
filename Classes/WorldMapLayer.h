@@ -2,6 +2,7 @@
 #ifndef __MINI_MAP_LAYER_H__
 #define __MINI_MAP_LAYER_H__
 #include"PreProcess.h"
+#include"CommonTouchLayer.h"
 #include<string>
 #include<map>
 
@@ -15,7 +16,7 @@ struct stMap
 *class WorldMapLayer
 *显示世界分布图
 */
-class WorldMapLayer Inherit(cocos2d::Layer)
+class WorldMapLayer Inherit(CommonTouchLayer)
 {
 	CLASS_ESSENTAIL(WorldMapLayer)
 	CREATE_FUNC(WorldMapLayer)

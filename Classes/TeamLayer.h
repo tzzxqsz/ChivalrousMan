@@ -2,9 +2,10 @@
 #ifndef __TEAM_LAYER_H__
 #define  __TEAM_LAYER_H__
 #include"PreProcess.h"
+#include"CommonTouchLayer.h"
 #include<list>
 
-class TeamLayer Inherit(cocos2d::Layer)
+class TeamLayer Inherit(CommonTouchLayer)
 {
 	CLASS_ESSENTAIL(TeamLayer)
 	CREATE_FUNC(TeamLayer)

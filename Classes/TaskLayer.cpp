@@ -5,13 +5,13 @@
 
 bool TaskLayer::init()
 {
-	if (Layer::init())
+	if (CommonTouchLayer::init())
 	{
 		auto size = SCREEN;
 		auto bg = Sprite::create(StringValue("TaskBg"));
 		bg->setPosition(size.width*0.5, size.height*0.5);
 		this->addChild(bg);
-
+		setExcludeRect(bg->getPosition(), bg->getTextureRect());
 		auto labeltitle = LabelTTF::create(StringValue("TaskTitle"), "¿¬Ìå", 30);
 		labeltitle->setPosition(size.width*0.5, size.height*0.5 + bg->getContentSize().height*0.5 - 25);
 		labeltitle->setColor(Color3B::YELLOW);

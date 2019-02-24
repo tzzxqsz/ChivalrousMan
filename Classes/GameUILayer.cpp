@@ -19,22 +19,11 @@
 #include"TalkManager.h"
 #include<string>
 
-#define SHOW_AND_DELETE_LAYER(__LAYER__)  \
-if (!m_isclick##__LAYER__&&!m_isClickLayer)           \
-{     \
-     m_isclick##__LAYER__ = !m_isclick##__LAYER__;        \
-    ((GameScene*)getParent())->getLogicLayer()->setUnTouch(true); \
+#define SHOW_LAYER(__LAYER__)  \
 	auto layer = __LAYER__::create();      \
 	layer->setName(#__LAYER__);      \
-	getParent()->addChild(layer);      \
-    m_isClickLayer=true;        \
-}      \
-else  if(m_isclick##__LAYER__)     \
-{    \
-    m_isclick##__LAYER__ = !m_isclick##__LAYER__;    \
-    ((GameScene*)getParent())->getLogicLayer()->setUnTouch(false);   \
-    m_isClickLayer=false;              \
-	getParent()->removeChildByName(#__LAYER__);   } 
+    layer->setZOrder(this->getZOrder()+1);   \
+	getParent()->addChild(layer)     
 
 bool GameUILayer::init()
 {
@@ -42,6 +31,7 @@ bool GameUILayer::init()
 	{
 		setName("GameUILayer");
 		generateUserInterface();
+
 		return true;
 	}
 	return false;
@@ -194,25 +184,25 @@ void GameUILayer::generateUserInterface()
 void GameUILayer::onMapIconClickCallBack(cocos2d::CCObject* sender)
 {
 	ClickAction();
-	SHOW_AND_DELETE_LAYER(WorldMapLayer);
+	SHOW_LAYER(WorldMapLayer);
 }
 
 void GameUILayer::onBackPackClickCallBack(cocos2d::CCObject* sender)
 {
 	ClickAction();
-	SHOW_AND_DELETE_LAYER(BackPackLayer);
+	SHOW_LAYER(BackPackLayer);
 }
 
 void GameUILayer::onSkillClickCallBack(cocos2d::CCObject* sender)
 {
 	ClickAction();
-	SHOW_AND_DELETE_LAYER(SkillLayer);
+	SHOW_LAYER(SkillLayer);
 }
 
 void GameUILayer::onHeadClickCallBack(cocos2d::CCObject* sender)
 {
 	ClickAction();
-	SHOW_AND_DELETE_LAYER(RoleInfoLayer);
+	SHOW_LAYER(RoleInfoLayer);
 }
 
 void GameUILayer::onSendClickCallBack(cocos2d::CCObject* sender)
@@ -240,13 +230,13 @@ void GameUILayer::onMenuClickCallBack(cocos2d::CCObject* sender)
 void GameUILayer::onTaskIconClickCallback(cocos2d::CCObject* sender)
 {
 	ClickAction(sender);
-	SHOW_AND_DELETE_LAYER(TaskLayer);
+	SHOW_LAYER(TaskLayer);
 }
 
 void GameUILayer::onNearPlayerBtnClick(cocos2d::CCObject* sender)
 {
 	ClickAction(sender);
-	SHOW_AND_DELETE_LAYER(PlayerListLayer);
+	SHOW_LAYER(PlayerListLayer);
 }
 
 bool GameUILayer::onTextFieldAttachWithIME(TextFieldTTF * sender)
@@ -309,14 +299,14 @@ void GameUILayer::onMsgIconClickCallback(cocos2d::CCObject* sender)
 {
 	ClickAction(sender);
 	setRedSpot(false);
-	SHOW_AND_DELETE_LAYER(MsgListLayer);
+	SHOW_LAYER(MsgListLayer);
 }
 
 void GameUILayer::onTeamIconClick(cocos2d::CCObject* sender)
 {
 	ClickAction(sender);
 	setTeamSpot(false);
-	SHOW_AND_DELETE_LAYER(TeamLayer);
+	SHOW_LAYER(TeamLayer);
 }
 
 void GameUILayer::setRedSpot(bool b)

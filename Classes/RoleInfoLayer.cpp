@@ -10,12 +10,13 @@
 
 bool RoleInfoLayer::init()
 {
-	if (Layer::init())
+	if (CommonTouchLayer::init())
 	{
 		auto size = SCREEN;
 		auto bg = Sprite::create(StringValue("RoleBg"));
 		bg->setPosition(size.width*0.5, size.height*0.5);
 		this->addChild(bg);
+		setExcludeRect(bg->getPosition(), bg->getTextureRect());
 		auto line = Sprite::create(StringValue("Line"));
 		line->setPosition(size.width*0.60, size.height*0.5);
 		this->addChild(line);

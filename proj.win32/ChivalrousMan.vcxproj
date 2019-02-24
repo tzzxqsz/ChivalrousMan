@@ -34,7 +34,7 @@
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v120_xp</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v140_xp</PlatformToolset>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -158,6 +158,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\BackPackManager.cpp" />
     <ClCompile Include="..\Classes\BeginLayer.cpp" />
     <ClCompile Include="..\Classes\BeginScene.cpp" />
+    <ClCompile Include="..\Classes\CommonTouchLayer.cpp" />
     <ClCompile Include="..\Classes\FightManager.cpp" />
     <ClCompile Include="..\Classes\LogUtil.cpp" />
     <ClCompile Include="..\Classes\PlayerManager.cpp" />
@@ -260,6 +261,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\BeginScene.h" />
     <ClInclude Include="..\Classes\cHas.h" />
     <ClInclude Include="..\Classes\cHash_Map.h" />
+    <ClInclude Include="..\Classes\CommonTouchLayer.h" />
     <ClInclude Include="..\Classes\FightManager.h" />
     <ClInclude Include="..\Classes\LogUtil.h" />
     <ClInclude Include="..\Classes\SocketManager.h" />

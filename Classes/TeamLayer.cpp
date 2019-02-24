@@ -12,13 +12,14 @@
 
 bool TeamLayer::init()
 {
-	if (Layer::init())
+	if (CommonTouchLayer::init())
 	{
 		auto size = SCREEN;
 		setName("TeamLayer");
 		auto bg = Sprite::create(StringValue("MsgListBg"));
 		bg->setPosition(size.width*0.5, size.height*0.5);
 		this->addChild(bg);
+		setExcludeRect(bg->getPosition(), bg->getTextureRect());
 		
 		std::string nametext;
 		Vec2 pos = bg->getPosition();

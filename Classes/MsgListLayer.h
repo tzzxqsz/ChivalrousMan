@@ -2,11 +2,12 @@
 #ifndef __MSG_LIST_LAYER_H__
 #define __MSG_LIST_LAYER_H__
 #include"PreProcess.h"
+#include"CommonTouchLayer.h"
 #include<list>
 
 class MsgItem;
 
-class MsgListLayer Inherit(cocos2d::Layer)
+class MsgListLayer Inherit(CommonTouchLayer)
 {
 	CLASS_ESSENTAIL(MsgListLayer)
 	CREATE_FUNC(MsgListLayer)

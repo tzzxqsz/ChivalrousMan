@@ -2,13 +2,14 @@
 #ifndef __BACK_PACK_LAYER_H__
 #define  __BACK_PACK_LAYER_H__
 #include"PreProcess.h"
+#include"CommonTouchLayer.h"
 #include<vector>
 
 /*
 *class BackPackLayer
 *ÏÔÊ¾Ö÷½Ç±³°ü
 */
-class BackPackLayer Inherit(cocos2d::Layer)
+class BackPackLayer:public CommonTouchLayer
 {
 	CLASS_ESSENTAIL(BackPackLayer)
 	CREATE_FUNC(BackPackLayer)

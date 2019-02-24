@@ -8,13 +8,13 @@
 
 bool PlayerListLayer::init()
 {
-	if (Layer::init())
+	if (CommonTouchLayer::init())
 	{
-		LISTEN_TOUCH(PlayerListLayer);
 		auto size = SCREEN;
 		auto bg = Sprite::create(StringValue("PlayerListBg"));
 		bg->setPosition(size.width*0.5, size.height*0.5);
 		this->addChild(bg);
+		setExcludeRect(bg->getPosition(), bg->getTextureRect());
 		setName("PlayerListLayer");
 		
 		auto titlelabel = LabelTTF::create(StringValue("NearPlayerText"), "¿¬Ìå", 30);
@@ -68,13 +68,14 @@ bool PlayerListLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *unused
 	m_click = true;
 	m_startPos = touch->getLocation();
 	m_startScrollPos = m_scrollBar->getPosition();
-	return Layer::onTouchBegan(touch, unused_event);
+	return CommonTouchLayer::onTouchBegan(touch, unused_event);
 }
 
 void PlayerListLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)
 {
 	m_click = false;
 	recoverItem(m_dy);
+	CommonTouchLayer::onTouchEnded(touch, unused_event);
 }
 
 void PlayerListLayer::onTouchMoved(cocos2d::Touch *touch, cocos2d::Event *unused_event)

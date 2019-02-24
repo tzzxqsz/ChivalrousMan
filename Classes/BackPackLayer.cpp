@@ -14,12 +14,13 @@
 
 bool BackPackLayer::init()
 {
-	if (Layer::init())
+	if (CommonTouchLayer::init())
 	{
 		auto size = SCREEN;
 		auto backpackGrid = Sprite::create(StringValue("BackpackGrid"));
 		backpackGrid->setPosition(size.width*0.5, size.height*0.5);
 		this->addChild(backpackGrid);
+		setExcludeRect(backpackGrid->getPosition(), backpackGrid->getTextureRect());
 		m_basePoint.x = backpackGrid->getPositionX() - backpackGrid->getContentSize().width*0.5 + 45;
 		m_basePoint.y = backpackGrid->getPositionY() + backpackGrid->getContentSize().height*0.5 - 118;
 		

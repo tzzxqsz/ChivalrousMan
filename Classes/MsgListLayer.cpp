@@ -11,13 +11,14 @@
 
 bool MsgListLayer::init()
 {
-	if (Layer::init())
+	if (CommonTouchLayer::init())
 	{
 		auto size = SCREEN;
 		setName("MsgListLayer");
 		auto bg = Sprite::create(StringValue("MsgListBg"));
 		bg->setPosition(size.width*0.5, size.height*0.5);
 		this->addChild(bg);
+		setExcludeRect(bg->getPosition(), bg->getTextureRect());
 
 		auto titlelabel = LabelTTF::create(StringValue("MsgListText"), "¿¬Ìå", 30);
 		titlelabel->setColor(Color3B::YELLOW);

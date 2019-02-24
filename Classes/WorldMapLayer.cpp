@@ -6,12 +6,13 @@
 
 bool WorldMapLayer::init()
 {
-	if (Layer::init())
+	if (CommonTouchLayer::init())
 	{
 		auto size = SCREEN;
 		auto bg = Sprite::create(StringValue("WorldMap"), Rect{ 40,20,800,600});
 		bg->setPosition(size.width*0.5, size.height*0.5);
 		this->addChild(bg);
+		setExcludeRect(bg->getPosition(), bg->getTextureRect());
 		Vec2 basePos = bg->getPosition();
 		basePos.x -= bg->getContentSize().width*0.5;
 		basePos.y -= bg->getContentSize().height*0.5;

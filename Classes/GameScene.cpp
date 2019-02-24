@@ -66,6 +66,7 @@ void GameScene::initScene()
 	this->addChild(m_logicLayer);
 
 	m_uiLayer = GameUILayer::create();
+	m_uiLayer->setZOrder(m_logicLayer->getZOrder() + 1);
 	this->addChild(m_uiLayer);
 	SetIntData("Save", 1);
 	SetIntData("IsHaveGameScene", 1);

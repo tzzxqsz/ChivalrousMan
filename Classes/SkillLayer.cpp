@@ -9,12 +9,13 @@
 
 bool SkillLayer::init()
 {
-	if (Layer::init())
+	if (CommonTouchLayer::init())
 	{
 		auto size = SCREEN;
 		auto back = Sprite::create(StringValue("SkillBg"));
 		back->setPosition(size.width*0.5, size.height*0.5);
 		this->addChild(back);
+		setExcludeRect(back->getPosition(), back->getTextureRect());
 		m_basePos = back->getPosition();
 		m_basePos.y += 47;
 		m_basePos.x = m_basePos.x - back->getContentSize().width*0.5 + 103;

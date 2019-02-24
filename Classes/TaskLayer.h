@@ -2,6 +2,7 @@
 #ifndef __TASK_LAYER_H__
 #define __TASK_LAYER_H__
 #include"PreProcess.h"
+#include"CommonTouchLayer.h"
 #include<list>
 
 class TaskItem;
@@ -10,7 +11,7 @@ class TaskItem;
 *class TaskLayer
 *»ŒŒÒ√Ê∞Â≤„
 */
-class TaskLayer Inherit(cocos2d::Layer)
+class TaskLayer Inherit(CommonTouchLayer)
 {
 	CLASS_ESSENTAIL(TaskLayer)
 	CREATE_FUNC(TaskLayer)

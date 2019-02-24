@@ -423,6 +423,9 @@
     <ClCompile Include="..\Classes\LogUtil.cpp">
       <Filter>src\Tool\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CommonTouchLayer.cpp">
+      <Filter>src\Logic\Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -775,6 +778,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\LogUtil.h">
       <Filter>src\Tool\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CommonTouchLayer.h">
+      <Filter>src\Logic\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

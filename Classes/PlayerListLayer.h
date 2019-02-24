@@ -2,6 +2,7 @@
 #ifndef __PLAYER_LIST_H__
 #define  __PLAYER_LIST_H__
 #include"PreProcess.h"
+#include"CommonTouchLayer.h"
 #include<vector>
 
 class  PlayerItem;
@@ -10,12 +11,12 @@ class  PlayerItem;
 *class PlayerListLayer
 *显示周围玩家列表
 */
-class PlayerListLayer Inherit(cocos2d::Layer)
+class PlayerListLayer Inherit(CommonTouchLayer)
 {
 	CLASS_ESSENTAIL(PlayerListLayer)
 	CREATE_FUNC(PlayerListLayer)
 public:
-	bool init();
+	bool init() override;
 	
 	virtual bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *unused_event) override;
 	virtual void onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event) override;

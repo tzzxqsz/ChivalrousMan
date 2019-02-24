@@ -2,13 +2,14 @@
 #ifndef __SKILL_LAYER_H__
 #define __SKILL_LAYER_H__
 #include"PreProcess.h"
+#include"CommonTouchLayer.h"
 #include<vector>
 
 /**
 *class SkillLayer
 *显示玩家技能
 */
-class SkillLayer Inherit(cocos2d::Layer)
+class SkillLayer Inherit(CommonTouchLayer)
 {
 	CLASS_ESSENTAIL(SkillLayer)
 	CREATE_FUNC(SkillLayer)

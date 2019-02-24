@@ -2,8 +2,9 @@
 #ifndef __ROLEINFOLAYER_H__
 #define __ROLEINFOLAYER_H__
 #include"PreProcess.h"
+#include"CommonTouchLayer.h"
 
-class RoleInfoLayer Inherit(cocos2d::Layer)
+class RoleInfoLayer Inherit(CommonTouchLayer)
 {
 	CLASS_ESSENTAIL(RoleInfoLayer)
 	CREATE_FUNC(RoleInfoLayer)

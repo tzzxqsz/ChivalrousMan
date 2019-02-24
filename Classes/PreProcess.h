@@ -27,7 +27,7 @@ __TYPE__* __TYPE__::m_instance = nullptr
 //获取单实例设计模式的实例对象
 #define GET_SINGLE_OBJECT(__TYPE__)  \
 public: \
-	static __TYPE__*  __TYPE__::getInstance() \
+	static __TYPE__*  getInstance() \
 	{ \
 	m_instance = m_load.load(std::memory_order_relaxed); \
 	std::atomic_thread_fence(std::memory_order_acquire); \
