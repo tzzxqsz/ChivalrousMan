@@ -127,6 +127,9 @@
     <Filter Include="src\Thing\Skill">
       <UniqueIdentifier>{d86e1c00-d77f-44cd-99f9-39260da76ddf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Logic\Friend">
+      <UniqueIdentifier>{3e86377f-016b-4527-a4e8-e8abf397f443}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -424,6 +427,15 @@
       <Filter>src\Tool\Utils</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\CommonTouchLayer.cpp">
+      <Filter>src\Logic\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FriendLayer.cpp">
+      <Filter>src\Logic\Friend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FriendManager.cpp">
+      <Filter>src\Logic\Friend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CSBaseView.cpp">
       <Filter>src\Logic\Common</Filter>
     </ClCompile>
   </ItemGroup>
@@ -780,6 +792,15 @@
       <Filter>src\Tool\Utils</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CommonTouchLayer.h">
+      <Filter>src\Logic\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FriendLayer.h">
+      <Filter>src\Logic\Friend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FriendManager.h">
+      <Filter>src\Logic\Friend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CSBaseView.h">
       <Filter>src\Logic\Common</Filter>
     </ClInclude>
   </ItemGroup>

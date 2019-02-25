@@ -4,12 +4,14 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="font">
+          <TTF Name="font1.ttf" />
           <TTF Name="font2.ttf" />
         </Folder>
         <Folder Name="friend">
-          <Project Name="FriendView.csd" Type="Layer" />
+          <Project Name="FriendView.csd" Type="Node" />
         </Folder>
         <Folder Name="res">
+          <Image Name="Btn.png" />
           <Image Name="TaskBg.png" />
         </Folder>
       </RootFolder>

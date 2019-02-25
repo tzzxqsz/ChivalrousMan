@@ -6,9 +6,14 @@
 class CommonTouchLayer :public cocos2d::LayerColor
 {
 public:
-	CREATE_FUNC(CommonTouchLayer);
+	static cocos2d::Color4B BackColor;
 
-	virtual bool init() override;
+	CommonTouchLayer();
+	virtual ~CommonTouchLayer();
+
+	CreateWithParam(CommonTouchLayer, cocos2d::Color4B);
+
+	virtual bool init(const cocos2d::Color4B& color = cocos2d::Color4B(0x4d, 0x4d, 0x4d, 155));
 
 	void onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event) override;
 

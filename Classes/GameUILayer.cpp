@@ -15,6 +15,7 @@
 #include"PlayerListLayer.h"
 #include"MsgListLayer.h"
 #include"TeamLayer.h"
+#include"FriendLayer.h"
 #include"SocketManager.h"
 #include"TalkManager.h"
 #include<string>
@@ -306,7 +307,7 @@ void GameUILayer::onTeamIconClick(cocos2d::CCObject* sender)
 {
 	ClickAction(sender);
 	setTeamSpot(false);
-	SHOW_LAYER(TeamLayer);
+	SHOW_LAYER(FriendLayer);
 }
 
 void GameUILayer::setRedSpot(bool b)

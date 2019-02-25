@@ -1,18 +1,25 @@
 #pragma once
 #ifndef __FRIEND_LAYER_H__
+#define __FRIEND_LAYER_H__
 #include"PreProcess.h"
+#include"CommonTouchLayer.h"
+#include"CSBaseView.h"
 
-/*
-*class FriendLayer
-*好友层，用于显示玩家的好友
-*/
-class FriendLayer Inherit(cocos2d::Layer)
+class FriendLayer :public CSBaseView
 {
 	CLASS_ESSENTAIL(FriendLayer)
-	CREATE_FUNC(FriendLayer)
 public:
+	static CommonTouchLayer* create();
+
 	bool init() override;
+
+	void onEnter() override;
+
+	void onExit() override;
+
+	void onAddFriendClick(cocos2d::Ref* sender);
 private:
+	
 };
 
 #endif // !__FRIEND_LAYER_H__

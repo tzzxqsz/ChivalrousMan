@@ -56,8 +56,8 @@ public: virtual const varType& get##funName(void){return varName;}    \
 public: virtual void set##funName(const varType& var){varName=var;} 
 
 
-#define CreateWithParam(__OBJTYPE__,__TYPE__,PARAM) \
-static __OBJTYPE__* create##__OBJTYPE__(__TYPE__ PARAM)  \
+#define CreateWithParam(__OBJTYPE__,__TYPE__) \
+static __OBJTYPE__* create##__OBJTYPE__(const __TYPE__& PARAM)  \
 {    \
 __OBJTYPE__*  pRet = new __OBJTYPE__;     \
 if (pRet&&pRet->init(PARAM))      \

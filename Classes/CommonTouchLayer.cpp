@@ -1,9 +1,19 @@
 #include"CommonTouchLayer.h"
 #include"Commen.h"
 
-bool CommonTouchLayer::init()
+cocos2d::Color4B CommonTouchLayer::BackColor = cocos2d::Color4B(0x4d, 0x4d, 0x4d, 155);
+
+CommonTouchLayer::CommonTouchLayer()
 {
-	if (cocos2d::LayerColor::initWithColor(cocos2d::Color4B(255,100,122,100)))
+}
+
+CommonTouchLayer::~CommonTouchLayer()
+{
+}
+
+bool CommonTouchLayer::init(const cocos2d::Color4B& color)
+{
+	if (cocos2d::LayerColor::initWithColor(color))
 	{
 		cocos2d::Size size = cocos2d::Director::sharedDirector()->getWinSize();
 		this->setContentSize(size);
@@ -39,3 +49,4 @@ void CommonTouchLayer::setExcludeRect(const cocos2d::Point & center, const cocos
 	m_excludeRect.origin.x = center.x - rect.size.width*0.5;
 	m_excludeRect.origin.y = center.y - rect.size.height*0.5;
 }
+
