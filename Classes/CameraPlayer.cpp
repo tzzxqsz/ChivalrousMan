@@ -100,7 +100,7 @@ bool CameraPlayer::move()
 		m_face->setPosition(pos.first);
 		float zorder = 100.0f - (m_pos.y / MapWidth) * 100;
 		m_face->setZOrder(zorder);
-		MapLayer->drawMap(pos.second.x, pos.second.y);
+		MapLayerObject->drawMap(pos.second.x, pos.second.y);
 		return true;
 	}
 	return false;
@@ -223,7 +223,7 @@ void CameraPlayer::AdjustPlayerAndMapPos()
 {
 	std::pair<Vec2, Vec2> pos = changeMapPosToUI();
 	m_face->setPosition(pos.first);
-	MapLayer->drawMap(pos.second.x, pos.second.y);
+	MapLayerObject->drawMap(pos.second.x, pos.second.y);
 }
 
 void CameraPlayer::beAttack(float attack)

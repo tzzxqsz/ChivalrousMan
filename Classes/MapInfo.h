@@ -15,7 +15,7 @@ class Door;
 #define MapHeight MapInfo::getMapInstance()->getMapHeight()
 #define MapInterval MapInfo::getMapInstance()->getInterval()
 #define InitMapLayer MapInfo::getMapInstance()->setMapLayer
-#define MapLayer MapInfo::getMapInstance()->getMapLayer()
+#define MapLayerObject MapInfo::getMapInstance()->getMapLayer()
 #define MapGridW MapInfo::getMapInstance()->getMapGridW()
 #define MapGridH MapInfo::getMapInstance()->getMapGridH()
 #define GetMapInfo MapInfo::getMapInstance()->getMapInfo
