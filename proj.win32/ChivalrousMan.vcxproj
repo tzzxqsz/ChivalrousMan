@@ -253,6 +253,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\TCPClient.cpp" />
     <ClCompile Include="..\Classes\XBArrow.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SignalManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\Animal.h" />
@@ -376,6 +377,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\TCPClient.h" />
     <ClInclude Include="..\Classes\XBArrow.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="SignalManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

@@ -438,6 +438,9 @@
     <ClCompile Include="..\Classes\CSBaseView.cpp">
       <Filter>src\Logic\Common</Filter>
     </ClCompile>
+    <ClCompile Include="SignalManager.cpp">
+      <Filter>src\Tool\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -802,6 +805,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CSBaseView.h">
       <Filter>src\Logic\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="SignalManager.h">
+      <Filter>src\Tool\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

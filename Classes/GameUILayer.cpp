@@ -307,7 +307,7 @@ void GameUILayer::onTeamIconClick(cocos2d::CCObject* sender)
 {
 	ClickAction(sender);
 	setTeamSpot(false);
-	SHOW_LAYER(FriendLayer);
+	SHOW_LAYER(TeamLayer);
 }
 
 void GameUILayer::setRedSpot(bool b)

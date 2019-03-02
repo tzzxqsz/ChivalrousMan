@@ -3,13 +3,12 @@
 #define __FRIEND_LAYER_H__
 #include"PreProcess.h"
 #include"CommonTouchLayer.h"
-#include"CSBaseView.h"
 
-class FriendLayer :public CSBaseView
+class FriendLayer :public CommonTouchLayer
 {
 	CLASS_ESSENTAIL(FriendLayer)
 public:
-	static CommonTouchLayer* create();
+	CREATE_FUNC(FriendLayer)
 
 	bool init() override;
 
