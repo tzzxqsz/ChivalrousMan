@@ -31,6 +31,11 @@ FindRoad::~FindRoad()
 
 void FindRoad::ExecuteAStar()
 {
+	if (!IsValid(*m_targetPos))
+	{
+		hasRoad = false;
+		return;
+	}
 	m_curPos = m_startPos;
 	int dir[][2] = { {1,0},{-1,0},{0,1},{0,-1},{1,-1},{-1,1},{1,1},{-1,-1} };
 	

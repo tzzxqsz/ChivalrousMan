@@ -50,3 +50,8 @@ void CommonTouchLayer::setExcludeRect(const cocos2d::Point & center, const cocos
 	m_excludeRect.origin.y = center.y - rect.size.height*0.5;
 }
 
+void CommonTouchLayer::onEnter()
+{
+	LayerColor::onEnter();
+}
+

@@ -11,7 +11,7 @@ bool DragonRoar::init(cocos2d::Layer* parent,cocos2d::CCObject* towho, const flo
 	{
 		m_parent = parent;
 		m_baseattack = baseattack;
-		m_towho = m_towho;
+		m_towho = towho;
 		Vec2 pos = ((Monster*)m_towho)->getPosition();
 		this->setPosition(pos.x + 90, pos.y);
 		m_parent->addChild(this);

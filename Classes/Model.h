@@ -358,4 +358,70 @@ public:
 	}
 };
 
+class Friend
+{
+public:
+	Friend() {}
+	~Friend() {}
+	GettingAndSetting(std::string, playername, playername);
+	GettingAndSetting(std::string, rolename, rolename);
+	GettingAndSetting(std::string, friendpname, friendpname);
+	GettingAndSetting(std::string, friendrname, friendrname);
+	GettingAndSetting(std::string, friendrtype, friendrtype);
+	GettingAndSetting(std::string, friendgrade, friendgrade);
+public:
+	std::string& operator[](const int& index)
+	{
+		switch (index)
+		{
+		case 1:
+			return playername;
+		case 2:
+			return rolename;
+		case 3:
+			return friendpname;
+		case 4:
+			return friendrname;
+		case 5:
+			return friendrtype;
+		case 6:
+			return friendgrade;
+		default:
+			return playername;
+		}
+	}
+
+	std::string getAttributeName(const int& index)
+	{
+		switch (index)
+		{
+		case 1:
+			return "playername";
+		case 2:
+			return "rolename";
+		case 3:
+			return "friendpname";
+			break;
+		case 4:
+			return "friendrname";
+		case 5:
+			return "friendrtype";
+		case 6:
+			return "friendgrade";
+		default:
+			return "playername";
+		}
+	}
+
+	std::string getName()
+	{
+		return "friend";
+	}
+
+	int getAttributeNums()
+	{
+		return 6;
+	}
+};
+
 #endif // !__MODEL_H__

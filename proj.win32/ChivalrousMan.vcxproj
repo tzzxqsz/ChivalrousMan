@@ -158,9 +158,11 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\BackPackManager.cpp" />
     <ClCompile Include="..\Classes\BeginLayer.cpp" />
     <ClCompile Include="..\Classes\BeginScene.cpp" />
+    <ClCompile Include="..\Classes\CommonHead.cpp" />
     <ClCompile Include="..\Classes\CommonTouchLayer.cpp" />
     <ClCompile Include="..\Classes\CSBaseView.cpp" />
     <ClCompile Include="..\Classes\FightManager.cpp" />
+    <ClCompile Include="..\Classes\FriendItem.cpp" />
     <ClCompile Include="..\Classes\FriendLayer.cpp" />
     <ClCompile Include="..\Classes\FriendManager.cpp" />
     <ClCompile Include="..\Classes\LogUtil.cpp" />
@@ -217,6 +219,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\Skill.cpp" />
     <ClCompile Include="..\Classes\SkillFactory.cpp" />
     <ClCompile Include="..\Classes\SkillManager.cpp" />
+    <ClCompile Include="..\Classes\SynsTask.cpp" />
     <ClCompile Include="..\Classes\TalkManager.cpp" />
     <ClCompile Include="..\Classes\TaskItem.cpp" />
     <ClCompile Include="..\Classes\TaskLayer.cpp" />
@@ -253,7 +256,6 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\TCPClient.cpp" />
     <ClCompile Include="..\Classes\XBArrow.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SignalManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\Animal.h" />
@@ -265,9 +267,11 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\BeginScene.h" />
     <ClInclude Include="..\Classes\cHas.h" />
     <ClInclude Include="..\Classes\cHash_Map.h" />
+    <ClInclude Include="..\Classes\CommonHead.h" />
     <ClInclude Include="..\Classes\CommonTouchLayer.h" />
     <ClInclude Include="..\Classes\CSBaseView.h" />
     <ClInclude Include="..\Classes\FightManager.h" />
+    <ClInclude Include="..\Classes\FriendItem.h" />
     <ClInclude Include="..\Classes\FriendLayer.h" />
     <ClInclude Include="..\Classes\FriendManager.h" />
     <ClInclude Include="..\Classes\LogUtil.h" />
@@ -338,6 +342,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\SkillFactory.h" />
     <ClInclude Include="..\Classes\SkillManager.h" />
     <ClInclude Include="..\Classes\SlotListener.h" />
+    <ClInclude Include="..\Classes\SynsTask.h" />
     <ClInclude Include="..\Classes\TalkManager.h" />
     <ClInclude Include="..\Classes\TaskItem.h" />
     <ClInclude Include="..\Classes\TaskLayer.h" />
@@ -377,7 +382,6 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\TCPClient.h" />
     <ClInclude Include="..\Classes\XBArrow.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="SignalManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

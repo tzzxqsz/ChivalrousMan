@@ -136,6 +136,8 @@
   <string>trunOn.png</string>
   <key>TrunOff</key>
   <string>trunOff.png</string>
+  <key>CommonBtn</key>
+  <string>button/CommonBtn.png</string>
   <!-- 文本素材 -->
   <key>UpgradeText</key>
   <string>升级到</string>
@@ -159,8 +161,7 @@
   <string>我</string>
   <key>NearPlayerText</key>
   <string>周围玩家</string>
-  <key>Net
-  Text</key>
+  <key>NetText</key>
   <string>连接网络中......</string>
   <key>PickTaskText</key>
   <string>是否接取该任务？</string>
@@ -300,6 +301,22 @@
   <string>输入用户名</string>
   <key>tfPasswd</key>
   <string>输入密码</string>
+  <key>TeamDissolveText</key>
+  <string>队伍已解散</string>
+  <key>NotEqualMap</key>
+  <string>不在同一张地图</string>
+  <key>TeamingText</key>
+  <string>组队中无法操作</string>
+  <key>TeamMemberText</key>
+  <string>队员</string>
+  <key>TeamHeaderText</key>
+  <string>队长</string>
+  <key>FriendText</key>
+  <string>好友</string>
+  <key>AddFriendText</key>
+  <string>添加好友</string>
+  <key>ApplyListText</key>
+  <string>申请列表</string>
   <!-- 背景素材 -->
   <key>MsgItemBg</key>
   <string>MsgItemBg.png</string>
@@ -343,16 +360,8 @@
   <string>EditBox.png</string>
   <key>SigOnBg</key>
   <string>SigobBg.jpg</string>
-  <key>TeamDissolveText</key>
-  <string>队伍已解散</string>
-  <key>NotEqualMap</key>
-  <string>不在同一张地图</string>
-  <key>TeamingText</key>
-  <string>组队中无法操作</string>
-  <key>TeamMemberText</key>
-  <string>队员</string>
-  <key>TeamHeaderText</key>
-  <string>队长</string>
+  <key>StyleBg</key>
+  <string>Background/StyleBg.png</string>
   <!-- 按钮 -->
   <key>DissolveTeamBtn</key>
   <string>button/Dissolve.png</string>
@@ -360,6 +369,8 @@
   <string>button/KickOut.png</string>
   <key>QuitTeamBtn</key>
   <string>button/QuitBtn.png</string>
+  <key>FriendBtn</key>
+  <string>button/FriendBtn.png</string>
   <!--背景素材-->
   <key>TipBg</key>
   <string>tipbg.png</string>

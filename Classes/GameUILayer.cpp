@@ -96,6 +96,9 @@ void GameUILayer::generateUserInterface()
 		menu_selector(GameUILayer::onTeamIconClick));
 	teamIcon->setPosition(m_msgicon->getPositionX() - m_msgicon->getContentSize().width - 15, m_msgicon->getPositionY()+3);
 	menu->addChild(teamIcon);
+	auto friendBtn = MenuItemImage::create(StringValue("FriendBtn"), StringValue("FriendBtn"), this, menu_selector(GameUILayer::onFriendClickCallback));
+	friendBtn->setPosition(teamIcon->getPositionX() - teamIcon->getContentSize().width - 15, teamIcon->getPositionY());
+	menu->addChild(friendBtn);
 
 	m_teamSpot = Sprite::create(StringValue("MsgTip"));
 	m_teamSpot->setPosition(teamIcon->getPositionX() + 20, teamIcon->getPositionY() + 10);
@@ -308,6 +311,12 @@ void GameUILayer::onTeamIconClick(cocos2d::CCObject* sender)
 	ClickAction(sender);
 	setTeamSpot(false);
 	SHOW_LAYER(TeamLayer);
+}
+
+void GameUILayer::onFriendClickCallback(cocos2d::CCObject* sender)
+{
+	ClickAction(sender);
+	SHOW_LAYER(FriendLayer);
 }
 
 void GameUILayer::setRedSpot(bool b)

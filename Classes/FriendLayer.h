@@ -3,6 +3,10 @@
 #define __FRIEND_LAYER_H__
 #include"PreProcess.h"
 #include"CommonTouchLayer.h"
+#include"ui/UIButton.h"
+#include"ui/UIListView.h"
+#include"Model.h"
+#include<vector>
 
 class FriendLayer :public CommonTouchLayer
 {
@@ -10,15 +14,25 @@ class FriendLayer :public CommonTouchLayer
 public:
 	CREATE_FUNC(FriendLayer)
 
-	bool init() override;
+	virtual bool init() override;
 
-	void onEnter() override;
+	void onFriendListClick(cocos2d::CCObject* sender);
 
-	void onExit() override;
+	void onAddFriendClick(cocos2d::CCObject* sender);
 
-	void onAddFriendClick(cocos2d::Ref* sender);
-private:
+	void onApplyListClick(cocos2d::CCObject* sender);
+
+	void onEventScrollTrigger(cocos2d::CCObject* sender, cocos2d::ui::ScrollviewEventType type);
+
+	virtual void onEnter() override;
 	
+	void getFriendList();
+
+	void getAddFriendList();
+private:
+	cocos2d::ui::ListView* m_listView;
+	std::vector<Friend> m_friendList;
+	cocos2d::LabelTTF* m_title;
 };
 
 #endif // !__FRIEND_LAYER_H__

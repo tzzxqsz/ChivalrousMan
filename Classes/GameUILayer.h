@@ -99,6 +99,8 @@ private:
 	*消息图标点击回调函数
 	*/
 	void onMsgIconClickCallback(cocos2d::CCObject* sender);
+
+	void onFriendClickCallback(cocos2d::CCObject* sender);
 	
 	/*
 	*onTeamIconClick(cocos2d::CCObject* sender);

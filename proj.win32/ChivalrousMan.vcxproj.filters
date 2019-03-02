@@ -438,8 +438,14 @@
     <ClCompile Include="..\Classes\CSBaseView.cpp">
       <Filter>src\Logic\Common</Filter>
     </ClCompile>
-    <ClCompile Include="SignalManager.cpp">
+    <ClCompile Include="..\Classes\SynsTask.cpp">
       <Filter>src\Tool\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FriendItem.cpp">
+      <Filter>src\Logic\Friend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CommonHead.cpp">
+      <Filter>src\Logic\Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -806,8 +812,14 @@
     <ClInclude Include="..\Classes\CSBaseView.h">
       <Filter>src\Logic\Common</Filter>
     </ClInclude>
-    <ClInclude Include="SignalManager.h">
+    <ClInclude Include="..\Classes\SynsTask.h">
       <Filter>src\Tool\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FriendItem.h">
+      <Filter>src\Logic\Friend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CommonHead.h">
+      <Filter>src\Logic\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

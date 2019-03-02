@@ -3,6 +3,7 @@
 #define __COMMEN_H__
 
 using namespace cocos2d;
+using namespace ui;
 
 #define PI 3.1415
 

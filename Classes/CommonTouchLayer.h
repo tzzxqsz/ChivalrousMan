@@ -22,6 +22,8 @@ public:
 	void setTouchClose(const bool& touchClose = true);
 
 	void setExcludeRect(const cocos2d::Point& center, const cocos2d::Rect& rect);
+
+	virtual void onEnter() override;
 private:
 	bool m_touchClose = true;
 
