@@ -39,7 +39,7 @@ public:
 
 	Player_Info findPlayerInfoByFd(const int& fd);
 
-	std::list<Player_Info>& getPlayerList() { return m_playerlist; }
+	const std::list<Player_Info>& getPlayerList() { return m_playerlist; }
 private:
 	PlayerManager();
 	~PlayerManager();

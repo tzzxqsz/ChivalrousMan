@@ -130,10 +130,10 @@ void TeamManager::s2cTeamGotoMap(Json::Value &msg)
 {
 	if (CCDirector::getInstance()->getRunningScene()->getName() == "GameScene")
 	{
-		TeamGotoMap_Msg tmsg;
+		TeamGotoMap tmsg;
 		tmsg.x = msg["x"].asFloat();
 		tmsg.y = msg["y"].asFloat();
-		strcpy_s(tmsg.map, msg["map"].asCString());
+		tmsg.map = msg["map"].asString();
 		m_gotoMapMsgs.push_back(tmsg);
 	}
 }

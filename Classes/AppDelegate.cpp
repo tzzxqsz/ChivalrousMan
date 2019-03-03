@@ -18,6 +18,8 @@
 #include"FightManager.h"
 #include"RealSkill.h"
 
+#define _IS_EDITER_ 0
+
 #define LoadPlayerAnimation(player)    \
 {      \
 	char name[40] = { 0 };    \
@@ -74,12 +76,19 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
-    if(!glview) {
-        glview = GLViewImpl::createWithRect("ChivalrousMan", Rect(0, 0, 960, 640));
-        director->setOpenGLView(glview);
-    }
-
-    director->getOpenGLView()->setDesignResolutionSize(960, 640, ResolutionPolicy::SHOW_ALL);
+	if (!glview) {
+#if _IS_EDITER_==1
+		glview = GLViewImpl::createWithRect("ChivalrousMan", Rect(0, 0, 1680, 960));
+		director->setOpenGLView(glview);
+	}
+	director->getOpenGLView()->setDesignResolutionSize(1680, 960, ResolutionPolicy::SHOW_ALL);
+#else
+		glview = GLViewImpl::createWithRect("ChivalrousMan", Rect(0, 0, 960, 640));
+		director->setOpenGLView(glview);
+	}
+	director->getOpenGLView()->setDesignResolutionSize(960, 640, ResolutionPolicy::SHOW_ALL);
+#endif // _IS_EDITER_==0
+   
 
     // turn on display FPS
     //director->setDisplayStats(true);
@@ -95,10 +104,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	registerReflectClass();
 	LoadResource();
 	HelpToolSystem::getInstance();
-
 	auto scene = BeginScene::create();
-
-    // run
     director->runWithScene(scene);
 
     return true;

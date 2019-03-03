@@ -84,7 +84,7 @@ void  SocketManager::OnRecv(char* buff)
 	//	doTeamMoveMsg((TeamMove_Msg*)buff);
 	//	break;
 	//case M_TeamGotoMap:
-	//	doTeamGotoMapMsg((TeamGotoMap_Msg*)buff);
+	//	doTeamGotoMapMsg((TeamGotoMap*)buff);
 	//	break;
 	//case M_DissolveTeam:
 	//	doTeamDissolveMsg();
@@ -440,7 +440,7 @@ int SocketManager::Connect()
 
 //void SocketManager::sendTeamGotoMapMsg(std::string map, cocos2d::Vec2 target, int dest)
 //{
-//	TeamGotoMap_Msg msg;
+//	TeamGotoMap msg;
 //	msg.dest = dest;
 //	strcpy_s(msg.map, map.c_str());
 //	msg.x = target.x;
@@ -448,7 +448,7 @@ int SocketManager::Connect()
 //	SendMsg((char*)&msg, sizeof(msg));
 //}
 
-//void SocketManager::doTeamGotoMapMsg(TeamGotoMap_Msg* msg)
+//void SocketManager::doTeamGotoMapMsg(TeamGotoMap* msg)
 //{
 //	if (CCDirector::getInstance()->getRunningScene()->getName() == "GameScene")
 //		m_gotoMapMsgs.push_back(*msg);

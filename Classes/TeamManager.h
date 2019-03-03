@@ -67,14 +67,14 @@ public:
 
 	std::list<int>& getApplyTeamList() { return m_applyTeamList; }
 
-	std::list<TeamGotoMap_Msg>& getGotoMapMsgs() { return m_gotoMapMsgs; }
+	std::list<TeamGotoMap>& getGotoMapMsgs() { return m_gotoMapMsgs; }
 private:
 	TeamManager();
 	~TeamManager();
 
 	std::list<int> m_applyTeamList;          //队伍申请列表
 	std::map<int, int> m_teamMembers;   //保存队员
-	std::list<TeamGotoMap_Msg> m_gotoMapMsgs;            //保存前往某地图消息
+	std::list<TeamGotoMap> m_gotoMapMsgs;            //保存前往某地图消息
 
 	SINGLE_ATTRIBUTES(TeamManager);
 };

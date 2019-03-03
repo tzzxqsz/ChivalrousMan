@@ -23,13 +23,14 @@ public:
 	void onApplyListClick(cocos2d::CCObject* sender);
 
 	void onEventScrollTrigger(cocos2d::CCObject* sender, cocos2d::ui::ScrollviewEventType type);
+	
+	void onSelected(const int& index);
 
 	virtual void onEnter() override;
-	
-	void getFriendList();
 
-	void getAddFriendList();
+	void refreshView();
 private:
+	int m_selectIndex;
 	cocos2d::ui::ListView* m_listView;
 	std::vector<Friend> m_friendList;
 	cocos2d::LabelTTF* m_title;

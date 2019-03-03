@@ -5,6 +5,7 @@
 #include"DBDao.h"
 #include"FriendItem.h"
 #include"ShareData.h"
+#include"FriendManager.h"
 
 bool FriendLayer::init()
 {
@@ -58,19 +59,20 @@ bool FriendLayer::init()
 
 void FriendLayer::onFriendListClick(cocos2d::CCObject * sender)
 {
-	//ClickAction(sender);
 	m_title->setString(StringValue("FriendText"));
+	onSelected(1);
 }
 
 void FriendLayer::onAddFriendClick(cocos2d::CCObject * sender)
 {
-	//ClickAction(sender);
 	m_title->setString(StringValue("AddFriendText"));
+	onSelected(2);
 }
 
 void  FriendLayer::onApplyListClick(cocos2d::CCObject* sender)
 {
 	m_title->setString(StringValue("ApplyListText"));
+	onSelected(3);
 }
 
 void FriendLayer::onEventScrollTrigger(cocos2d::CCObject * sender, cocos2d::ui::ScrollviewEventType type)
@@ -82,31 +84,42 @@ void FriendLayer::onEventScrollTrigger(cocos2d::CCObject * sender, cocos2d::ui::
 	}
 }
 
+void FriendLayer::onSelected(const int & index)
+{
+	if (m_selectIndex == index)
+		return;
+	m_selectIndex == index;
+	refreshView();
+}
+
 void FriendLayer::onEnter()
 {
 	CommonTouchLayer::onEnter();
-	getAddFriendList();
+	FriendManager::getInstance()->getFriendList(true);
+	m_selectIndex = 1;
 }
 
-void FriendLayer::getFriendList()
+void FriendLayer::refreshView()
 {
-	DBDao<Friend> db;
-	m_friendList.clear();
-	m_friendList = db.queryModel();
-}
-
-void FriendLayer::getAddFriendList()
-{
-	DBDao<PlayerInfo> db;
-	auto list = db.queryModel();
-	Player_Info info;
+	std::vector<Player_Info> list;
+	switch (m_selectIndex)
+	{
+	case 1:
+		list = FriendManager::getInstance()->getFriendList();
+		break;
+	case 2:
+		list = FriendManager::getInstance()->getAddFriendList();
+		break;
+	case 3:
+		list = FriendManager::getInstance()->getApplyFriendList();
+		break;
+	default:
+		break;
+	}
+	m_listView->removeAllChildren();
 	for (auto var : list)
 	{
-		info.playername = var.getplayerName();
-		info.rolename = var.getroleName();
-		info.playertype = var.getroleType();
-		info.grade = std::stoi(var.getgrade());
-		auto item = FriendItem::createFriendItem(info);
+		auto item = FriendItem::createFriendItem(var);
 		m_listView->pushBackCustomItem(item);
 	}
 }

@@ -173,7 +173,7 @@ public:
 	///*
 	//*处理队伍进入某地图消息
 	//*/
-	//void doTeamGotoMapMsg(TeamGotoMap_Msg* msg);
+	//void doTeamGotoMapMsg(TeamGotoMap* msg);
 
 	///*
 	//*SendTeamDissolveMsg(int dest)
@@ -261,7 +261,7 @@ public:
 	//*/
 	//void doPlayerDieMsg(PlayerDie_Msg* msg);
 
-	//std::list<TeamGotoMap_Msg>& getGotoMapMsgs() { return m_gotoMapMsgs; }
+	//std::list<TeamGotoMap>& getGotoMapMsgs() { return m_gotoMapMsgs; }
 private:
 	SocketManager();
 	~SocketManager();
@@ -281,7 +281,7 @@ private:
 	//std::list<int> m_applyTeamList;          //队伍申请列表
 	//std::deque<TalkMsg> m_worldTalkMsgs;    //世界聊天消息
 	//std::map<int, std::deque<TalkMsg>> m_privateTalkMsgs;    //私聊消息
-	//std::list<TeamGotoMap_Msg> m_gotoMapMsgs;            //保存前往某地图消息
+	//std::list<TeamGotoMap> m_gotoMapMsgs;            //保存前往某地图消息
 };
 
 #endif // !__CM_CLIENT_H__
