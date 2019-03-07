@@ -211,13 +211,13 @@ void GameLogicLayer::checkGotoMap()
 {
 	if (TeamManager::getInstance()->getGotoMapMsgs().size() > 0)
 	{
+		unscheduleUpdate();
 		TeamGotoMap msg = TeamManager::getInstance()->getGotoMapMsgs().back();
 		SetFloatData("DestX", msg.x);
 		SetFloatData("DestY", msg.y);
 		SetIntData("IsDoor", 1);
-		unscheduleUpdate();
-		gotoDestMap(msg.map);
 		TeamManager::getInstance()->getGotoMapMsgs().clear();
+		gotoDestMap(msg.map);
 	}
 }
 

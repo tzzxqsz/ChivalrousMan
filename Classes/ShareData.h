@@ -17,6 +17,11 @@ struct Player_Info
 	float y;
 	int grade;
 	int fd;
+
+	Player_Info()
+	{
+		fd = -1;
+	}
 };
 
 struct TeamGotoMap

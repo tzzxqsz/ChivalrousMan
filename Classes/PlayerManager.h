@@ -39,6 +39,8 @@ public:
 
 	Player_Info findPlayerInfoByFd(const int& fd);
 
+	Player_Info findPlayerInfoByRoleName(const std::string& rolename);
+
 	const std::list<Player_Info>& getPlayerList() { return m_playerlist; }
 private:
 	PlayerManager();

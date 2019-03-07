@@ -16,6 +16,7 @@
 #include"TalkManager.h"
 #include"PlayerManager.h"
 #include"FightManager.h"
+#include"FriendManager.h"
 #include"RealSkill.h"
 
 #define _IS_EDITER_ 0
@@ -193,4 +194,5 @@ void AppDelegate::instanceManager()
 	TalkManager::getInstance();
 	TeamManager::getInstance();
 	FightManager::getInstance();
+	FriendManager::getInstance();
 }

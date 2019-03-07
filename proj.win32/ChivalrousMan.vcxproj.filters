@@ -447,6 +447,9 @@
     <ClCompile Include="..\Classes\CommonHead.cpp">
       <Filter>src\Logic\Common</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SignalManager.cpp">
+      <Filter>src\Tool\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -820,6 +823,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CommonHead.h">
       <Filter>src\Logic\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SignalConst.h">
+      <Filter>src\Tool\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SignalManager.h">
+      <Filter>src\Tool\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

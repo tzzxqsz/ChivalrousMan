@@ -3,7 +3,7 @@
 #define __MODEL_H__
 #include<string>
 
-#define GettingAndSetting(varType,varName,funName) \
+#define GettingAndSetting_S(varType,varName,funName) \
 private: varType varName=""; \
 public: varType& get##funName(void){return varName;} \
 public: void set##funName(const varType& var) {varName=var;}
@@ -14,9 +14,9 @@ public:
 	GamePlayer() {}
 	~GamePlayer() {}
 
-	GettingAndSetting(std::string, playerName, playerName);
-	GettingAndSetting(std::string, playerPsw, playerPsw);
-	GettingAndSetting(std::string, nums, nums);
+	GettingAndSetting_S(std::string, playerName, playerName);
+	GettingAndSetting_S(std::string, playerPsw, playerPsw);
+	GettingAndSetting_S(std::string, nums, nums);
 public:
 	std::string& operator[](const int& index)
 	{
@@ -67,21 +67,21 @@ public:
 	PlayerInfo() {}
 	~PlayerInfo() {}
 
-	GettingAndSetting(std::string, playerName, playerName);
-	GettingAndSetting(std::string, roleName, roleName);
-	GettingAndSetting(std::string, roleType, roleType);
-	GettingAndSetting(std::string, glod, glod);
-	GettingAndSetting(std::string, grade, grade);
-	GettingAndSetting(std::string, blood, blood);
-	GettingAndSetting(std::string, mana, mana);
-	GettingAndSetting(std::string, attack, attack);
-	GettingAndSetting(std::string, defense, defense);
-	GettingAndSetting(std::string, speed, speed);
-	GettingAndSetting(std::string, exp, exp);
-	GettingAndSetting(std::string, maxExp, maxExp);
-	GettingAndSetting(std::string, destx, destx);
-	GettingAndSetting(std::string, desty, desty);
-	GettingAndSetting(std::string, level, level);
+	GettingAndSetting_S(std::string, playerName, playerName);
+	GettingAndSetting_S(std::string, roleName, roleName);
+	GettingAndSetting_S(std::string, roleType, roleType);
+	GettingAndSetting_S(std::string, glod, glod);
+	GettingAndSetting_S(std::string, grade, grade);
+	GettingAndSetting_S(std::string, blood, blood);
+	GettingAndSetting_S(std::string, mana, mana);
+	GettingAndSetting_S(std::string, attack, attack);
+	GettingAndSetting_S(std::string, defense, defense);
+	GettingAndSetting_S(std::string, speed, speed);
+	GettingAndSetting_S(std::string, exp, exp);
+	GettingAndSetting_S(std::string, maxExp, maxExp);
+	GettingAndSetting_S(std::string, destx, destx);
+	GettingAndSetting_S(std::string, desty, desty);
+	GettingAndSetting_S(std::string, level, level);
 public:
 	std::string& operator[](const int& index)
 	{
@@ -180,10 +180,10 @@ public:
 	SkillInfo() {}
 	~SkillInfo() {}
 
-	GettingAndSetting(std::string, playername, playername);
-	GettingAndSetting(std::string, rolename, rolename);
-	GettingAndSetting(std::string, skillname, skillname);
-	GettingAndSetting(std::string, skillgrade, skillgrade);
+	GettingAndSetting_S(std::string, playername, playername);
+	GettingAndSetting_S(std::string, rolename, rolename);
+	GettingAndSetting_S(std::string, skillname, skillname);
+	GettingAndSetting_S(std::string, skillgrade, skillgrade);
 public:
 	std::string& operator[](const int& index)
 	{
@@ -236,11 +236,11 @@ class EquipmentInfo
 public:
 	EquipmentInfo() {}
 	~EquipmentInfo() {}
-	GettingAndSetting(std::string, playername, playername);
-	GettingAndSetting(std::string, rolename, rolename);
-	GettingAndSetting(std::string, equipmentname, equipmentname);
-	GettingAndSetting(std::string, grade, grade);
-	GettingAndSetting(std::string, type, type);
+	GettingAndSetting_S(std::string, playername, playername);
+	GettingAndSetting_S(std::string, rolename, rolename);
+	GettingAndSetting_S(std::string, equipmentname, equipmentname);
+	GettingAndSetting_S(std::string, grade, grade);
+	GettingAndSetting_S(std::string, type, type);
 public:
 	std::string& operator[](const int& index)
 	{
@@ -297,12 +297,12 @@ class BackPack
 public:
 	BackPack() {}
 	~BackPack() {}
-	GettingAndSetting(std::string, playername, playername);
-	GettingAndSetting(std::string, rolename, rolename);
-	GettingAndSetting(std::string, thingname, thingname);
-	GettingAndSetting(std::string, thingtype, thingtype);
-	GettingAndSetting(std::string, thingnums, thingnums);
-	GettingAndSetting(std::string, thinggrade, thinggrade);
+	GettingAndSetting_S(std::string, playername, playername);
+	GettingAndSetting_S(std::string, rolename, rolename);
+	GettingAndSetting_S(std::string, thingname, thingname);
+	GettingAndSetting_S(std::string, thingtype, thingtype);
+	GettingAndSetting_S(std::string, thingnums, thingnums);
+	GettingAndSetting_S(std::string, thinggrade, thinggrade);
 public:
 	std::string& operator[](const int& index)
 	{
@@ -363,12 +363,12 @@ class Friend
 public:
 	Friend() {}
 	~Friend() {}
-	GettingAndSetting(std::string, playername, playername);
-	GettingAndSetting(std::string, rolename, rolename);
-	GettingAndSetting(std::string, friendpname, friendpname);
-	GettingAndSetting(std::string, friendrname, friendrname);
-	GettingAndSetting(std::string, friendrtype, friendrtype);
-	GettingAndSetting(std::string, friendgrade, friendgrade);
+	GettingAndSetting_S(std::string, playername, playername);
+	GettingAndSetting_S(std::string, rolename, rolename);
+	GettingAndSetting_S(std::string, friendpname, friendpname);
+	GettingAndSetting_S(std::string, friendrname, friendrname);
+	GettingAndSetting_S(std::string, friendrtype, friendrtype);
+	GettingAndSetting_S(std::string, friendgrade, friendgrade);
 public:
 	std::string& operator[](const int& index)
 	{

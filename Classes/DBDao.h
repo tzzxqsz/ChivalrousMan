@@ -74,6 +74,10 @@ public:
 	*@return bool：插入成功返回true，否则返回false
 	*/
 	bool updateModel(const std::map<std::string, std::string>& keyvls);
+
+	void close();
+
+	void clear();
 private:
 	/*
 	*initConnect();
@@ -130,7 +134,7 @@ DBDao<Model>::DBDao(const std::string& host, const std::string& username, const 
 template<typename Model>
 DBDao<Model>::~DBDao()
 {
-	mysql_close(m_sqlCon);
+	close();
 }
 
 template<typename Model>
@@ -236,6 +240,22 @@ bool DBDao<Model>::updateModel(const std::map<std::string, std::string>& keyvls)
 	}
 	int res = mysql_real_query(m_sqlCon, m_sql.c_str(), m_sql.length());
 	return !res;
+}
+
+template<typename Model>
+inline void DBDao<Model>::close()
+{
+	if (m_sqlCon != nullptr)
+	{
+		mysql_close(m_sqlCon);
+		m_sqlCon = nullptr;
+	}
+}
+
+template<typename Model>
+inline void DBDao<Model>::clear()
+{
+	m_md = Model();
 }
 
 template<typename Model>

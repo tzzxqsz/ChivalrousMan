@@ -1,13 +1,17 @@
 #include"FriendItem.h"
-#include"ShareData.h"
 #include"GameData.h"
 #include"CommonHead.h"
 #include"Commen.h"
+#include"FriendManager.h"
+#include"TeamManager.h"
+#include"SignalManager.h"
+#include"SignalConst.h"
 
 bool FriendItem::init(const Player_Info & info)
 {
 	if (Layout::init())
 	{
+		m_info = info;
 		auto bg = Sprite::create(StringValue("MsgItemBg"));
 		this->addChild(bg);
 		auto size = bg->getContentSize();
@@ -40,16 +44,19 @@ bool FriendItem::init(const Player_Info & info)
 		this->addChild(addBtn);
 		addBtn->setTag(4);
 		addBtn->setPosition(teamBtn->getPosition());
+		addBtn->addClickEventListener(CC_CALLBACK_1(FriendItem::onBtnClick, this));
 		m_btnVec.push_back(addBtn);
 		auto agreeBtn = Button::create(StringValue("TeamOkBtn"));
 		this->addChild(agreeBtn);
 		agreeBtn->setTag(5);
 		agreeBtn->setPosition(Vec2(size.width - 60, size.height*0.5));
+		agreeBtn->addClickEventListener(CC_CALLBACK_1(FriendItem::onBtnClick, this));
 		m_btnVec.push_back(agreeBtn);
 		auto rejectBtn = Button::create(StringValue("TeamRefuseBtn"));
 		this->addChild(rejectBtn);
 		rejectBtn->setTag(6);
 		rejectBtn->setPosition(Vec2(agreeBtn->getPositionX() - 60, size.height*0.5));
+		rejectBtn->addClickEventListener(CC_CALLBACK_1(FriendItem::onBtnClick, this));
 		m_btnVec.push_back(rejectBtn);
 		
 		return true;
@@ -77,17 +84,23 @@ void FriendItem::onBtnClick(cocos2d::CCObject* sender)
 	int tag = dynamic_cast<Button*>(sender)->getTag();
 	switch (tag)
 	{
-	case 1:
+	case 1:   // 私聊
+		SignalManager::getInstance()->dispatch(EVENT_GOTO_TALK);
 		break;
-	case 2:
+	case 2:   //组队
+		TeamManager::getInstance()->applyTeamByRoleName(m_info.rolename);
 		break;
-	case 3:
+	case 3:   //删除
+		FriendManager::getInstance()->c2sDelFriend(m_info);
 		break;
-	case 4:
+	case 4:   //添加
+		FriendManager::getInstance()->c2sApplyFriend(m_info.rolename);
 		break;
-	case 5:
+	case 5:  //同意
+		FriendManager::getInstance()->c2sAgreeFriend(m_info);
 		break;
-	case 6:
+	case 6:   //拒绝
+		FriendManager::getInstance()->c2sRejectFriend(m_info.rolename);
 		break;
 	default:
 		break;

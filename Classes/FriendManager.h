@@ -31,7 +31,19 @@ public:
 
 	void c2sApplyFriend(const std::string& rolename);
 
+	void c2sAgreeFriend(const Player_Info& info);
+
+	void c2sRejectFriend(const std::string& rolename);
+
+	void c2sDelFriend(const Player_Info& info);
+
 	void s2cApplyFriend(Json::Value& msg);
+
+	void s2cAgreeFriend(Json::Value& msg);
+
+	void s2cRejectFriend(Json::Value& msg);
+
+	void s2cDelFriend(Json::Value& msg);
 
 	std::vector<Player_Info>& getFriendList(const bool& refresh = false);
 
@@ -39,16 +51,19 @@ public:
 
 	std::vector<Player_Info> getApplyFriendList();
 
-	bool IsFriend(const Player_Info& info);
+	void removeApplyFriendList(const std::string& rolename);
+
+	bool isFriend(const Player_Info& info);
+
+	bool isExitsApply(const Player_Info& info);
 private:
 	FriendManager();
 	~FriendManager();
-	
+
 	std::vector<Player_Info> m_friendList;
 	std::vector<Player_Info> m_applyList;
 
 	SINGLE_ATTRIBUTES(FriendManager);
 };
 
-#endif // !__FRIEND_MANAGER_H__
-
+#endif //__FRIEND_MANAGER_H__

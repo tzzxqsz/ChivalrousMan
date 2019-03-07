@@ -4,10 +4,9 @@
 #include"PreProcess.h"
 #include"ui/UILayout.h"
 #include"ui/UIButton.h"
+#include"ShareData.h"
 #include<initializer_list>
 #include<vector>
-
-struct Player_Info;
 
 class FriendItem :public cocos2d::ui::Layout
 {
@@ -22,6 +21,8 @@ public:
 	void onBtnClick(cocos2d::CCObject* sender);
 private:
 	std::vector<cocos2d::ui::Button*> m_btnVec;
+
+	Player_Info m_info;
 };
 
 #endif // !__FRIEND_ITEM_H__

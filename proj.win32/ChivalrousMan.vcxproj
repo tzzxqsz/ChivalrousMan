@@ -66,8 +66,8 @@
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>E:\ChivalrousMan\lib;$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>E:\ChivalrousMan\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\lib;$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LibraryPath>E:\Cocos2dx-Project\ChivalrousMan\lib;$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
@@ -167,6 +167,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\FriendManager.cpp" />
     <ClCompile Include="..\Classes\LogUtil.cpp" />
     <ClCompile Include="..\Classes\PlayerManager.cpp" />
+    <ClCompile Include="..\Classes\SignalManager.cpp" />
     <ClCompile Include="..\Classes\SocketManager.cpp" />
     <ClCompile Include="..\Classes\CrackIt.cpp" />
     <ClCompile Include="..\Classes\Danate.cpp" />
@@ -275,6 +276,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\FriendLayer.h" />
     <ClInclude Include="..\Classes\FriendManager.h" />
     <ClInclude Include="..\Classes\LogUtil.h" />
+    <ClInclude Include="..\Classes\SignalConst.h" />
+    <ClInclude Include="..\Classes\SignalManager.h" />
     <ClInclude Include="..\Classes\SocketManager.h" />
     <ClInclude Include="..\Classes\Commen.h" />
     <ClInclude Include="..\Classes\CrackIt.h" />

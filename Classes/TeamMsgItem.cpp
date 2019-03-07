@@ -64,14 +64,11 @@ void TeamMsgItem::onOkBtnClick(cocos2d::CCObject* sender)
 	auto info = PlayerManager::getInstance()->findPlayerInfoByFd(m_fd);
 	if (info.curmap == GetIntData("CurMap"))
 	{
-		std::function<void(float)> func = [this](float) {
-			((TeamLayer*)this->getParent())->removeMsgItem(this);
-			TeamManager::getInstance()->c2sAgreeTeam(this->m_fd);
-			auto info = PlayerManager::getInstance()->findPlayerInfoByFd(this->m_fd);
-			auto it = CurGameScene()->getObjectLayer()->existPlayer(info.playername, info.rolename);
-			CameraPlayer::getPlayerInstance()->moveTo((*it)->getWorldPos(), 1);
-		};
-		scheduleOnce(func, 0.2, "func12");
+		TeamManager::getInstance()->c2sAgreeTeam(this->m_fd);
+		auto info = PlayerManager::getInstance()->findPlayerInfoByFd(this->m_fd);
+		auto it = CurGameScene()->getObjectLayer()->existPlayer(info.playername, info.rolename);
+		CameraPlayer::getPlayerInstance()->moveTo((*it)->getWorldPos(), 1);
+		((TeamLayer*)this->getParent())->removeMsgItem(this);
 	}
 	else
 	{

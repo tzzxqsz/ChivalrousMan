@@ -67,7 +67,7 @@ void TeamManager::c2sTeamMove(cocos2d::Vec2 target, int dest)
 void TeamManager::c2sTeamGotoMap(std::string map, cocos2d::Vec2 target, int dest)
 {
 	NetMsg msg;
-	msg["dest"] =dest;
+	msg["dest"] = dest;
 	msg["map"] = map;
 	msg["x"] = target.x;
 	msg["y"] = target.y;
@@ -128,14 +128,11 @@ void TeamManager::s2cTeamMove(Json::Value & msg)
 
 void TeamManager::s2cTeamGotoMap(Json::Value &msg)
 {
-	if (CCDirector::getInstance()->getRunningScene()->getName() == "GameScene")
-	{
-		TeamGotoMap tmsg;
-		tmsg.x = msg["x"].asFloat();
-		tmsg.y = msg["y"].asFloat();
-		tmsg.map = msg["map"].asString();
-		m_gotoMapMsgs.push_back(tmsg);
-	}
+	TeamGotoMap tmsg;
+	tmsg.x = msg["x"].asFloat();
+	tmsg.y = msg["y"].asFloat();
+	tmsg.map = msg["map"].asString();
+	m_gotoMapMsgs.push_back(tmsg);
 }
 
 void TeamManager::s2cTeamDissolve(Json::Value &)
@@ -177,4 +174,17 @@ void TeamManager::dissolveTeam()
 {
 	m_teamMembers.clear();
 	CameraPlayer::getPlayerInstance()->setTeamStatus(P_STATUS_NORMAL);
+}
+
+void TeamManager::applyTeamByRoleName(const std::string & rolename)
+{
+	auto info = PlayerManager::getInstance()->findPlayerInfoByRoleName(rolename);
+	if (info.fd != -1)
+	{
+		c2sTeamApply(info.fd);
+	}
+	else
+	{
+
+	}
 }

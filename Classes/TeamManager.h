@@ -63,6 +63,8 @@ public:
 	*/
 	void dissolveTeam();
 
+	void applyTeamByRoleName(const std::string& rolename);
+
 	std::map<int, int>& getTeamMembers() { return m_teamMembers; }
 
 	std::list<int>& getApplyTeamList() { return m_applyTeamList; }

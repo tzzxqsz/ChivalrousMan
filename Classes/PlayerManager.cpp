@@ -215,3 +215,13 @@ Player_Info PlayerManager::findPlayerInfoByFd(const int & fd)
 	}
 	return info;
 }
+
+Player_Info PlayerManager::findPlayerInfoByRoleName(const std::string & rolename)
+{
+	for (auto var : m_playerlist)
+	{
+		if (var.rolename == rolename)
+			return var;
+	}
+	return Player_Info();
+}

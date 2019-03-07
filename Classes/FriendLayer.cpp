@@ -6,6 +6,7 @@
 #include"FriendItem.h"
 #include"ShareData.h"
 #include"FriendManager.h"
+#include"SignalManager.h"
 
 bool FriendLayer::init()
 {
@@ -88,7 +89,7 @@ void FriendLayer::onSelected(const int & index)
 {
 	if (m_selectIndex == index)
 		return;
-	m_selectIndex == index;
+	m_selectIndex = index;
 	refreshView();
 }
 
@@ -96,23 +97,43 @@ void FriendLayer::onEnter()
 {
 	CommonTouchLayer::onEnter();
 	FriendManager::getInstance()->getFriendList(true);
-	m_selectIndex = 1;
+	//m_slot=
+	onSelected(1);
+}
+
+void FriendLayer::onExit()
+{
+	CommonTouchLayer::onExit();
+
 }
 
 void FriendLayer::refreshView()
 {
 	std::vector<Player_Info> list;
+	std::initializer_list<bool> initList;
 	switch (m_selectIndex)
 	{
 	case 1:
+	{
 		list = FriendManager::getInstance()->getFriendList();
-		break;
+		std::initializer_list<bool> initList1{ true,true,true,false,false,false };
+		initList = initList1;
+	}
+	break;
 	case 2:
+	{
 		list = FriendManager::getInstance()->getAddFriendList();
-		break;
+		std::initializer_list<bool> initList2{ false,false,false,true,false,false };
+		initList = initList2;
+	}
+	break;
 	case 3:
+	{
 		list = FriendManager::getInstance()->getApplyFriendList();
-		break;
+		std::initializer_list<bool> initList3{ false,false,false,false,true,true };
+		initList = initList3;
+	}
+	break;
 	default:
 		break;
 	}
@@ -120,6 +141,7 @@ void FriendLayer::refreshView()
 	for (auto var : list)
 	{
 		auto item = FriendItem::createFriendItem(var);
+		item->setStatus(initList);
 		m_listView->pushBackCustomItem(item);
 	}
 }
