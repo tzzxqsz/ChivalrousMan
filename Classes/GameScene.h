@@ -61,6 +61,8 @@ public:
 	void resetGamePlayer();
 
 	void initScene();
+
+	virtual void onEnter() override;
 private:
 	int m_level;
 	GameLogicLayer* m_logicLayer;

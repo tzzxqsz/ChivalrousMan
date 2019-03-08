@@ -56,6 +56,8 @@ void ObjectLayer::update(float dt)
 	checkmissedTask();
 	checkpickedupTask();
 	updateObjectScreenPos();
+	checkCollisionNpc();
+	checkAddObjectPlayer();
 }
 
 void ObjectLayer::initNpcObject(const int& level)
@@ -220,7 +222,7 @@ std::list<XGamePlayer*>::iterator ObjectLayer::existPlayer(const std::string& pl
 {
 	for (auto it = m_playerlist.begin(); it != m_playerlist.end(); ++it)
 	{
-		if ((*it)->getPlayerName() == playername && (*it)->getRoleName() == rolename)
+		if ((*it)->getRoleName() == rolename)
 		{
 			return it;
 		}
@@ -278,3 +280,36 @@ Npc* ObjectLayer::findNpcByName(const std::string& name)
 	return nullptr;
 }
 
+void ObjectLayer::checkCollisionNpc()
+{
+	for each (auto var in m_npcList)
+	{
+		float dis = ccpDistance(PlayerPos, ccp(var->getX(), var->getY()));
+		if (dis < 120)
+		{
+			if (!var->getIsCollision())
+			{
+				var->collisionEvent();
+			}
+		}
+		else
+		{
+			if (var->getIsCollision())
+			{
+				var->endCollisionEvent();
+			}
+		}
+	}
+}
+
+void ObjectLayer::checkAddObjectPlayer()
+{
+	if (PlayerManager::getInstance()->getAddList().size() > 0)
+	{
+		for (auto var : PlayerManager::getInstance()->getAddList())
+		{
+			addPlayer(var);
+		}
+		PlayerManager::getInstance()->getAddList().clear();
+	}
+}

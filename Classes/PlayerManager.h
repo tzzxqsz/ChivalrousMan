@@ -42,12 +42,15 @@ public:
 	Player_Info findPlayerInfoByRoleName(const std::string& rolename);
 
 	const std::list<Player_Info>& getPlayerList() { return m_playerlist; }
+
+	std::list<Player_Info>& getAddList() { return m_addList; }
 private:
 	PlayerManager();
 	~PlayerManager();
 
 	std::list<Player_Info> m_playerlist;            //其他玩家列表
-
+	std::list<Player_Info> m_addList;
+		
 	SINGLE_ATTRIBUTES(PlayerManager);
 };
 

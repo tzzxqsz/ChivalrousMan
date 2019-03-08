@@ -23,13 +23,9 @@ private:
 	*CheckEntryDoor();
 	*检查是否进入门内，并处理相应事件
 	*/
-	void checkEntryDoor();
+	bool checkEntryDoor();
 
-	/*
-	*checkCollisionNpc();
-	*检测是否碰到了Npc并处理相应的事件
-	*/
-	void checkCollisionNpc();
+
 
 	/*
 	*gotoDestMap
@@ -53,7 +49,7 @@ private:
 	/*
 	*检查前往某地图
 	*/
-	void checkGotoMap();
+	bool checkGotoMap();
 	
 	/*
 	*
@@ -63,7 +59,7 @@ private:
 	/*
 	*检查是否进入战斗
 	*/
-	void checkEntryFight();
+	bool checkEntryFight();
 
 	/*
 	*checkTip();

@@ -44,25 +44,10 @@ void HelpToolSystem::WorkThread()
 		Sleep(50);
 		count++;
 		count2++;
-		if (count >= 180&&GetIntData("IsHaveGameScene")==1)
+		if (count >= 1800 && GetIntData("IsHaveGameScene") == 1)
 		{
 			PlayerManager::getInstance()->c2sVerifyPlayerPos();
-			//SocketManager::getInstance()->VerifyPlayerPos();
 			count = 0;
-		}
-		if (count2 >= 4 && PlayerTeamStatus() == P_STATUS_HEADER)
-		{
-			for (auto var : TeamManager::getInstance()->getTeamMembers())
-			{
-				auto info = PlayerManager::getInstance()->findPlayerInfoByFd(var.first);
-				int  mapindex=GetIntData("CurMap");
-				if (info.curmap != mapindex)
-				{
-					Vec2 target{ GetFloatData("DestX"),GetFloatData("DestY") };
-					TeamManager::getInstance()->c2sTeamGotoMap("map" + NTS(mapindex), target, var.first);
-				}
-			}
-			count2 = 0;
 		}
 	}
 }

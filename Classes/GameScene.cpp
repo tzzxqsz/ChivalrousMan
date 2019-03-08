@@ -70,8 +70,6 @@ void GameScene::initScene()
 	this->addChild(m_uiLayer);
 	SetIntData("Save", 1);
 	SetIntData("IsHaveGameScene", 1);
-	PlayerManager::getInstance()->c2sInitPos();
-	//SocketManager::getInstance()->SendInitPos();
 }
 
 void GameScene::pauseAllActions(cocos2d::Node* hoster,cocos2d::Node* except)
@@ -135,4 +133,10 @@ void GameScene::pauseOrResumeAllLayer(bool b)
 		m_objectLayer->resumeSchedulerAndActions();
 		m_uiLayer->resumeSchedulerAndActions();
 	}
+}
+
+void GameScene::onEnter()
+{
+	Scene::onEnter();
+	PlayerManager::getInstance()->c2sInitPos();
 }

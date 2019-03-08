@@ -36,6 +36,10 @@ public:
 	*更新地图传送门在屏幕上的位置
 	*/
 	void updateDoorScreenPos();
+
+	virtual void update(float dt) override;
+
+	virtual void onEnter() override;
 private:
 	/*
 	*创建地图上的传送门

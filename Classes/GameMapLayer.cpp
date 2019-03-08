@@ -101,3 +101,14 @@ void GameMapLayer::generateDoors()
 		this->addChild(door);
 	}
 }
+
+void GameMapLayer::update(float dt)
+{
+	updateDoorScreenPos();
+}
+
+void GameMapLayer::onEnter()
+{
+	Layer::onEnter();
+	scheduleUpdate();
+}

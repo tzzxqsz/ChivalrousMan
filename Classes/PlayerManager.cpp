@@ -117,8 +117,7 @@ void PlayerManager::s2cInitPos(Json::Value & msg)
 			var->x = msg["x"].asFloat();
 			var->y = msg["y"].asFloat();
 			var->curmap = msg["curmap"].asInt();
-			if (cocos2d::Director::getInstance()->getRunningScene()->getChildByName("ObjectLayer") != nullptr)
-				CurGameScene()->getObjectLayer()->addPlayer(*var);
+			m_addList.push_back(*var);
 		}
 	}
 }

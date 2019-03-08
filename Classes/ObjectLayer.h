@@ -94,6 +94,14 @@ public:
 	void initOtherPlayer(float dt);
 
 	/*
+   *checkCollisionNpc();
+    *检测是否碰到了Npc并处理相应的事件
+    */
+	void checkCollisionNpc();
+
+	void checkAddObjectPlayer();
+
+	/*
 	*清理对象层的其它玩家
 	*/
 	void clearOtherPlayer();

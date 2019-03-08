@@ -11,6 +11,7 @@
 #include"FightLayer.h"
 #include"SocketManager.h"
 #include"TeamManager.h"
+#include"PlayerManager.h"
 #include"TipLayer.h"
 #include<stack>
 #include<functional>
@@ -53,29 +54,24 @@ void  GameLogicLayer::onTouchEnded(Touch *touch, Event *unused_event)
 
 void GameLogicLayer::update(float dt)
 {
-	static float time = 0;
-	time += dt*UpdateSpeed;
-	if (time >= 1)
+	if (checkEntryFight())
+		return;
+	if (checkEntryDoor())
+		return;
+	if (PlayerCanMove())
 	{
-		if (PlayerCanMove())
-		{
-			PlayerMove();
-			randomMeetMonster();
-		}
-		UpdateDoorScreenPos();
-		checkEntryDoor();
-		checkCollisionNpc();
-		time = 0;
+		PlayerMove();
+		randomMeetMonster();
 	}
-	checkEntryFight();
 	checkTip();
 }
 
-void GameLogicLayer::checkEntryDoor()
+bool GameLogicLayer::checkEntryDoor()
 {
-	checkGotoMap();
+	if (checkGotoMap())
+		return true;
 	if (PlayerTeamStatus() == P_STATUS_MEMBER)
-		return;
+		return false;
 	std::vector<Door> doors = GetDoorPosInfo();
 	int size = doors.size();
 	int count = 0;
@@ -87,70 +83,75 @@ void GameLogicLayer::checkEntryDoor()
 			SetFloatData("DestX", doors[i].destPos.x);
 			SetFloatData("DestY", doors[i].destPos.y);
 			SetIntData("IsDoor", 1);
-			unscheduleUpdate();
 			gotoDestMap(doors[i].dest);
-			break;
+			return true;
 		}
 	}
+	return false;
 }
 
 void GameLogicLayer::gotoDestMap(const std::string& dest)
 {
+	getParent()->cleanup();
 	SetIntData("IsHaveGameScene", 0);
 	std::function<bool(void)> func = [] {return true; };
 	ExcessiveScene* ex = nullptr;
-	int level = 0;
+
+	if (PlayerTeamStatus() == P_STATUS_HEADER)
+	{
+		for (auto var : TeamManager::getInstance()->getTeamMembers())
+		{
+			auto info = PlayerManager::getInstance()->findPlayerInfoByFd(var.first);
+			Vec2 target{ GetFloatData("DestX"),GetFloatData("DestY") };
+			TeamManager::getInstance()->c2sTeamGotoMap(dest, target, var.first);
+		}
+	}
 	if (dest == "map1")
 	{
 		ex = ExcessiveScene::createExcessice(LEVEL_ONE, func, 1);
-		level = LEVEL_ONE;
 	}
 	else if (dest == "map2")
 	{
 		ex = ExcessiveScene::createExcessice(LEVEL_TWO, func, 1);
-		level = LEVEL_TWO;
 	}
 	else if (dest == "map3")
 	{
 		ex = ExcessiveScene::createExcessice(LEVEL_THREE, func, 1);
-		level = LEVEL_THREE;
 	}
 	else if (dest == "map4")
 	{
 		ex = ExcessiveScene::createExcessice(LEVEL_FOUR, func, 1);
-		level = LEVEL_FOUR;
 	}
 	else if (dest == "map5")
 	{
 		ex = ExcessiveScene::createExcessice(LEVEL_FIVE, func, 1);
-		level = LEVEL_FIVE;
 	}
 	Director::getInstance()->replaceScene(ex);
 }
 
-void GameLogicLayer::checkCollisionNpc()
-{
-	GameScene* gs = (GameScene*)getParent();
-	std::vector<Npc*>& npclist = gs->getObjectLayer()->getNpcList();
-	for each (auto var in npclist)
-	{
-		float dis = ccpDistance(PlayerPos, ccp(var->getX(), var->getY()));
-		if (dis < 120)
-		{
-			if (!var->getIsCollision())
-			{
-				var->collisionEvent();
-			}
-		}
-		else
-		{
-			if (var->getIsCollision())
-			{
-				var->endCollisionEvent();
-			}
-		}
-	}
-}
+//void GameLogicLayer::checkCollisionNpc()
+//{
+//	GameScene* gs = (GameScene*)getParent();
+//	std::vector<Npc*>& npclist = gs->getObjectLayer()->getNpcList();
+//	for each (auto var in npclist)
+//	{
+//		float dis = ccpDistance(PlayerPos, ccp(var->getX(), var->getY()));
+//		if (dis < 120)
+//		{
+//			if (!var->getIsCollision())
+//			{
+//				var->collisionEvent();
+//			}
+//		}
+//		else
+//		{
+//			if (var->getIsCollision())
+//			{
+//				var->endCollisionEvent();
+//			}
+//		}
+//	}
+//}
 
 void GameLogicLayer::randomMeetMonster()
 {
@@ -207,18 +208,19 @@ std::string  GameLogicLayer::monsterName()
 	}
 }
 
-void GameLogicLayer::checkGotoMap()
+bool GameLogicLayer::checkGotoMap()
 {
 	if (TeamManager::getInstance()->getGotoMapMsgs().size() > 0)
 	{
-		unscheduleUpdate(); 
 		TeamGotoMap msg = TeamManager::getInstance()->getGotoMapMsgs().back();
 		SetFloatData("DestX", msg.x);
 		SetFloatData("DestY", msg.y);
 		SetIntData("IsDoor", 1);
 		TeamManager::getInstance()->getGotoMapMsgs().clear();
 		gotoDestMap(msg.map);
+		return true;
 	}
+	return false;
 }
 
 void GameLogicLayer::checkTeamEntryFight(const std::string& name, const int& nums)
@@ -232,17 +234,15 @@ void GameLogicLayer::checkTeamEntryFight(const std::string& name, const int& num
 	}
 }
 
-void GameLogicLayer::checkEntryFight()
+bool GameLogicLayer::checkEntryFight()
 {
 	if (GetIntData("IsEntryFight") == 1)
 	{
+		getParent()->cleanup();
 		SetFloatData("DestX", PlayerPos.x);
 		SetFloatData("DestY", PlayerPos.y);
 		SetIntData("IsHaveGameScene", 0);
 		SetIntData("IsEntryFight", 0);
-		unscheduleUpdate();
-		CurGameScene()->pauseAllActions(CurGameScene(), this);
-		GetPlayerFace()->stopAllActions();
 		CCLayerColor* red = CCLayerColor::create(ccc4(255, 0, 0, 128));
 		red->setName("redLayer");
 		CurGameScene()->addChild(red);
@@ -253,7 +253,9 @@ void GameLogicLayer::checkEntryFight()
 			Director::sharedDirector()->replaceScene(reScene);
 		};
 		scheduleOnce(func, 0.2, "red");
+		return true;
 	}
+	return false;
 }
 
 void GameLogicLayer::checkTip()
@@ -265,3 +267,16 @@ void GameLogicLayer::checkTip()
 		getParent()->addChild(tiplayer);
 	}
 }
+
+//void GameLogicLayer::checkAddObjectPlayer()
+//{
+//	if (PlayerManager::getInstance()->getAddList().size() > 0)
+//	{
+//		for (auto var : PlayerManager::getInstance()->getAddList())
+//		{
+//			GameScene* gs = (GameScene*)getParent();
+//			gs->getObjectLayer()->addPlayer(var);
+//		}
+//		PlayerManager::getInstance()->getAddList().clear();
+//	}
+//}
