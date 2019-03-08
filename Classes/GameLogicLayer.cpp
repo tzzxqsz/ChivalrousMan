@@ -211,7 +211,7 @@ void GameLogicLayer::checkGotoMap()
 {
 	if (TeamManager::getInstance()->getGotoMapMsgs().size() > 0)
 	{
-		unscheduleUpdate();
+		unscheduleUpdate(); 
 		TeamGotoMap msg = TeamManager::getInstance()->getGotoMapMsgs().back();
 		SetFloatData("DestX", msg.x);
 		SetFloatData("DestY", msg.y);
