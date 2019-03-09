@@ -19,7 +19,7 @@ bool SealOfTheBlade::init(Layer* parent,cocos2d::CCObject* towho, const float& b
 		this->runAction(animate);
 
 		scheduleOnce(schedule_selector(SealOfTheBlade::died), 1.5);
-		scheduleOnce(schedule_selector(SealOfTheBlade::heart), 0.7);
+		scheduleOnce(schedule_selector(SealOfTheBlade::heart), 1.0);
 		this->setTag(1.5);    //使用tag标记技能持续时间
 		return true;
 	}

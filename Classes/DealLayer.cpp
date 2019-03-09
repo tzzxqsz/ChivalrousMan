@@ -69,13 +69,14 @@ DealLayer* DealLayer::createWithType(const int& type,const std::string& name)
 
 bool  DealLayer::init(const int& type,const std::string& name)
 {
-	if (Layer::init())
+	if (CommonTouchLayer::init())
 	{
 		m_type = type;
 		auto size = SCREEN;
 		auto backpack = Sprite::create(StringValue("DealPack"));
 		backpack->setPosition(size.width*0.5, size.height*0.5);
 		this->addChild(backpack);
+		setExcludeRect(backpack->getPosition(), backpack->getTextureRect());
 		m_basePoint.x = backpack->getPositionX() - backpack->getContentSize().width*0.5 + 45;
 		m_basePoint.y = backpack->getPositionY() + backpack->getContentSize().height*0.5 - 118;
 

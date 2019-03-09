@@ -263,9 +263,6 @@ void CameraPlayer::SaveGameData()
 	keyvls["playername"] = GetStringData("playername");
 	keyvls["rolename"] = GetStringData("rolename");
 	dbdao.updateModel(keyvls);
-	BackPackManager::getInstance()->saveBackpackInfo();
-	EquipmentManager::getInstance()->saveEquipmentInfo();
-	SkillManager::getInstance()->saveSkillInfo();
 }
 
 bool CameraPlayer::moveTo(cocos2d::Vec2 targetPos, int less)

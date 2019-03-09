@@ -2,6 +2,7 @@
 #ifndef __DEAL_LAYER_H__
 #define __DEAL_LAYER_H__
 #include"PreProcess.h"
+#include"CommonTouchLayer.h"
 #include"Thing.h"
 #include<vector>
 #include<string>
@@ -10,7 +11,7 @@
 *class DealLayer
 *½»Ò×²ã
 */
-class DealLayer Inherit(cocos2d::Layer)
+class DealLayer Inherit(CommonTouchLayer)
 {
 	CLASS_ESSENTAIL(DealLayer)
 public:

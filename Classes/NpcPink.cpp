@@ -34,7 +34,6 @@ void NpcPink::talkEndEvent()
 {
 	Npc::talkEndEvent();
 	auto gs = CurGameScene();
-	gs->getLogicLayer()->pauseSchedulerAndActions();
 	auto dealLayer = DealLayer::createWithType(MEDICATION, StringValue("DealMedication"));
 	dealLayer->setName("DealLayer");
 	gs->addChild(dealLayer);

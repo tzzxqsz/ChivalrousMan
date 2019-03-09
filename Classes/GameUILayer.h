@@ -101,6 +101,8 @@ private:
 	void onMsgIconClickCallback(cocos2d::CCObject* sender);
 
 	void onFriendClickCallback(cocos2d::CCObject* sender);
+
+	void onTalismanClickCallback(cocos2d::CCObject* sender);
 	
 	/*
 	*onTeamIconClick(cocos2d::CCObject* sender);

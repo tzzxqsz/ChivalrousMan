@@ -59,7 +59,7 @@ public:
 	*/
 	void readEquipmentInfo();
 
-	void saveEquipmentInfo();
+	void insertEquipmentInfo(const EMInfo& info);
 private:
 	void updateEm(EMInfo);
 

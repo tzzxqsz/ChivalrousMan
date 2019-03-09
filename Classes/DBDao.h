@@ -200,6 +200,7 @@ bool DBDao<Model>::insertModel()
 {
 	generateSql(INSERT);
 	int res=mysql_real_query(m_sqlCon, m_sql.c_str(), m_sql.length());
+	std::string buff = mysql_error(m_sqlCon);
 	return !res;
 }
 

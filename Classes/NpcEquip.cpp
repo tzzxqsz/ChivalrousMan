@@ -28,7 +28,6 @@ void NpcEquip::talkEndEvent()
 {
 	Npc::talkEndEvent();
 	auto gs = CurGameScene();
-	gs->getLogicLayer()->pauseSchedulerAndActions();
 	auto dealLayer = DealLayer::createWithType(EQUIPMENT, StringValue("DealEquipMent"));
 	gs->addChild(dealLayer);
 }

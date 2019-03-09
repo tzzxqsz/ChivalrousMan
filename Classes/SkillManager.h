@@ -72,7 +72,9 @@ public:
 	*saveSkillInfo();
 	*保存角色技能信息
 	*/
-	void  saveSkillInfo();
+	void  insertSkillInfo(const std::string& name, const int& grade);
+
+	void deleteSkillInfo(const std::string& name);
 private:
 	SkillManager();
 	~SkillManager();

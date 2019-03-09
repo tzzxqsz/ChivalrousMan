@@ -382,14 +382,12 @@ void FightLayer::onAttackClickCallBack(cocos2d::CCObject * sender)
 		return;
 	if (m_isPlayer&&m_otherplayerEnd)
 	{
-		if (!m_selectedMonster->isDie())
+		if (m_selectedMonster->isDie())
 		{
-			playerAttackMonster();
+			if (!reSelectMonster())
+				return;
 		}
-		else
-		{
-			NoTarget();
-		}
+		playerAttackMonster();
 	}
 	else
 	{
@@ -422,7 +420,10 @@ void FightLayer::onTimer(float dt)
 			if (ftime == 0)
 			{
 				if (m_selectedMonster->isDie())
-					reSelectMonster();
+				{
+					if (!reSelectMonster())
+						return;
+				}
 				if (m_selSkill == nullptr)
 					playerAttackMonster();
 				else
@@ -511,6 +512,7 @@ void FightLayer::EndFight(std::string tip)
 
 void FightLayer::endFunc(float dt)
 {
+	this->cleanup();
 	GetPlayerData().addGlod(m_settlementGlod);
 	GetPlayerData().addExp(m_settlementExp);
 	std::string tip = StringValue("Glod") + "+" + NTS(this->m_settlementGlod) +
@@ -589,8 +591,8 @@ void FightLayer::onSkill(cocos2d::CCObject* sender)
 		ClickAction(sender);
 		if (m_selectedMonster->isDie())
 		{
-			NoTarget();
-			return;
+			if (!reSelectMonster())
+				return;
 		}
 		float mana = dynamic_cast<Skill*>(sender)->getUseMana();
 		if (GetPlayerData().getcurmana() >= mana)
@@ -626,7 +628,7 @@ void FightLayer::onSkill(cocos2d::CCObject* sender)
 	}
 }
 
-void FightLayer::reSelectMonster()
+bool FightLayer::reSelectMonster()
 {
 	for (auto var : m_monsterList)
 	{
@@ -634,8 +636,10 @@ void FightLayer::reSelectMonster()
 		{
 			m_selectedMonster = var;
 			m_arrow->setPosition(var->getPositionX(), var->getPositionY() + 80);
+			return true;
 		}
 	}
+	return false;
 }
 
 void FightLayer::checkMonsterBehavie()

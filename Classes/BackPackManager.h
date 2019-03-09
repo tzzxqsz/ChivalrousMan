@@ -69,7 +69,7 @@ public:
 	*/
 	void readBackpackInfo();
 
-	void saveBackpackInfo();
+	void insertBackpackInfo(const ThingInfo& info);
 private:
 	void updateBackpack(ThingInfo info);
 

@@ -31,12 +31,14 @@ void BackPackManager::addBackPackThing(ThingInfo thinginfo)
 		{
 			flag = 1;
 			++it->nums;
+			updateBackpack(*it);
 		}
 	}
 	if (!flag)
 	{
 		thinginfo.nums = 1;
 		m_backpackList.push_back(thinginfo);
+		insertBackpackInfo(thinginfo);
 	}
 }
 
@@ -49,8 +51,8 @@ int BackPackManager::removeBackPackThing(const std::string& name)
 			--(it->nums);
 			if (it->nums == 0)
 			{
-				m_backpackList.erase(it);
 				deleteBackpack(*it);
+				m_backpackList.erase(it);
 				return -2;
 			}
 			updateBackpack(*it);
@@ -97,21 +99,18 @@ void BackPackManager::readBackpackInfo()
 	}
 }
 
-void BackPackManager::saveBackpackInfo()
+void BackPackManager::insertBackpackInfo(const ThingInfo& info)
 {
-	for (auto var : m_backpackList)
-	{
-		BackPack info;
-		DBDao<BackPack> dao;
-		info.setplayername(GetStringData("playername"));
-		info.setrolename(GetStringData("rolename"));
-		info.setthinggrade(NTS(var.grade));
-		info.setthingname(var.name);
-		info.setthingnums(NTS(var.nums));
-		info.setthingtype(NTS(var.type));
-		dao.setModel(info);
-		dao.insertModel();
-	}
+	BackPack data;
+	DBDao<BackPack> dao;
+	data.setplayername(GetStringData("playername"));
+	data.setrolename(GetStringData("rolename"));
+	data.setthinggrade(NTS(info.grade));
+	data.setthingname(info.name);
+	data.setthingnums(NTS(info.nums));
+	data.setthingtype(NTS(info.type));
+	dao.setModel(data);
+	dao.insertModel();
 }
 
 void BackPackManager::updateBackpack(ThingInfo info)

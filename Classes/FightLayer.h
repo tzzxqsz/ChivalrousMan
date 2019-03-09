@@ -27,6 +27,7 @@ public:
 	friend class RecallCounterMand;
 	friend class SealOfTheBlade;
 	friend class XBArrow;
+
 	FightLayer();
 	~FightLayer();
 
@@ -196,7 +197,7 @@ private:
 	/*
 	*重新选择有效的怪物
 	*/
-	void reSelectMonster();
+	bool reSelectMonster();
 
 	/*
 	*初始化玩家列表

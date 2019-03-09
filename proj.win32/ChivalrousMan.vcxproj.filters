@@ -130,6 +130,15 @@
     <Filter Include="src\Logic\Friend">
       <UniqueIdentifier>{3e86377f-016b-4527-a4e8-e8abf397f443}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Logic\Talisman">
+      <UniqueIdentifier>{0a083460-506d-40cd-9a28-cb0445d92cd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Tool\GameData">
+      <UniqueIdentifier>{e92a1937-c80d-48d7-9b62-b821a79c3442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Tool\Event">
+      <UniqueIdentifier>{ae1ff2b3-2527-4202-94f8-a3842a18e480}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -375,20 +384,8 @@
     <ClCompile Include="..\Classes\EquipmentManager.cpp">
       <Filter>src\Tool\Equipment</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Event.cpp">
-      <Filter>src\Tool\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameData.cpp">
-      <Filter>src\Tool\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameDynamicData.cpp">
-      <Filter>src\Tool\Utils</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\ReflectNpc.cpp">
       <Filter>src\Tool\Npc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Signal.cpp">
-      <Filter>src\Tool\Utils</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\SkillFactory.cpp">
       <Filter>src\Tool\Skill</Filter>
@@ -447,8 +444,32 @@
     <ClCompile Include="..\Classes\CommonHead.cpp">
       <Filter>src\Logic\Common</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TalismanLayer.cpp">
+      <Filter>src\Logic\Talisman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TalismanManager.cpp">
+      <Filter>src\Logic\Talisman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameData.cpp">
+      <Filter>src\Tool\GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameDynamicData.cpp">
+      <Filter>src\Tool\GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Signal.cpp">
+      <Filter>src\Tool\Event</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\SignalManager.cpp">
-      <Filter>src\Tool\Utils</Filter>
+      <Filter>src\Tool\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Event.cpp">
+      <Filter>src\Tool\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Path.cpp">
+      <Filter>src\Tool\GameData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CommonButton.cpp">
+      <Filter>src\Logic\Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -746,29 +767,14 @@
     <ClInclude Include="..\Classes\EquipmentManager.h">
       <Filter>src\Tool\Equipment</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Event.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameData.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameDynamicData.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\PreProcess.h">
       <Filter>src\Tool\Utils</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ReflectNpc.h">
       <Filter>src\Tool\Npc</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Signal.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\SkillFactory.h">
       <Filter>src\Tool\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SlotListener.h">
-      <Filter>src\Tool\Utils</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\TeamManager.h">
       <Filter>src\Logic\Team</Filter>
@@ -824,11 +830,38 @@
     <ClInclude Include="..\Classes\CommonHead.h">
       <Filter>src\Logic\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\TalismanLayer.h">
+      <Filter>src\Logic\Talisman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TalismanManager.h">
+      <Filter>src\Logic\Talisman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameData.h">
+      <Filter>src\Tool\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameDynamicData.h">
+      <Filter>src\Tool\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Signal.h">
+      <Filter>src\Tool\Event</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\SignalConst.h">
-      <Filter>src\Tool\Utils</Filter>
+      <Filter>src\Tool\Event</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\SignalManager.h">
-      <Filter>src\Tool\Utils</Filter>
+      <Filter>src\Tool\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Event.h">
+      <Filter>src\Tool\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SlotListener.h">
+      <Filter>src\Tool\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Path.h">
+      <Filter>src\Tool\GameData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CommonButton.h">
+      <Filter>src\Logic\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

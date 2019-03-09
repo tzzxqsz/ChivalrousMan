@@ -30,11 +30,13 @@ int SkillManager::addSkill(const std::string& name,const int& grade)
 		return -1;
 	}
 	m_skillMap[name] = grade;
+	insertSkillInfo(name, grade);
 	 return 0;
  }
 
  void SkillManager::removeSkill(const std::string& name)
  {
+	 deleteSkillInfo(name);
 	 m_skillMap.erase(name);
  }
 
@@ -88,17 +90,25 @@ int SkillManager::addSkill(const std::string& name,const int& grade)
 	 }
  }
 
- void SkillManager::saveSkillInfo()
+ void SkillManager::insertSkillInfo(const std::string& name, const int& grade)
  {
-	 for (auto var : m_skillMap)
-	 {
-		 SkillInfo info;
-		 DBDao<SkillInfo> dao;
-		 info.setplayername(GetStringData("playername"));
-		 info.setrolename(GetStringData("rolename"));
-		 info.setskillname(var.first);
-		 info.setskillgrade(NumberToString(var.second));
-		 dao.setModel(info);
-		 dao.insertModel();
-	 }
+	 SkillInfo info;
+	 DBDao<SkillInfo> dao;
+	 info.setplayername(GetStringData("playername"));
+	 info.setrolename(GetStringData("rolename"));
+	 info.setskillname(name);
+	 info.setskillgrade(NTS(grade));
+	 dao.setModel(info);
+	 dao.insertModel();
+ }
+
+ void SkillManager::deleteSkillInfo(const std::string& name)
+ {
+	 SkillInfo info;
+	 DBDao<SkillInfo> dao;
+	 info.setplayername(GetStringData("playername"));
+	 info.setrolename(GetStringData("rolename"));
+	 info.setskillname(name);
+	 dao.setModel(info);
+	 dao.deleteModel();
  }

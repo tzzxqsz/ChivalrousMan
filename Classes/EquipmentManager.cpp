@@ -25,10 +25,12 @@ int EquipmentManager::wearEquipment(const EMInfo& info)
 			eq->Disassemble(nullptr);
 			it->name = info.name;
 			it->grade = 1;
+			updateEm(*it);
 			return -1;
 		}
 	}
 	m_emlist.push_back(info);
+	insertEquipmentInfo(info);
 	return 0;
 }
 
@@ -52,8 +54,8 @@ int EquipmentManager::removeEquipment(const std::string& name)
 	{
 		if (it->name == name)
 		{
-			m_emlist.erase(it);
 			deleteEm(*it);
+			m_emlist.erase(it);
 			return 0;
 		}
 	}
@@ -84,19 +86,19 @@ void EquipmentManager::readEquipmentInfo()
 	}
 }
 
-void EquipmentManager::saveEquipmentInfo()
+void EquipmentManager::insertEquipmentInfo(const EMInfo& info)
 {
-	for (auto var : m_emlist)
+	DBDao<EquipmentInfo> dao;
+	EquipmentInfo data;
+	data.setplayername(GetStringData("playername"));
+	data.setrolename(GetStringData("rolename"));
+	data.settype(NTS(info.type));
+	data.setgrade(NTS(info.grade));
+	data.setequipmentname(info.name);
+	dao.setModel(data);
+	if (dao.insertModel())
 	{
-		EquipmentInfo info;
-		DBDao<EquipmentInfo> dao;
-		info.setplayername(GetStringData("playername"));
-		info.setrolename(GetStringData("rolename"));
-		info.setequipmentname(var.name);
-		info.setgrade(NTS(var.grade));
-		info.settype(NTS(var.type));
-		dao.setModel(info);
-		dao.insertModel();
+		dao.close();
 	}
 }
 
@@ -105,10 +107,11 @@ void EquipmentManager::updateEm(EMInfo info)
 	EquipmentInfo em;
 	DBDao<EquipmentInfo> dao;
 	em.setgrade(NTS(info.grade));
+	em.setequipmentname(info.name);
 	std::map<std::string, std::string> keyvls;
 	keyvls["playername"] = GetStringData("playername");
 	keyvls["rolename"] = GetStringData("rolename");
-	keyvls["equipmentname"] = info.name;
+	keyvls["type"] = NTS(info.type);
 	dao.setModel(em);
 	dao.updateModel(keyvls);
 }
@@ -117,7 +120,6 @@ void EquipmentManager::deleteEm(EMInfo info)
 {
 	EquipmentInfo em;
 	DBDao<EquipmentInfo> dao;
-	em.setgrade(NTS(info.grade));
 	em.setequipmentname(info.name);
 	em.setplayername(GetStringData("playername"));
 	em.setrolename(GetStringData("rolename"));

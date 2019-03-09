@@ -28,7 +28,6 @@ void NpcSkill::talkEndEvent()
 {
 	Npc::talkEndEvent();
 	auto gs = CurGameScene();
-	gs->getLogicLayer()->pauseSchedulerAndActions();
 	auto dealLayer = DealLayer::createWithType(SKILL, StringValue("DealSkill"));
 	gs->addChild(dealLayer);
 }
