@@ -139,6 +139,9 @@
     <Filter Include="src\Tool\Event">
       <UniqueIdentifier>{ae1ff2b3-2527-4202-94f8-a3842a18e480}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Thing\Talisman">
+      <UniqueIdentifier>{b8d9f4cb-72f2-4ddd-969d-15823ed6ef47}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -470,6 +473,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\CommonButton.cpp">
       <Filter>src\Logic\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TalismanFragment.cpp">
+      <Filter>src\Thing\Talisman</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -862,6 +868,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CommonButton.h">
       <Filter>src\Logic\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Colors.h">
+      <Filter>src\Tool\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TalismanFragment.h">
+      <Filter>src\Thing\Talisman</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

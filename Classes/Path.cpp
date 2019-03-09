@@ -19,3 +19,8 @@ std::string getMainPath(std::string id)
 {
 	return id + PNG;
 }
+
+std::string getFontPath(std::string id)
+{
+	return std::string("res/font/") + id + TTF;
+}

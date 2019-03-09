@@ -148,5 +148,8 @@ enum class Player_Type
 #define TB_KICKOUT 5003
 #define TB_NULL 5004
 
+typedef cocos2d::Node* (*Sel_Create_Func)(void);
+#define CREATE_FUNC_SELECTOR(_CREATE_FUNC) reinterpret_cast<Sel_Create_Func>(&_CREATE_FUNC)
+
 #endif // !__PRE_PRECESS_H__
 

@@ -4,6 +4,8 @@
 #include"PreProcess.h"
 #include"CommonTouchLayer.h"
 
+
+
 class TalismanLayer:public CommonTouchLayer
 {
 	CLASS_ESSENTAIL(TalismanLayer)
@@ -13,8 +15,15 @@ public:
 	bool init() override;
 	
 	virtual void onEnter() override;
-private:
+
+	void updateView();
+
+	void onLeftClickCallback(cocos2d::CCObject* sender);
 	
+	void onRightClickCallback(cocos2d::CCObject* sender);
+private:
+	cocos2d::Label* m_tilasmanName;
+	cocos2d::Label* m_tilsmanGrade;
 };
 
 
