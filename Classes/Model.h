@@ -431,7 +431,7 @@ public:
 	~Playermw() {}
 	GettingAndSetting_S(std::string, playername, playername);
 	GettingAndSetting_S(std::string, rolename, rolename);
-	GettingAndSetting_S(std::string, mw_id, mw_id);
+	GettingAndSetting_S(std::string, mw_name, mw_name);
 	GettingAndSetting_S(std::string, grade, grade);
 	GettingAndSetting_S(std::string, curexp, curexp);
 	GettingAndSetting_S(std::string, exp, exp);
@@ -445,7 +445,7 @@ public:
 		case 2:
 			return rolename;
 		case 3:
-			return mw_id;
+			return mw_name;
 		case 4:
 			return grade;
 		case 5:
@@ -466,7 +466,7 @@ public:
 		case 2:
 			return "rolename";
 		case 3:
-			return "mw_id";
+			return "mw_name";
 		case 4:
 			return "grade";
 		case 5:
@@ -486,62 +486,6 @@ public:
 	int getAttributeNums()
 	{
 		return 6;
-	}
-};
-
-class MagicWeapon
-{
-public:
-	MagicWeapon() {}
-	~MagicWeapon() {}
-
-	GettingAndSetting_S(std::string, id, id);
-	GettingAndSetting_S(std::string, name, name);
-	GettingAndSetting_S(std::string, attr, attr);
-	GettingAndSetting_S(std::string, attrvalue, attrvalue);
-public:
-	std::string& operator[](const int& index)
-	{
-		switch (index)
-		{
-		case 1:
-			return id;
-		case 2:
-			return name;
-		case 3:
-			return attr;
-		case 4:
-			return attrvalue;
-		default:
-			return id;
-		}
-	}
-
-	std::string getAttributeName(const int& index)
-	{
-		switch (index)
-		{
-		case 1:
-			return "id";
-		case 2:
-			return "name";
-		case 3:
-			return "attr";
-		case 4:
-			return "attrvalue";
-		default:
-			return "id";
-		}
-	}
-
-	std::string getName()
-	{
-		return "magicweapon";
-	}
-
-	int getAttributeNums()
-	{
-		return 4;
 	}
 };
 

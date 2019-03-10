@@ -4,6 +4,9 @@
 #include"Path.h"
 #include"Colors.h"
 #include"GameData.h"
+#include"TalismanAvatar.h"
+#include"ConfigUtils.h"
+
 
 bool TalismanLayer::init()
 {
@@ -28,7 +31,7 @@ bool TalismanLayer::init()
 		TTFConfig ttfConfig;
 		ttfConfig.fontFilePath = getFontPath("font2"); //±ØÐëÅäÖÃ
 		ttfConfig.fontSize = 32;
-		m_tilasmanName = Label::createWithTTF(ttfConfig, StringValue("OffLine"));
+		m_tilasmanName = Label::createWithTTF(ttfConfig,"");
 		this->addChild(m_tilasmanName);
 		m_tilasmanName->setColor(TITLE_COLOR);
 		m_tilasmanName->setPosition(centerPos.x, centerPos.y + visibleSize.height*0.5 - 50);
@@ -36,8 +39,15 @@ bool TalismanLayer::init()
 		m_tilsmanGrade = Label::createWithTTF(ttfConfig, "+100");
 		this->addChild(m_tilsmanGrade);
 		m_tilsmanGrade->setColor(TWO_TITLE_COLOR);
-		m_tilsmanGrade->setPosition(centerPos.x, centerPos.y + visibleSize.height*0.5 - 90);
+		m_tilsmanGrade->setPosition(centerPos.x, centerPos.y + visibleSize.height*0.5 - 84);
 
+		m_desc = Node::create();
+		m_desc->setPosition(centerPos.x - visibleSize.width*0.5 + 40, centerPos.y + visibleSize.height*0.5 - 90);
+		this->addChild(m_desc);
+
+		m_avatar = TalismanAvatar::create();
+		this->addChild(m_avatar);
+		m_avatar->setPosition(centerPos);
 		return true;
 	}
 	return false;
@@ -51,7 +61,28 @@ void TalismanLayer::onEnter()
 
 void TalismanLayer::updateView()
 {
+	m_avatar->updateAvatar("ChaoticMirror");
+	updateDes();
+}
 
+void TalismanLayer::updateDes()
+{
+	auto screenSize = SCREEN;
+	auto dec = ConfigUtils::getInstance()->getConfigDec(getTalismanPurePath("ChaoticMirror"));
+	m_tilasmanName->setString(dec[CONFIG_NAME]);
+	int size = dec.size();
+	TTFConfig ttfConfig;
+	ttfConfig.fontFilePath = getFontPath("font2"); //±ØÐëÅäÖÃ
+	ttfConfig.fontSize = 32;
+	m_desc->removeAllChildren();
+	for (int i = CONFIG_NAME + 1; i < size; ++i)
+	{
+		auto label = Label::createWithTTF(ttfConfig, dec[i]);
+		label->setAnchorPoint(Vec2(0, 0.5));
+		m_desc->addChild(label);
+		label->setColor(DEC_COLOR);
+		label->setPosition(0, -i * 36);
+	}
 }
 
 void TalismanLayer::onLeftClickCallback(cocos2d::CCObject * sender)

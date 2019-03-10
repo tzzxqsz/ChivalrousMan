@@ -12,7 +12,6 @@
 class Thing Inherit(cocos2d::MenuItemImage)
 {
 public:
-	Thing();
 	Thing(const std::string &name);
 	virtual ~Thing();
 
@@ -44,7 +43,7 @@ protected:
 	PROPERTY__REF(float, m_buyglod, buyglod)
 	//卖出价格
 	PROPERTY__REF(float, m_sellglod, sellglod)
-	//名称
+	//资源路径名称
 	PROPERTY__REF(std::string,m_name,name)
 	//详情第一句
 	PROPERTY__REF(std::string,m_firsttext,firsttext)

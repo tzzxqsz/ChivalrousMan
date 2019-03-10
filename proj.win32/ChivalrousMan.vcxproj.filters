@@ -474,8 +474,20 @@
     <ClCompile Include="..\Classes\CommonButton.cpp">
       <Filter>src\Logic\Common</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CommonItem.cpp">
+      <Filter>src\Logic\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TalismanIcon.cpp">
+      <Filter>src\Thing\Talisman</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\TalismanFragment.cpp">
       <Filter>src\Thing\Talisman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TalismanAvatar.cpp">
+      <Filter>src\Thing\Talisman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ConfigUtils.cpp">
+      <Filter>src\Tool\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -872,8 +884,20 @@
     <ClInclude Include="..\Classes\Colors.h">
       <Filter>src\Tool\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\CommonItem.h">
+      <Filter>src\Logic\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TalismanIcon.h">
+      <Filter>src\Thing\Talisman</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\TalismanFragment.h">
       <Filter>src\Thing\Talisman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TalismanAvatar.h">
+      <Filter>src\Thing\Talisman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ConfigUtils.h">
+      <Filter>src\Tool\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

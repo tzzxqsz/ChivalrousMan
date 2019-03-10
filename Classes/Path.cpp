@@ -15,6 +15,11 @@ std::string getTalismanPath(std::string id)
 	return std::string("talisman/") + id + PNG;
 }
 
+std::string getTalismanPurePath(std::string id)
+{
+	return std::string("talisman/") + id;
+}
+
 std::string getMainPath(std::string id)
 {
 	return id + PNG;

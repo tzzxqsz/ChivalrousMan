@@ -13,6 +13,8 @@ std::string getBackgroundPath(std::string id);
 
 std::string getTalismanPath(std::string id);
 
+std::string getTalismanPurePath(std::string id);
+
 std::string getMainPath(std::string id);
 
 std::string getFontPath(std::string id);

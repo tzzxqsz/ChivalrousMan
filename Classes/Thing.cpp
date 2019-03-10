@@ -5,11 +5,6 @@
 #include"GameDynamicData.h"
 #include<fstream>
 
-Thing::Thing()
-{
-
-}
-
 Thing::Thing(const std::string& name):
 	m_name(name)
 {
@@ -64,7 +59,8 @@ void  Thing::initDetails(const std::string& name)
 	do
 	{
 		fin >> tmp;
-		m_details.push_back(tmp);
+		if (tmp != "")
+			m_details.push_back(tmp);
 	} while (!fin.eof());
 	fin.close();
 }

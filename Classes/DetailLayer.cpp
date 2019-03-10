@@ -60,5 +60,5 @@ bool DetailLayer::init(Thing* th)
 void DetailLayer::onCloseClickCallBack(cocos2d::CCObject* sender)
 {
 	ClickAction();
-	getParent()->removeChild(this);
+	removeFromParent();
 }

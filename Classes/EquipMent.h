@@ -52,19 +52,19 @@ protected:
 	//增加的血量值
 	PROPERTY__REF(float, m_addblood, addblood)
 		//增加的魔量值
-		PROPERTY__REF(float, m_addmana, addmana)
+	PROPERTY__REF(float, m_addmana, addmana)
 		//增加的攻击力
-		PROPERTY__REF(float, m_addattack, addattack)
+	PROPERTY__REF(float, m_addattack, addattack)
 		//增加的防御力
-		PROPERTY__REF(float, m_adddefense, adddefense)
+	PROPERTY__REF(float, m_adddefense, adddefense)
 		//增加速度
-		PROPERTY__REF(float, m_addspeed, speed)
+	PROPERTY__REF(float, m_addspeed, speed)
 		//装备等级
-		PROPERTY__REF(float, m_grade, grade)
+	PROPERTY__REF(float, m_grade, grade)
 		//装备类型
-		PROPERTY__REF(int, m_type, type)
+	PROPERTY__REF(int, m_type, type)
 		//基础升级所需金钱
-		PROPERTY__REF(float, m_baseupglod, baseupglod)
+	PROPERTY__REF(float, m_baseupglod, baseupglod)
 };
 
 #endif // !__EQUIP_MENT_H__
