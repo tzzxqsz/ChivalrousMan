@@ -177,23 +177,14 @@
     <ClCompile Include="..\Classes\GameMenuLayer.cpp">
       <Filter>src\Logic\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HurtValueLayer.cpp">
-      <Filter>src\Logic\Common</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\LoadingLayer.cpp">
       <Filter>src\Logic\Common</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\LoginLayer.cpp">
       <Filter>src\Logic\LoginAndSigOn</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\MsgListLayer.cpp">
-      <Filter>src\Logic\Common</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\NewGameLayer.cpp">
       <Filter>src\Logic\NewGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\ObjectLayer.cpp">
-      <Filter>src\Logic\Common</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\PickupTaskLayer.cpp">
       <Filter>src\Logic\Task</Filter>
@@ -209,9 +200,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\RoleInfoLayer.cpp">
       <Filter>src\Logic\RoleInfo</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SelectLayer.cpp">
-      <Filter>src\Logic\Common</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\SkillLayer.cpp">
       <Filter>src\Logic\Skill</Filter>
@@ -489,6 +477,21 @@
     <ClCompile Include="..\Classes\ConfigUtils.cpp">
       <Filter>src\Tool\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ObjectLayer.cpp">
+      <Filter>src\Logic\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SelectLayer.cpp">
+      <Filter>src\Logic\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MsgListLayer.cpp">
+      <Filter>src\Logic\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HurtValueLayer.cpp">
+      <Filter>src\Logic\Fight</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CommonProcessBar.cpp">
+      <Filter>src\Logic\Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -524,23 +527,14 @@
     <ClInclude Include="..\Classes\GameMenuLayer.h">
       <Filter>src\Logic\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HurtValueLayer.h">
-      <Filter>src\Logic\Common</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\LoadingLayer.h">
       <Filter>src\Logic\Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\LoginLayer.h">
       <Filter>src\Logic\LoginAndSigOn</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\MsgListLayer.h">
-      <Filter>src\Logic\Common</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\NewGameLayer.h">
       <Filter>src\Logic\NewGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ObjectLayer.h">
-      <Filter>src\Logic\Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\PickupTaskLayer.h">
       <Filter>src\Logic\Task</Filter>
@@ -556,9 +550,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\RoleInfoLayer.h">
       <Filter>src\Logic\RoleInfo</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SelectLayer.h">
-      <Filter>src\Logic\Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\SkillLayer.h">
       <Filter>src\Logic\Skill</Filter>
@@ -898,6 +889,21 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ConfigUtils.h">
       <Filter>src\Tool\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ObjectLayer.h">
+      <Filter>src\Logic\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SelectLayer.h">
+      <Filter>src\Logic\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MsgListLayer.h">
+      <Filter>src\Logic\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HurtValueLayer.h">
+      <Filter>src\Logic\Fight</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CommonProcessBar.h">
+      <Filter>src\Logic\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
