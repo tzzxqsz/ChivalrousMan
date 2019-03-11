@@ -317,6 +317,8 @@
   <string>添加好友</string>
   <key>ApplyListText</key>
   <string>申请列表</string>
+  <key>FragmentText</key>
+  <string>碎</string>
   <!-- 背景素材 -->
   <key>MsgItemBg</key>
   <string>MsgItemBg.png</string>

@@ -1,4 +1,8 @@
 #include"TalismanFragment.h"
+#include"GameData.h"
+#include"Path.h"
+#include"Commen.h"
+#include"Colors.h"
 #include<fstream>
 
 TalismanFragment::TalismanFragment(const std::string& name)
@@ -48,8 +52,24 @@ bool TalismanFragment::init()
 {
 	if (Thing::init())
 	{
+		m_fragment = ui::ImageView::create();
+		m_fragment->loadTexture(m_name + "_icon.png");
+		this->addChild(m_fragment);
+		m_fragment->setScale(0.6);
 
+		TTFConfig ttfConfig;
+		ttfConfig.fontFilePath = getFontPath("font2"); //±ØÐëÅäÖÃ
+		ttfConfig.fontSize = 22;
+		auto text = Label::createWithTTF(ttfConfig, StringValue("FragmentText"));
+		text->setColor(PURPLE_COLOR);
+		this->addChild(text);
+		text->setPosition(-10, 10);
 		return true;
 	}
 	return false;
+}
+
+void TalismanFragment::updateUI(const std::string & name)
+{
+	m_fragment->loadTexture(getTalismanPath(name + "_icon"));
 }

@@ -462,9 +462,6 @@
     <ClCompile Include="..\Classes\CommonButton.cpp">
       <Filter>src\Logic\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\CommonItem.cpp">
-      <Filter>src\Logic\Common</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\TalismanIcon.cpp">
       <Filter>src\Thing\Talisman</Filter>
     </ClCompile>
@@ -874,9 +871,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Colors.h">
       <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CommonItem.h">
-      <Filter>src\Logic\Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\TalismanIcon.h">
       <Filter>src\Thing\Talisman</Filter>

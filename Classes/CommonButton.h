@@ -18,6 +18,10 @@ public:
 	void showRedPoint(const bool& visible);
 
 	virtual void setContentSize(const cocos2d::Size& size) override;
+
+	void setString(const std::string& text);
+
+	void setFontSize(const int& size);
 private:
 	void onClickCallback(cocos2d::CCObject* sender);
 

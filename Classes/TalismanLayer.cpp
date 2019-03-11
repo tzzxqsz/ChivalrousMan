@@ -6,6 +6,9 @@
 #include"GameData.h"
 #include"TalismanAvatar.h"
 #include"ConfigUtils.h"
+#include"CommonProcessBar.h"
+#include"CommonButton.h"
+#include"TalismanFragment.h"
 
 
 bool TalismanLayer::init()
@@ -48,6 +51,18 @@ bool TalismanLayer::init()
 		m_avatar = TalismanAvatar::create();
 		this->addChild(m_avatar);
 		m_avatar->setPosition(centerPos);
+
+		auto pro = CommonProcessBar::create(getCommonPath("BarBG"), getCommonPath("bar"));
+		this->addChild(pro);
+		pro->setPosition(centerPos.x + 20, centerPos.y - visibleSize.height*0.5 + 120);
+		pro->setValue(100);
+		auto fragment = TalismanFragment::createWithName("ChaoticMirror");
+		this->addChild(fragment);
+		fragment->setPosition(centerPos.x - 185, centerPos.y - visibleSize.height*0.5 + 120);
+
+		auto btn = CommonButton::createCommonButton(getButtonPath("CommonBtn"));
+		this->addChild(btn);
+		btn->setPosition(centerPos.x, centerPos.y - visibleSize.height*0.5 + 80);
 		return true;
 	}
 	return false;

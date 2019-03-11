@@ -9,6 +9,7 @@ bool CommonButton::init(std::string res)
 	{
 		m_btn = Button::create(res);
 		m_btn->setName("btn");
+		m_btn->setTitleFontName(getFontPath("font2"));
 		this->addChild(m_btn);
 		m_btn->addClickEventListener(CC_CALLBACK_1(CommonButton::onClickCallback, this));
 		auto size = m_btn->getContentSize();
@@ -42,6 +43,16 @@ void CommonButton::setContentSize(const cocos2d::Size & size)
 {
 	Node::setContentSize(size);
 	m_btn->setContentSize(size);
+}
+
+void CommonButton::setString(const std::string & text)
+{
+	m_btn->setTitleText(text);
+}
+
+void CommonButton::setFontSize(const int & size)
+{
+	m_btn->setTitleFontSize(size);
 }
 
 void CommonButton::onClickCallback(cocos2d::CCObject * sender)
