@@ -64,6 +64,10 @@ bool TalismanLayer::init()
 		auto btn = CommonButton::createCommonButton(getButtonPath("CommonBtn"));
 		this->addChild(btn);
 		btn->setPosition(centerPos.x, centerPos.y - visibleSize.height*0.5 + 80);
+
+		auto btn2 = CommonButton::createCommonButton(getButtonPath("v_btn"));
+		this->addChild(btn2);
+		btn2->setPosition(centerPos.x + visibleSize.width*0.5 - 90, centerPos.y + visibleSize.height*0.5 - 130);
 		return true;
 	}
 	return false;

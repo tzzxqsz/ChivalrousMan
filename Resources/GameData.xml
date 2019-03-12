@@ -323,6 +323,10 @@
   <string>合成</string>
   <key>UpText</key>
   <string>升级</string>
+  <key>GoBattleText</key>
+  <string>上阵</string>
+  <key>UnloadBattleText</key>
+  <string>下阵</string>
   <!-- 背景素材 -->
   <key>MsgItemBg</key>
   <string>MsgItemBg.png</string>
