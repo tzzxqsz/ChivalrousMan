@@ -56,6 +56,7 @@ bool TalismanLayer::init()
 		this->addChild(pro);
 		pro->setPosition(centerPos.x + 20, centerPos.y - visibleSize.height*0.5 + 120);
 		pro->setValue(100);
+		pro->visibleValue(true);
 		auto fragment = TalismanFragment::createWithName("ChaoticMirror");
 		this->addChild(fragment);
 		fragment->setPosition(centerPos.x - 185, centerPos.y - visibleSize.height*0.5 + 120);

@@ -319,6 +319,10 @@
   <string>申请列表</string>
   <key>FragmentText</key>
   <string>碎</string>
+  <key>SynthesisText</key>
+  <string>合成</string>
+  <key>UpText</key>
+  <string>升级</string>
   <!-- 背景素材 -->
   <key>MsgItemBg</key>
   <string>MsgItemBg.png</string>

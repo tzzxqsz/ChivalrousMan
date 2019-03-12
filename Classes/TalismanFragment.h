@@ -15,7 +15,10 @@ public:
 private:
 	TalismanFragment(const std::string& name);
 	virtual ~TalismanFragment();
-	void initProperty();
+
+	void onClick(cocos2d::CCObject* sender);
+
+	void updateProperty(const std::string& pathname);
 	
 	cocos2d::ui::ImageView* m_fragment;
 	std::string m_talismanName;

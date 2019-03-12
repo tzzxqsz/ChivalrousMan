@@ -1,5 +1,6 @@
 #include"CommonProcessBar.h"
 #include"Commen.h"
+#include"GameData.h"
 
 CommonProcessBar* CommonProcessBar::create(const std::string& bgfile, const std::string& barfile)
 {
@@ -32,6 +33,10 @@ bool CommonProcessBar::init(const std::string & bgfile, const std::string & barf
 		m_progress->setBarChangeRate(ccp(1, 0));
 		m_progress->setPercentage(0);
 		this->addChild(m_progress);
+
+		m_value = LabelTTF::create();
+		this->addChild(m_value);
+		m_value->setVisible(false);
 		return true;
 	}
 	return false;
@@ -39,5 +44,16 @@ bool CommonProcessBar::init(const std::string & bgfile, const std::string & barf
 
 void CommonProcessBar::setValue(const float& value)
 {
-	m_progress->setPercentage(value);
+	m_progress->setPercentage(value / m_max * 100);
+	m_value->setString(NTS(value) + "/" + NTS(m_max));
+}
+
+void CommonProcessBar::setMax(const float & max)
+{
+	m_max = max;
+}
+
+void CommonProcessBar::visibleValue(const bool & b)
+{
+	m_value->setVisible(b);
 }

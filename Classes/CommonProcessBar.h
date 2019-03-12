@@ -13,11 +13,16 @@ public:
 
 	void setValue(const float& value);
 
+	void setMax(const float& max);
+
+	void visibleValue(const bool& b);
 private:
+	float m_max = 100;
 	cocos2d::Size m_initSize;
 	cocos2d::Sprite* m_bg;
 	cocos2d::Sprite* m_bar;
 	cocos2d::ProgressTimer* m_progress;
+	cocos2d::LabelTTF* m_value;
 };
 
 #endif // !__COMMON_PROCESS_H__

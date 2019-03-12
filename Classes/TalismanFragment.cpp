@@ -3,21 +3,27 @@
 #include"Path.h"
 #include"Commen.h"
 #include"Colors.h"
+#include"ui/UIButton.h"
 #include<fstream>
 
 TalismanFragment::TalismanFragment(const std::string& name)
 	:Thing(std::string("talisman/") + name)
 {
-	initProperty();
+	updateProperty(m_name);
 }
 
 TalismanFragment::~TalismanFragment()
 {
 }
 
-void TalismanFragment::initProperty()
+void TalismanFragment::onClick(cocos2d::CCObject * sender)
 {
-	std::string realname = m_name;
+
+}
+
+void TalismanFragment::updateProperty(const std::string& pathname)
+{
+	std::string realname = pathname;
 	realname += "_f.att";
 	std::ifstream fin;
 	fin.open(realname, std::ios::in);
@@ -26,7 +32,7 @@ void TalismanFragment::initProperty()
 		return;
 	}
 	std::string tmp;
-	fin >> tmp;
+	fin >> m_talismanName;
 	ADD_PROPERTY(buyglod);
 	ADD_PROPERTY(sellglod);
 	fin.close();
@@ -52,10 +58,14 @@ bool TalismanFragment::init()
 {
 	if (Thing::init())
 	{
+		auto fragmentBg = ui::Button::create(getCommonPath("img_com_frame"), getCommonPath("img_com_frame"), getCommonPath("img_com_frame"));
+		this->addChild(fragmentBg);
+		fragmentBg->addClickEventListener(CC_CALLBACK_1(TalismanFragment::onClick, this));
+
 		m_fragment = ui::ImageView::create();
 		m_fragment->loadTexture(m_name + "_icon.png");
 		this->addChild(m_fragment);
-		m_fragment->setScale(0.6);
+		m_fragment->setScale(0.55);
 
 		TTFConfig ttfConfig;
 		ttfConfig.fontFilePath = getFontPath("font2"); //±ØÐëÅäÖÃ
@@ -63,7 +73,8 @@ bool TalismanFragment::init()
 		auto text = Label::createWithTTF(ttfConfig, StringValue("FragmentText"));
 		text->setColor(PURPLE_COLOR);
 		this->addChild(text);
-		text->setPosition(-10, 10);
+		text->setPosition(-10, -10);
+		
 		return true;
 	}
 	return false;
