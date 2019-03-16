@@ -1,6 +1,6 @@
 #include"ConfigUtils.h"
 #include<fstream>
-
+#include<regex>
 DEFINE_SINGLE_ATTRIBUTES(ConfigUtils);
 
 std::map<std::string, std::string>  ConfigUtils::getConfigAttr(const std::string& pathname)
@@ -54,4 +54,47 @@ std::vector<std::string> ConfigUtils::getConfigDec(const std::string & pathname)
 	}
 	fin.close();
 	return dec;
+}
+
+void ConfigUtils::getConfigDrop(const std::string & pathname)
+{
+	std::map<std::string, std::vector<std::string>> ret;
+	std::string realname = pathname + ".dp";
+	std::ifstream fin;
+	fin.open(realname, std::ios::in);
+	if (fin.fail())
+	{
+		return;
+	}
+	std::string type;
+	std::string name;
+	std::string percent;
+	std::string value;
+	fin >> type;
+	fin >> value;
+	ret[type].push_back(value);
+	fin >> name;
+	fin >> value;
+	value.replace(value.find("{"), 1, "");
+	value.replace(value.find("}"), 1, "");
+	ret[name] = split(value, std::string(","));
+	fin >> percent;
+	fin >> value;
+	value.replace(value.find("{"), 1, "");
+	value.replace(value.find("}"), 1, "");
+	ret[percent] = split(value, std::string(","));
+	fin.close();
+	return;
+}
+
+std::vector<std::string> ConfigUtils::split(std::string & str, std::string & part)
+{
+	std::vector<std::string> ret;
+	std::regex r4((std::string("\\s*[") + part + std::string("]\\s*")));
+	const std::sregex_token_iterator send;
+	for (std::sregex_token_iterator iter(str.cbegin(), str.cend(), r4, -1); iter != send; ++iter)
+	{
+		ret.push_back(*iter);
+	}
+	return ret;
 }

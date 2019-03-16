@@ -40,6 +40,9 @@ public:
 	PROPERTY__REF(float, m_frames, frames)
 
 	bool isDie();
+
+	//µôÂäÎïÆ·
+	void drop();
 private:
 	/*
 	*initProperty(const std::string name)

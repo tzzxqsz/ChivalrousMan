@@ -1,0 +1,3 @@
+type talisman
+name {StoneBeetle_f,Streamstone_f,ThreeEyes_f,Tiger_f}
+percent {20,10,10,10}

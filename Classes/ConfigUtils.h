@@ -14,6 +14,10 @@ public:
 	std::map<std::string, std::string> getConfigAttr(const std::string& pathname);
 
 	std::vector<std::string> getConfigDec(const std::string& pathname);
+
+	void getConfigDrop(const std::string& pathname);
+
+	std::vector<std::string> split(std::string& str, std::string& part);
 private:
 	ConfigUtils() {}
 

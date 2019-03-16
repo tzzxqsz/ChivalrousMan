@@ -1,0 +1,3 @@
+type talisman
+name {Morality_f,RomanticSwordsman_f,SmileFace_f}
+percent {20,10,10}

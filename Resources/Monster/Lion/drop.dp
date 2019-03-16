@@ -1,0 +1,3 @@
+type talisman
+name {ChaoticMirror_f,ConchBook_f,FireBead_f}
+percent {5,5,3}

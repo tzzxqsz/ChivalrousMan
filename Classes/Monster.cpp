@@ -123,3 +123,8 @@ bool Monster::isDie()
 {
 	return m_isdie;
 }
+
+void Monster::drop()
+{
+	
+}
