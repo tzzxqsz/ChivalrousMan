@@ -30,6 +30,11 @@ std::string getFontPath(std::string id)
 	return std::string("res/font/") + id + TTF;
 }
 
+std::string getMonsterPath(std::string id)
+{
+	return std::string("Monster/") + id + std::string("/") + id;
+}
+
 std::string getCommonPath(std::string id)
 {
 	return std::string("Common/") + id + PNG;

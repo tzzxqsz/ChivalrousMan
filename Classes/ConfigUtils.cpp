@@ -56,10 +56,10 @@ std::vector<std::string> ConfigUtils::getConfigDec(const std::string & pathname)
 	return dec;
 }
 
-void ConfigUtils::getConfigDrop(const std::string & pathname)
+std::map<std::string, std::vector<std::string>> ConfigUtils::getConfigDrop(const std::string & pathname)
 {
 	std::map<std::string, std::vector<std::string>> ret;
-	std::string realname = pathname + ".dp";
+	std::string realname = pathname + "drop.dp";
 	std::ifstream fin;
 	fin.open(realname, std::ios::in);
 	if (fin.fail())

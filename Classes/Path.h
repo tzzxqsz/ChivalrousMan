@@ -19,6 +19,8 @@ std::string getMainPath(std::string id);
 
 std::string getFontPath(std::string id);
 
+std::string getMonsterPath(std::string id);
+
 std::string getCommonPath(std::string id);
 
 #endif // !1

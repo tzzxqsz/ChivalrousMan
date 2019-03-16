@@ -15,7 +15,7 @@ public:
 
 	std::vector<std::string> getConfigDec(const std::string& pathname);
 
-	void getConfigDrop(const std::string& pathname);
+	std::map<std::string, std::vector<std::string>> getConfigDrop(const std::string& pathname);
 
 	std::vector<std::string> split(std::string& str, std::string& part);
 private:

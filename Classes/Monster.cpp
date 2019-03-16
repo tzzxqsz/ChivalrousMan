@@ -4,8 +4,11 @@
 #include"HurtValueLayer.h"
 #include"FightLayer.h"
 #include"TaskSystem.h"
+#include"Path.h"
+#include"ConfigUtils.h"
 #include<fstream>
 #include<functional>
+#include<random>
    
 Monster::Monster(const std::string& name)
 {
@@ -126,5 +129,13 @@ bool Monster::isDie()
 
 void Monster::drop()
 {
-	
+	auto config = ConfigUtils::getInstance()->getConfigDrop(getMonsterPath(m_name));
+	int size = config["name"].size();
+	std::uniform_int_distribution<unsigned> uniform_distribution(1, 100);// 定义一个范围为0~100的无符号整型分布类型
+	std::default_random_engine random_engine;// 定义一个随机数引擎
+	unsigned percent = uniform_distribution(random_engine);
+	for (unsigned i = 0; i < size; ++i)
+	{
+
+	}
 }
