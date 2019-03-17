@@ -155,7 +155,6 @@ void BackPackLayer::initBackPackThing()
 		y = m_basePoint.y - y * (56) + 7;
 		ob->setPosition(x, y);
 		ob->addClickCallback(CC_CALLBACK_1(BackPackLayer::onClickThingCallBack, this));
-		//ob->setTarget(this, menu_selector(BackPackLayer::onClickThingCallBack));
 		auto numlabel = LabelTTF::create(NumberToString(it.nums), "¿¬Ìå",20);
 		numlabel->setPosition(-18, -14);
 		numlabel->setColor(ccc3(255, 242, 0));

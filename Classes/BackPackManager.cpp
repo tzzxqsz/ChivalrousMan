@@ -6,6 +6,7 @@
 #include"GameDynamicData.h"
 #include"SignalConst.h"
 #include"SignalManager.h"
+#include"SynsTask.h"
 #include<utility>
 #include<map>
 
@@ -129,12 +130,14 @@ void BackPackManager::dropThing(Json::Value & msg)
 	{
 		return;
 	}
-	ThingInfo info;
-	info.name = msg["name"].asString();
-	info.type = TypeMaps[msg["type"].asString()];
-	info.nums = 1;
-	info.grade = 0;
-	addBackPackThing(info);
+	SynsTask task([this,msg] {
+		ThingInfo info;
+		info.name = msg["name"].asString();
+		info.type = TypeMaps[msg["type"].asString()];
+		info.nums = 1;
+		info.grade = 0;
+		this->addBackPackThing(info);
+	});
 }
 
 void BackPackManager::updateBackpack(ThingInfo info)
