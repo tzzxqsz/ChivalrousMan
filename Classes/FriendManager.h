@@ -6,20 +6,7 @@
 #include<list>
 #include"ShareData.h"
 #include"jsonCpp/value.h"
-#include<algorithm>
-#include<chrono>
 
-class RandomGenerator
-{
-public:
-	ptrdiff_t operator() (ptrdiff_t max)
-	{
-		double temp;
-		srand(std::chrono::system_clock::now().time_since_epoch().count());
-		temp = static_cast<double>(rand()) / static_cast<double>(RAND_MAX);
-		return static_cast<ptrdiff_t>(temp * max);
-	}
-};
 
 class FriendManager :public cocos2d::CCObject
 {

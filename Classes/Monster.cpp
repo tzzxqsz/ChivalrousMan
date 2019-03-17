@@ -9,6 +9,7 @@
 #include"jsonCpp/value.h"
 #include"SignalConst.h"
 #include"SignalManager.h"
+#include"RandomGenerator.h"
 #include<fstream>
 #include<functional>
 #include<random>
@@ -136,7 +137,7 @@ void Monster::drop()
 	auto config = ConfigUtils::getInstance()->getConfigDrop(getMonsterPath(m_name));
 	int size = config["name"].size();
 	std::uniform_int_distribution<unsigned> uniform_distribution(1, 100);// 定义一个范围为0~100的无符号整型分布类型
-	std::default_random_engine random_engine;// 定义一个随机数引擎
+	std::random_device random_engine;// 定义一个随机数引擎
 	unsigned percent = uniform_distribution(random_engine);
 	int count = 0;
 	int index = -1;

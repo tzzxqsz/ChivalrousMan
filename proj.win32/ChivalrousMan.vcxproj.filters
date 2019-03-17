@@ -905,6 +905,9 @@
     <ClInclude Include="..\Classes\MaxTopLayer.h">
       <Filter>src\Logic\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\RandomGenerator.h">
+      <Filter>src\Tool\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

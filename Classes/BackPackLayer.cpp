@@ -151,8 +151,8 @@ void BackPackLayer::initBackPackThing()
 		}
 		float x = index % BASENUM;
 		float y = index / BASENUM;     
-		x = m_basePoint.x + x * (56) + 9;
-		y = m_basePoint.y - y * (56) + 7;
+		x = m_basePoint.x + x * (55.8) + 9;
+		y = m_basePoint.y - y * (55.8) + 7;
 		ob->setPosition(x, y);
 		ob->addClickCallback(CC_CALLBACK_1(BackPackLayer::onClickThingCallBack, this));
 		auto numlabel = LabelTTF::create(NumberToString(it.nums), "Ώ¬Με",20);

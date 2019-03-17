@@ -1,4 +1,5 @@
 #include"FriendManager.h"
+#include"RandomGenerator.h"
 #include"DBDao.h"
 #include"Model.h"
 #include"NetWorkManager.h"

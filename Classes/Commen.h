@@ -195,5 +195,4 @@ gradelabel->setColor(Color3B::ORANGE);   \
 gradelabel->setPosition(head->getPositionX() + 34, -15);   \
 this->addChild(gradelabel)
 
-
 #endif  // !__COMMEN_H__
