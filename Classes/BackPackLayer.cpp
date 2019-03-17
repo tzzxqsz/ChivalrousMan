@@ -7,6 +7,7 @@
 #include"Medication.h"
 #include"EquipMent.h"
 #include"TipLayer.h"
+#include"TalismanFragment.h"
 #include<string>
 #include<map>
 
@@ -99,9 +100,11 @@ void BackPackLayer::useBtnCallBack(cocos2d::CCObject* sender)
 	int nums = std::stoi(m_numlabels[index]->getString());
 	if (nums > 0)
 	{
-		pth->beUse(this);
-		m_numlabels[index]->setString(NumberToString(nums - 1));
-		BackPackManager::getInstance()->removeBackPackThing(pth->getname());
+		if (pth->beUse(this) != -1.0f)
+		{
+			m_numlabels[index]->setString(NumberToString(nums - 1));
+			BackPackManager::getInstance()->removeBackPackThing(pth->getname());
+		}
 	}
 	else
 	{
@@ -128,28 +131,38 @@ void BackPackLayer::initBackPackThing()
 		std::string filename = it.name;
 		filename += ".png";
 		Thing* ob = nullptr;
+		int offsetx = 0;
+		int offsety = 0;
 		if (it.type == MEDICATION)
 		{
 			ob = Medication::createWithImage(filename);
+		}
+		else if (it.type == MW_FRAGMENT)
+		{
+			ob = TalismanFragment::createWithName();
+			dynamic_cast<TalismanFragment*>(ob)->updateUI(it.name, true);
+			offsetx = -5;
+			offsety = -1;
 		}
 		else
 		{
 			ob = EquipMent::createWithImage(filename);
 			dynamic_cast<EquipMent*>(ob)->setgrade(it.grade);
 		}
-		float x = index%BASENUM;
+		float x = index % BASENUM;
 		float y = index / BASENUM;     
-		x = m_basePoint.x + x*(45 + 10) + 15;     
-		y = m_basePoint.y - y*(45 + 10) + 8;     
+		x = m_basePoint.x + x * (56) + 9;
+		y = m_basePoint.y - y * (56) + 7;
 		ob->setPosition(x, y);
-		ob->setTarget(this, menu_selector(BackPackLayer::onClickThingCallBack));
+		ob->addClickCallback(CC_CALLBACK_1(BackPackLayer::onClickThingCallBack, this));
+		//ob->setTarget(this, menu_selector(BackPackLayer::onClickThingCallBack));
 		auto numlabel = LabelTTF::create(NumberToString(it.nums), "楷体",20);
-		numlabel->setPosition(ob->getPositionX() - 18, ob->getPositionY() - 14);
+		numlabel->setPosition(-18, -14);
 		numlabel->setColor(ccc3(255, 242, 0));
+		ob->addChild(numlabel);
 		ob->setTag(index);      //使用tag存储索引
 		m_numlabels.push_back(numlabel);
-		m_menu->addChild(ob);
-		this->addChild(numlabel);
+		this->addChild(ob);
 		if (!index)
 			m_curSel = ob;
 		++index;

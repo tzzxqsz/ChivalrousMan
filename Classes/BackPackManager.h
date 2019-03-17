@@ -2,11 +2,13 @@
 #ifndef __BACKPACK_MANAGER_H__
 #define __BACKPACK_MANAGER_H__
 #include"PreProcess.h"
+#include"jsonCpp/value.h"
 #include<thread>
 #include<atomic>
 #include<mutex>
 #include<string>
 #include<list>
+#include<map>
 
 struct ThingInfo
 {
@@ -21,6 +23,8 @@ struct ThingInfo
 	}
 };
 
+class Slot;
+
 #define AddToBackPack BackPackManager::getInstance()->addBackPackThing
 #define RemoveFromBackPack BackPackManager::getInstance()->removeBackPackThing
 #define BackPackMap BackPackManager::getInstance()->getBackPackMap
@@ -29,10 +33,12 @@ struct ThingInfo
 *class BackPackManager
 *±³°ü¹ÜÀíÆ÷
 */
-class BackPackManager
+class BackPackManager:public cocos2d::CCObject
 {
 	GET_SINGLE_OBJECT(BackPackManager)
 public:
+	static std::map<std::string, int> TypeMaps;
+
 	static void release();
 
 	/*
@@ -70,6 +76,8 @@ public:
 	void readBackpackInfo();
 
 	void insertBackpackInfo(const ThingInfo& info);
+
+	void dropThing(Json::Value& msg);
 private:
 	void updateBackpack(ThingInfo info);
 
@@ -79,6 +87,8 @@ private:
 	~BackPackManager();
 	
 	std::list<ThingInfo> m_backpackList;
+	Slot* m_dropSlot;
+
 	SINGLE_ATTRIBUTES(BackPackManager);
 };
 #endif // !__BACKPACK_MANAGER_H__

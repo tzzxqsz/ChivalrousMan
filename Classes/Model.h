@@ -435,6 +435,7 @@ public:
 	GettingAndSetting_S(std::string, grade, grade);
 	GettingAndSetting_S(std::string, curexp, curexp);
 	GettingAndSetting_S(std::string, exp, exp);
+	GettingAndSetting_S(std::string, is_in_battle, Is_in_battle);
 public:
 	std::string& operator[](const int& index)
 	{
@@ -452,6 +453,8 @@ public:
 			return curexp;
 		case 6:
 			return exp;
+		case 7:
+			return is_in_battle;
 		default:
 			return playername;
 		}
@@ -473,6 +476,8 @@ public:
 			return "curexp";
 		case 6:
 			return "exp";
+		case 7:
+			return "is_in_battle";
 		default:
 			return "playername";
 		}
@@ -485,7 +490,7 @@ public:
 
 	int getAttributeNums()
 	{
-		return 6;
+		return 7;
 	}
 };
 

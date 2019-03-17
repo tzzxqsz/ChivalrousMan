@@ -43,11 +43,11 @@ do      \
 	auto ob = __NAME__::createWithImage(filename);     \
 	float x = index%BASENUM;     \
 	float y = index / BASENUM;     \
-	x = m_basePoint.x + x*(45 + 10) + 15;     \
-	y = m_basePoint.y - y*(45 + 10)+8;     \
+	x = m_basePoint.x + x*(56) + 9;     \
+	y = m_basePoint.y - y*(56)+7;     \
 	ob->setPosition(x, y);      \
-	ob->setTarget(this, menu_selector(DealLayer::onClickThingCallBack));     \
-    menu->addChild(ob);      \
+	ob->addClickCallback(CC_CALLBACK_1(DealLayer::onClickThingCallBack,this));     \
+    this->addChild(ob);      \
     ++index;         \
 } while (!fin.eof());  fin.close();
  

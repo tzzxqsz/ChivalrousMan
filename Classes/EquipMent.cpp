@@ -6,6 +6,7 @@
 #include"EquipmentManager.h"
 #include"TipLayer.h"
 #include"GameData.h"
+#include"ui/UIImageView.h"
 #include<fstream>
  
 EquipMent::EquipMent(const std::string& name):
@@ -39,9 +40,8 @@ bool  EquipMent::init(const std::string& filename)
 {
 	if (Thing::init())
 	{
-		Sprite* face = Sprite::create(filename);
-		this->setNormalImage(face);
-		this->setSelectedImage(face);
+		auto face = ui::ImageView::create(filename);
+		this->addChild(face);
 		m_baseupglod = m_addblood + m_addmana + m_addattack * 10 + m_adddefense * 10;
 		return true;
 	}

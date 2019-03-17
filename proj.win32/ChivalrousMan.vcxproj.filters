@@ -489,6 +489,9 @@
     <ClCompile Include="..\Classes\CommonProcessBar.cpp">
       <Filter>src\Logic\Common</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MaxTopLayer.cpp">
+      <Filter>src\Logic\Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -897,6 +900,9 @@
       <Filter>src\Logic\Fight</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CommonProcessBar.h">
+      <Filter>src\Logic\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MaxTopLayer.h">
       <Filter>src\Logic\Common</Filter>
     </ClInclude>
   </ItemGroup>

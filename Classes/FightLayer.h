@@ -3,13 +3,16 @@
 #define __FIGHT_LAYER_H__
 #include"PreProcess.h"
 #include"Lock.h"
+#include"jsonCpp/value.h"
 #include<string>
 #include<vector>
+#include<map>
 
 class Monster;
 class Medication;
 class Skill;
 class XGamePlayer;
+class Slot;
 
 /*
 *class FightLayer
@@ -102,6 +105,14 @@ public:
 	void setOtherPlayerDie();
 
 	void removeOtherPlayer(cocos2d::Node* node);
+
+	void dropThing(Json::Value& msg);
+
+	void onEnter();
+
+	void onExit();
+
+	std::string constructDropText();
 private:
 	/*
 	*calcActionOrder();
@@ -232,6 +243,8 @@ private:
 	bool m_otherNoAction = false;    //标记其它玩家是否需要行动
 	bool m_otherPlayerDie = false;
 	bool m_isDie = false;
+	std::map<std::string, int> m_drops; // 掉落物
+	Slot* m_slot;
 };
 
 #endif // ! __FIGHT_LAYER_HH_

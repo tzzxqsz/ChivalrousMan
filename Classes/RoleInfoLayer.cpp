@@ -181,28 +181,28 @@ void RoleInfoLayer::initRoleEquipment()
 	{
 		auto eq = EquipMent::createWithImage(it->name + ".png");
 		eq->setgrade(it->grade);
-		eq->setTarget(this, menu_selector(RoleInfoLayer::onEquipmentClickCallback));
+		eq->addClickCallback(CC_CALLBACK_1(RoleInfoLayer::onEquipmentClickCallback, this));
 		switch (it->type)
 		{
 		case EM_HEAD:
-			eq->setPosition(m_centerP.x, m_centerP.y + 55);
+			eq->setPosition(m_centerP.x, m_centerP.y + 56);
 			break;
 		case EM_WEPON:
-			eq->setPosition(m_centerP.x - 55, m_centerP.y);
+			eq->setPosition(m_centerP.x - 56, m_centerP.y);
 			break;
 		case EM_JEWELRY:
-			eq->setPosition(m_centerP.x + 55, m_centerP.y);
+			eq->setPosition(m_centerP.x + 56, m_centerP.y);
 			break;
 		case EM_CLOTH:
 			eq->setPosition(m_centerP);
 			break;
 		case EM_FOOT:
-			eq->setPosition(m_centerP.x, m_centerP.y - 55);
+			eq->setPosition(m_centerP.x, m_centerP.y - 56);
 			break;
 		default:
 			break;
 		}
-		m_menu->addChild(eq);
+		this->addChild(eq);
 	}
 }
 

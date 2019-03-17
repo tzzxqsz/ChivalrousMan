@@ -4,12 +4,11 @@
 #include"Commen.h"
 #include"Colors.h"
 #include"ui/UIButton.h"
-#include<fstream>
+#include"ConfigUtils.h"
 
 TalismanFragment::TalismanFragment(const std::string& name)
-	:Thing(std::string("talisman/") + name)
+	:Thing("")
 {
-	updateProperty(m_name);
 }
 
 TalismanFragment::~TalismanFragment()
@@ -23,24 +22,15 @@ void TalismanFragment::onClick(cocos2d::CCObject * sender)
 
 void TalismanFragment::updateProperty(const std::string& pathname)
 {
-	std::string realname = pathname;
-	realname += "_f.att";
-	std::ifstream fin;
-	fin.open(realname, std::ios::in);
-	if (fin.fail())
-	{
-		return;
-	}
-	std::string tmp;
-	fin >> m_talismanName;
-	ADD_PROPERTY(buyglod);
-	ADD_PROPERTY(sellglod);
-	fin.close();
+	auto attrs = ConfigUtils::getInstance()->getConfigAttr(pathname + "_f");
+	m_talismanName = attrs["textname"];
+	m_sellglod = std::stof(attrs["sellgold"]);
+	m_synthesis = std::stoi(attrs["synthesis"]);
 }
 
-TalismanFragment * TalismanFragment::createWithName(const std::string & name)
+TalismanFragment * TalismanFragment::createWithName()
 {
-	TalismanFragment* pRet = new TalismanFragment(name);
+	TalismanFragment* pRet = new TalismanFragment("");
 	if (pRet&&pRet->init())
 	{
 		pRet->autorelease();
@@ -58,12 +48,7 @@ bool TalismanFragment::init()
 {
 	if (Thing::init())
 	{
-		auto fragmentBg = ui::Button::create(getCommonPath("img_com_frame"), getCommonPath("img_com_frame"), getCommonPath("img_com_frame"));
-		this->addChild(fragmentBg);
-		fragmentBg->addClickEventListener(CC_CALLBACK_1(TalismanFragment::onClick, this));
-
 		m_fragment = ui::ImageView::create();
-		m_fragment->loadTexture(m_name + "_icon.png");
 		this->addChild(m_fragment);
 		m_fragment->setScale(0.55);
 
@@ -71,7 +56,7 @@ bool TalismanFragment::init()
 		ttfConfig.fontFilePath = getFontPath("font2"); //±ØÐëÅäÖÃ
 		ttfConfig.fontSize = 22;
 		auto text = Label::createWithTTF(ttfConfig, StringValue("FragmentText"));
-		text->setColor(PURPLE_COLOR);
+		text->setColor(FRAGMENT_COLOR);
 		this->addChild(text);
 		text->setPosition(-10, -10);
 		
@@ -80,7 +65,13 @@ bool TalismanFragment::init()
 	return false;
 }
 
-void TalismanFragment::updateUI(const std::string & name)
+void TalismanFragment::updateUI(const std::string & name, bool isSuffix)
 {
-	m_fragment->loadTexture(getTalismanPath(name + "_icon"));
+	std::string buff = name;
+	if (isSuffix)
+	{
+		buff.assign(name.begin(), name.begin() + name.size() - 2);
+	}
+	m_fragment->loadTexture(getTalismanPath(buff + "_icon"));
+	updateProperty(getTalismanPurePath(buff));
 }

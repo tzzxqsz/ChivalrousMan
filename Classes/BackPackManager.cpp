@@ -4,17 +4,27 @@
 #include"DBDao.h"
 #include"GameData.h"
 #include"GameDynamicData.h"
+#include"SignalConst.h"
+#include"SignalManager.h"
 #include<utility>
 #include<map>
 
 DEFINE_SINGLE_ATTRIBUTES(BackPackManager);
+std::map<std::string, int> BackPackManager::TypeMaps;
+
 
 BackPackManager::BackPackManager()
 {
+	TypeMaps["talisman"] = MW_FRAGMENT;
+	TypeMaps["equipment"] = EQUIPMENT;
+	TypeMaps["medication"] = MEDICATION;
+
+	m_dropSlot = SignalManager::getInstance()->add(EVENT_DROP_THING, handler(this, SEL_EVENTFUNC(BackPackManager::dropThing)));
 }
 
 BackPackManager::~BackPackManager()
 {
+	m_dropSlot->remove();
 }
 
 void BackPackManager::release()
@@ -111,6 +121,20 @@ void BackPackManager::insertBackpackInfo(const ThingInfo& info)
 	data.setthingtype(NTS(info.type));
 	dao.setModel(data);
 	dao.insertModel();
+}
+
+void BackPackManager::dropThing(Json::Value & msg)
+{
+	if (msg["name"].asString() == "empty")
+	{
+		return;
+	}
+	ThingInfo info;
+	info.name = msg["name"].asString();
+	info.type = TypeMaps[msg["type"].asString()];
+	info.nums = 1;
+	info.grade = 0;
+	addBackPackThing(info);
 }
 
 void BackPackManager::updateBackpack(ThingInfo info)

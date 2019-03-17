@@ -17,6 +17,10 @@
 #include"GameLogicLayer.h"
 #include"PlayerManager.h"
 #include"FightManager.h"
+#include"SignalConst.h"
+#include"SignalManager.h"
+#include"ConfigUtils.h"
+#include"Path.h"
 #include<random>
 #include<functional>
 #include<algorithm>
@@ -245,7 +249,7 @@ void FightLayer::onMedicationClickCallBack(cocos2d::CCObject* sender)
 					medication->setName(NumberToString(flag));       //Ê¹ÓÃName´æ´¢Ë÷Òý
 					Vec2 Pos = ccp(basePos.x - 50 * (flag + 1), basePos.y);
 					medication->setPosition(basePos);
-					medication->setTarget(this, menu_selector(FightLayer::onMedication));
+					//medication->setTarget(this, menu_selector(FightLayer::onMedication));
 					auto move1 = MoveTo::create(0.1*(flag + 1), Pos);
 					auto move2 = MoveTo::create(0.1*(flag + 1), Pos);
 					m_menu->addChild(medication);
@@ -307,8 +311,8 @@ void FightLayer::onSkillClickCallBack(cocos2d::CCObject * sender)
 				auto skill = Skill::createWithImage(realname);
 				skill->setgrade(var.second);
 				skill->setPosition(basePos);
-				skill->setTarget(this, menu_selector(FightLayer::onSkill));
-				m_menu->addChild(skill);
+				skill->addClickCallback(CC_CALLBACK_1(FightLayer::onSkill, this));
+				this->addChild(skill);
 				m_skills.push_back(skill);
 				Vec2 pos = ccp(basePos.x - 50 * (index + 1), basePos.y);
 				auto Move = MoveTo::create(0.1*(index + 1), pos);
@@ -513,6 +517,13 @@ void FightLayer::EndFight(std::string tip)
 void FightLayer::endFunc(float dt)
 {
 	this->cleanup();
+	std::string tips = constructDropText();
+	if (tips != "")
+	{
+		Json::Value msg;
+		msg["content"] = tips;
+		SignalManager::getInstance()->dispatch(EVENT_TIPS, msg);
+	}
 	GetPlayerData().addGlod(m_settlementGlod);
 	GetPlayerData().addExp(m_settlementExp);
 	std::string tip = StringValue("Glod") + "+" + NTS(this->m_settlementGlod) +
@@ -835,4 +846,37 @@ void FightLayer::removeOtherPlayer(cocos2d::Node* node)
 	m_otherPlayers.clear();
 	m_otherPlayerDie = true;
 	setOtherPalyerEnd();
+}
+
+void FightLayer::dropThing(Json::Value & msg)
+{
+	if (msg["name"].asString() == "empty")
+		return;
+	++m_drops[msg["name"].asString()];
+}
+
+void FightLayer::onEnter()
+{
+	Layer::onEnter();
+	m_slot = SignalManager::getInstance()->add(EVENT_DROP_THING, handler(this, SEL_EVENTFUNC(FightLayer::dropThing)));
+
+}
+
+void FightLayer::onExit()
+{
+	Layer::onExit();
+	m_slot->remove();
+}
+
+std::string FightLayer::constructDropText()
+{
+	if (m_drops.size() == 0)
+		return "";
+	std::string buff;
+	for (auto var : m_drops)
+	{
+		auto config = ConfigUtils::getInstance()->getConfigAttr(getTalismanPurePath(var.first));
+		buff = buff + config["textname"] + std::string(" x ") + NTS(var.second);
+	}
+	return buff;
 }

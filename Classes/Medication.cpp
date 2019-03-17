@@ -3,6 +3,7 @@
 #include"CameraPlayer.h"
 #include"TipLayer.h"
 #include"GameData.h"
+#include"ui/UIImageView.h"
 #include<fstream>
 
 Medication::Medication(const std::string& name):
@@ -36,9 +37,8 @@ bool Medication::init(const std::string& filename)
 {
 	if (Thing::init())
 	{
-		Sprite* face = Sprite::create(filename);
-		this->setNormalImage(face);
-		this->setSelectedImage(face);
+		auto face = ui::ImageView::create(filename);
+		this->addChild(face);
 		
 		return true;
 	}

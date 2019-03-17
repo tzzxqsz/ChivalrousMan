@@ -2,6 +2,7 @@
 #ifndef __THING_H__
 #define __THING_H__
 #include"PreProcess.h"
+#include"ui/UIButton.h"
 #include<vector>
 #include<string>
 
@@ -9,7 +10,7 @@
 *物品基类
 *class Thing
 */
-class Thing Inherit(cocos2d::MenuItemImage)
+class Thing Inherit(cocos2d::Node)
 {
 public:
 	Thing(const std::string &name);
@@ -29,6 +30,10 @@ public:
 	virtual float beUse(cocos2d::CCObject* obj, cocos2d::CCObject* who = nullptr, cocos2d::CCObject* towho = nullptr);
 
 	static std::string getfileName(const std::string& name);
+
+	virtual bool init() override;
+
+	void addClickCallback(cocos2d::ui::Widget::ccWidgetClickCallback callback);
 protected:
 	/*
 	*initDetails(const std::string& name)
@@ -37,6 +42,9 @@ protected:
 	*/
 	virtual void initDetails(const std::string& name);
 
+	void onClick(cocos2d::CCObject* sender);
+
+	cocos2d::ui::Widget::ccWidgetClickCallback m_callback;
 	//细节描述
 	std::vector<std::string> m_details;
 	 //购买价格

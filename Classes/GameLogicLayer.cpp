@@ -13,6 +13,8 @@
 #include"TeamManager.h"
 #include"PlayerManager.h"
 #include"TipLayer.h"
+#include"SignalConst.h"
+#include"SignalManager.h"
 #include<stack>
 #include<functional>
 
@@ -129,30 +131,6 @@ void GameLogicLayer::gotoDestMap(const std::string& dest)
 	Director::getInstance()->replaceScene(ex);
 }
 
-//void GameLogicLayer::checkCollisionNpc()
-//{
-//	GameScene* gs = (GameScene*)getParent();
-//	std::vector<Npc*>& npclist = gs->getObjectLayer()->getNpcList();
-//	for each (auto var in npclist)
-//	{
-//		float dis = ccpDistance(PlayerPos, ccp(var->getX(), var->getY()));
-//		if (dis < 120)
-//		{
-//			if (!var->getIsCollision())
-//			{
-//				var->collisionEvent();
-//			}
-//		}
-//		else
-//		{
-//			if (var->getIsCollision())
-//			{
-//				var->endCollisionEvent();
-//			}
-//		}
-//	}
-//}
-
 void GameLogicLayer::randomMeetMonster()
 {
 	if (PlayerTeamStatus() == P_STATUS_MEMBER)
@@ -200,7 +178,7 @@ std::string  GameLogicLayer::monsterName()
 	case LEVEL_FIVE:
 	{
 		std::string name[] = { "Octopus","Pterosaur","SkeletonMaster","TarrasqueMessenger" };
-		int index = rand()%4;
+		int index = rand() % 4;
 		return name[index];
 	}
 	default:
@@ -268,15 +246,12 @@ void GameLogicLayer::checkTip()
 	}
 }
 
-//void GameLogicLayer::checkAddObjectPlayer()
-//{
-//	if (PlayerManager::getInstance()->getAddList().size() > 0)
-//	{
-//		for (auto var : PlayerManager::getInstance()->getAddList())
-//		{
-//			GameScene* gs = (GameScene*)getParent();
-//			gs->getObjectLayer()->addPlayer(var);
-//		}
-//		PlayerManager::getInstance()->getAddList().clear();
-//	}
-//}
+void  GameLogicLayer::onEnter()
+{
+	Layer::onEnter();
+}
+
+void  GameLogicLayer::onExit()
+{
+	Layer::onExit();
+}

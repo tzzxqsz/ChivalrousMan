@@ -1,6 +1,7 @@
 #include"TipLayer.h"
 #include"GameData.h"
 #include"Commen.h"
+#include"ui/UIText.h"
 
 bool TipLayer::init(const std::string& tiptext)
 {
@@ -25,5 +26,5 @@ bool TipLayer::init(const std::string& tiptext)
 
 void TipLayer::killSelf(float dt)
 {
-	getParent()->removeChild(this);
+	this->removeFromParent();
 }

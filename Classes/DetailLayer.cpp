@@ -2,10 +2,10 @@
 #include"GameData.h"
 #include"Commen.h"
 
-DetailLayer* DetailLayer::createWithThing(Thing* th)
+DetailLayer* DetailLayer::createWithThing(const std::vector<std::string>& details,const int& costValue)
 {
 	DetailLayer* pRet = new DetailLayer;
-	if (pRet&&pRet->init(th))
+	if (pRet&&pRet->init(details, costValue))
 	{
 		pRet->autorelease();
 		return pRet;
@@ -18,7 +18,7 @@ DetailLayer* DetailLayer::createWithThing(Thing* th)
 	}
 }
 
-bool DetailLayer::init(Thing* th)
+bool DetailLayer::init(const std::vector<std::string>&details, const int& costValue)
 {
 	if (Layer::init())
 	{
@@ -26,17 +26,17 @@ bool DetailLayer::init(Thing* th)
 		auto back = Sprite::create(StringValue("DetailBg"));
 		back->setPosition(back->getContentSize().width*0.5+10, size.height*0.5);
 		this->addChild(back);
-		int n = th->getDetails().size();
+		int n = details.size();
 		Vec2 lastPos;
 		for (int i=0;i<n;++i)
 		{
-			auto detail = LabelTTF::create(th->getDetails()[i], "¿¬Ìå", 20);
+			auto detail = LabelTTF::create(details[i], "¿¬Ìå", 20);
 			detail->setPosition(back->getPositionX(), back->getPositionY() + back->getContentSize().height*0.5 - 60 - detail->getContentSize().height*i);
 			this->addChild(detail);
 			lastPos = detail->getPosition();
 		}
 
-		std::string cost = StringValue("Cost") + NumberToString(th->getbuyglod());
+		std::string cost = StringValue("Cost") + NumberToString(costValue);
 		auto sellmoney = LabelTTF::create(cost, "¿¬Ìå", 20);
 		sellmoney->setColor(ccc3(255, 242, 0));
 		sellmoney->setPosition(lastPos.x, lastPos.y - 50);

@@ -43,7 +43,7 @@ void TalismanAvatar::onEnter()
 void TalismanAvatar::updateAvatar(const std::string & name)
 {
 	m_avatar->loadTexture(getTalismanPath(name));
-	m_avatar->setScale(1.5);
+	m_avatar->setScale(1.3);
 }
 
 TalismanAvatar::TalismanAvatar()

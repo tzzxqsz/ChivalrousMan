@@ -3,6 +3,7 @@
 #include"GameScene.h"
 #include"DetailLayer.h"
 #include"GameDynamicData.h"
+#include"Path.h"
 #include<fstream>
 
 Thing::Thing(const std::string& name):
@@ -19,7 +20,7 @@ Thing::~Thing()
 void  Thing::showDetail(cocos2d::Node* node)
 {
 	node->removeChildByName("DetailLayer");
-	auto detailLayer = DetailLayer::createWithThing(this);
+	auto detailLayer = DetailLayer::createWithThing(this->getDetails(), getbuyglod());
 	detailLayer->setName("DetailLayer");
 	node->addChild(detailLayer);
 }
@@ -72,5 +73,28 @@ std::vector<std::string>& Thing::getDetails()
 
 float Thing::beUse(cocos2d::CCObject* obj,cocos2d::CCObject* who,cocos2d::CCObject* towho)
 {
-	return 0.0f;
+	return -1.0f;
+}
+
+bool Thing::init()
+{
+	if (Node::init())
+	{
+		auto bg = ui::Button::create(getCommonPath("img_com_frame"), getCommonPath("img_com_frame"));
+		this->addChild(bg);
+		bg->addClickEventListener(CC_CALLBACK_1(Thing::onClick, this));
+		return true;
+	}
+	return false;
+}
+
+void Thing::addClickCallback(cocos2d::ui::Widget::ccWidgetClickCallback callback)
+{
+	m_callback = callback;
+}
+
+void Thing::onClick(cocos2d::CCObject * sender)
+{
+	if (m_callback)
+		m_callback(this);
 }

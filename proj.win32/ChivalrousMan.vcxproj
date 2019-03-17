@@ -169,6 +169,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\FriendLayer.cpp" />
     <ClCompile Include="..\Classes\FriendManager.cpp" />
     <ClCompile Include="..\Classes\LogUtil.cpp" />
+    <ClCompile Include="..\Classes\MaxTopLayer.cpp" />
     <ClCompile Include="..\Classes\Path.cpp" />
     <ClCompile Include="..\Classes\PlayerManager.cpp" />
     <ClCompile Include="..\Classes\SignalManager.cpp" />
@@ -289,6 +290,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\FriendLayer.h" />
     <ClInclude Include="..\Classes\FriendManager.h" />
     <ClInclude Include="..\Classes\LogUtil.h" />
+    <ClInclude Include="..\Classes\MaxTopLayer.h" />
     <ClInclude Include="..\Classes\Path.h" />
     <ClInclude Include="..\Classes\SignalConst.h" />
     <ClInclude Include="..\Classes\SignalManager.h" />

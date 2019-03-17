@@ -22,6 +22,8 @@ public:
 	void setString(const std::string& text);
 
 	void setFontSize(const int& size);
+
+	void setButtonImage(const std::string& filename);
 private:
 	void onClickCallback(cocos2d::CCObject* sender);
 

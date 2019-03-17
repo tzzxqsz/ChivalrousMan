@@ -7,7 +7,8 @@ bool CommonButton::init(std::string res)
 {
 	if (Node::init())
 	{
-		m_btn = Button::create(res);
+		m_btn = Button::create();
+		m_btn->loadTextureNormal(res);
 		m_btn->setName("btn");
 		m_btn->setTitleFontName(getFontPath("font2"));
 		this->addChild(m_btn);
@@ -53,6 +54,11 @@ void CommonButton::setString(const std::string & text)
 void CommonButton::setFontSize(const int & size)
 {
 	m_btn->setTitleFontSize(size);
+}
+
+void CommonButton::setButtonImage(const std::string & filename)
+{
+	m_btn->loadTextureNormal(filename);
 }
 
 void CommonButton::onClickCallback(cocos2d::CCObject * sender)

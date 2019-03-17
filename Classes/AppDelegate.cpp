@@ -18,6 +18,7 @@
 #include"FightManager.h"
 #include"FriendManager.h"
 #include"RealSkill.h"
+#include"MaxTopLayer.h"
 
 #define _IS_EDITER_ 0
 
@@ -106,7 +107,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	LoadResource();
 	HelpToolSystem::getInstance();
 	auto scene = BeginScene::create();
-    director->runWithScene(scene);
+	director->runWithScene(scene);
+	MaxTopLayer::attach();
 
     return true;
 }

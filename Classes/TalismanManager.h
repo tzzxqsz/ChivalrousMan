@@ -12,6 +12,7 @@ struct TalismanInfo
 	float exp;
 	int isInBattle;
 	int sort;
+	bool have;
 
 	TalismanInfo()
 	{
@@ -20,6 +21,7 @@ struct TalismanInfo
 		exp = 0;
 		curExp = 0;
 		isInBattle = 0;
+		have = false;
 	}
 
 	bool operator<(const TalismanInfo& info)
@@ -35,13 +37,23 @@ struct TalismanInfo
 	}
 };
 
+class Playermw;
+
 class TalismanManager:public cocos2d::CCObject
 {
 	GET_SINGLE_OBJECT(TalismanManager)
 public:
-	inline const std::vector<TalismanInfo>& getTalismanList();
+	const std::vector<TalismanInfo>& getTalismanList();
+
+	TalismanInfo getTalismanInfo(const int& index);
+
+	int getTalismanSize();
+
+	void mergeTalismanInfo();
 private:
 	void initTalismanList();
+
+	void mergeInfo(Playermw& info);
 
 	TalismanManager();
 	~TalismanManager();

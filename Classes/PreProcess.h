@@ -115,9 +115,10 @@ enum class Player_Type
 #define LEVEL_FIVE 5
 
 //物品类型
-#define MEDICATION 1001
-#define EQUIPMENT 1002
-#define SKILL 1003 
+#define MEDICATION 1001  //药品
+#define EQUIPMENT 1002  //装备
+#define MW_FRAGMENT 1004   //宝物
+#define SKILL 1003    //技能
 
 //装备类型
 #define EM_HEAD 1005

@@ -6,6 +6,9 @@
 #include"TaskSystem.h"
 #include"Path.h"
 #include"ConfigUtils.h"
+#include"jsonCpp/value.h"
+#include"SignalConst.h"
+#include"SignalManager.h"
 #include<fstream>
 #include<functional>
 #include<random>
@@ -115,6 +118,7 @@ int Monster::beAttack(float attack)
 		std::function<void(float)> func = [this](float) {
 			dynamic_cast<FightLayer*>(this->getParent())->removeMonster(this);
 			TaskSystem::getInstance()->checkKillMonster(this->getname());
+			drop();
 		};
 		scheduleOnce(func, 0.3, "diefunc");
 		return -1;
@@ -134,8 +138,19 @@ void Monster::drop()
 	std::uniform_int_distribution<unsigned> uniform_distribution(1, 100);// 定义一个范围为0~100的无符号整型分布类型
 	std::default_random_engine random_engine;// 定义一个随机数引擎
 	unsigned percent = uniform_distribution(random_engine);
+	int count = 0;
+	int index = -1;
 	for (unsigned i = 0; i < size; ++i)
 	{
-
+		if (percent > count&&percent <= count + std::stoi(config["percent"][i]))
+		{
+			index = i;
+			break;
+		}
+		count += std::stoi(config["percent"][i]);
 	}
+	Json::Value msg;
+	msg["type"] = config["type"][0];
+	msg["name"] = index == -1 ? "empty" : config["name"][index];
+	SignalManager::getInstance()->dispatch(EVENT_DROP_THING, msg);
 }

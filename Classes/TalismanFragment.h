@@ -7,11 +7,11 @@
 class TalismanFragment :public Thing
 {
 public:
-	static TalismanFragment* createWithName(const std::string& name);
+	static TalismanFragment* createWithName();
 
 	virtual bool init() override;
 
-	void updateUI(const std::string& name);
+	void updateUI(const std::string& name, bool isSuffix = false);
 private:
 	TalismanFragment(const std::string& name);
 	virtual ~TalismanFragment();
@@ -22,6 +22,8 @@ private:
 	
 	cocos2d::ui::ImageView* m_fragment;
 	std::string m_talismanName;
+	
+	PROPERTY__REF(int, m_synthesis, Synthesis);
 };
 
 #endif // !__TalismanFragment_H__

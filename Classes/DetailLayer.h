@@ -8,9 +8,9 @@ class DetailLayer Inherit(cocos2d::Layer)
 {
 	CLASS_ESSENTAIL(DetailLayer)
 public:
-	static DetailLayer* createWithThing(Thing* th);
+	static DetailLayer* createWithThing(const std::vector<std::string>& details, const int& costValue = -1);
 
-	bool init(Thing* th);
+	bool init(const std::vector<std::string>& details, const int& costValue);
 private:
 	/*
 	*关闭按钮点击事件

@@ -7,7 +7,7 @@ std::map<std::string, std::string>  ConfigUtils::getConfigAttr(const std::string
 {
 	std::map<std::string, std::string> attrmaps;
 	std::string realname = pathname;
-	realname += ".att";
+	realname += ".attr";
 	std::ifstream fin;
 	fin.open(realname, std::ios::in);
 	if (fin.fail())
@@ -16,6 +16,7 @@ std::map<std::string, std::string>  ConfigUtils::getConfigAttr(const std::string
 	}
 	std::string tmp;
 	fin >> tmp;
+	attrmaps["textname"] = tmp;
 	std::string name;
 	std::string value;
 	while (!fin.eof())
@@ -59,12 +60,12 @@ std::vector<std::string> ConfigUtils::getConfigDec(const std::string & pathname)
 std::map<std::string, std::vector<std::string>> ConfigUtils::getConfigDrop(const std::string & pathname)
 {
 	std::map<std::string, std::vector<std::string>> ret;
-	std::string realname = pathname + "drop.dp";
+	std::string realname = pathname + ".dp";
 	std::ifstream fin;
 	fin.open(realname, std::ios::in);
 	if (fin.fail())
 	{
-		return;
+		return ret;
 	}
 	std::string type;
 	std::string name;
@@ -84,7 +85,7 @@ std::map<std::string, std::vector<std::string>> ConfigUtils::getConfigDrop(const
 	value.replace(value.find("}"), 1, "");
 	ret[percent] = split(value, std::string(","));
 	fin.close();
-	return;
+	return ret;
 }
 
 std::vector<std::string> ConfigUtils::split(std::string & str, std::string & part)
