@@ -12,7 +12,7 @@ struct TalismanInfo
 	float exp;
 	int isInBattle;
 	int sort;
-	bool have;
+	int have;
 
 	TalismanInfo()
 	{
@@ -21,18 +21,18 @@ struct TalismanInfo
 		exp = 0;
 		curExp = 0;
 		isInBattle = 0;
-		have = false;
+		have = 0;
 	}
 
 	bool operator<(const TalismanInfo& info)
 	{
-		if (isInBattle == info.isInBattle)
+		if (have == info.have)
 		{
 			return sort < info.sort;
 		}
 		else
 		{
-			return isInBattle < info.isInBattle;
+			return have > info.have;
 		}
 	}
 };
@@ -50,7 +50,15 @@ public:
 	int getTalismanSize();
 
 	void mergeTalismanInfo();
+
+	void synthesisTalisman(const int& index);
+
+	void upTalisman(const int& index, const int& value);
+
+	void battleTalisman(const int& index, const int& isBattle);
 private:
+	void upTalismanEx(const int& index, const int& value);
+
 	void initTalismanList();
 
 	void mergeInfo(Playermw& info);

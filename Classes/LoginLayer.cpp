@@ -7,6 +7,7 @@
 #include"Model.h"
 #include"GameDynamicData.h"
 #include"LoadingLayer.h"
+#include"CameraPlayer.h"
 #include<process.h>
 
 LoginLayer::LoginLayer()
@@ -165,6 +166,7 @@ void LoginLayer::LoginEvent()
 		this->removeChildByName("cushion");
 		return;
 	}
+	CameraPlayer::getPlayerInstance()->getPlayerData().setplayername(list[0].getplayerName());
 	SetStringData("playername", list[0].getplayerName());
 	SetStringData("rolenums", list[0].getnums());
 	m_goto = 2;

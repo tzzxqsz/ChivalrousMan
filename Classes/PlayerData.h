@@ -68,6 +68,9 @@ public:
 	PROPERTY__REF(float,m_maxExp,maxExp)
 	PROPERTY__REF(float,m_curblood,curblood)
 	PROPERTY__REF(float,m_curmana,curmana)
+	PROPERTY__REF(std::string,playername,playername)
+	PROPERTY__REF(std::string,rolename, rolename)
+	PROPERTY__REF(std::string,roleType, roleType)
 };
 
 #endif // !__PLAYER_DATA_H__

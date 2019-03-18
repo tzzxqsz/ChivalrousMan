@@ -11,6 +11,8 @@
 #include"TalismanFragment.h"
 #include"TalismanManager.h"
 #include"BackPackManager.h"
+#include"SignalConst.h"
+#include"SignalManager.h"
 
 bool TalismanLayer::init()
 {
@@ -55,12 +57,13 @@ bool TalismanLayer::init()
 		m_progress->visibleValue(true);
 		m_fragment = TalismanFragment::createWithName();
 		this->addChild(m_fragment);
+		m_fragment->addClickCallback(CC_CALLBACK_1(TalismanLayer::onFragmentClickCallback, this));
 		m_fragment->setPosition(centerPos.x - 185, centerPos.y - visibleSize.height*0.5 + 120);
 
 		m_synthesisBtn = CommonButton::createCommonButton(getButtonPath("CommonBtn"));
 		this->addChild(m_synthesisBtn);
 		m_synthesisBtn->setFontSize(32);
-		m_synthesisBtn->addClickCallback(CC_CALLBACK_1(TalismanLayer::onSynthesisClickCallback, this));
+		m_synthesisBtn->addClickCallback(CC_CALLBACK_1(TalismanLayer::onSynthesisOrUpClickCallback, this));
 		m_synthesisBtn->setPosition(centerPos.x, centerPos.y - visibleSize.height*0.5 + 80);
 
 		m_battleBtn = CommonButton::createCommonButton(getButtonPath("v_btn"));
@@ -95,9 +98,18 @@ void TalismanLayer::updateView()
 	m_synthesisBtn->setString(info.have ? StringValue("UpText") : StringValue("MergeText"));
 	m_tilsmanGrade->setString("+" + NTS(info.grade));
 	m_fragment->updateUI(info.name);
-	m_progress->setMax(float(m_fragment->getSynthesis()));
-	int nums = BackPackManager::getInstance()->ThingNums(info.name + "_f");
-	m_progress->setValue(nums);
+	if (!info.have)
+	{
+		m_progress->setMax(float(m_fragment->getSynthesis()));
+		int nums = BackPackManager::getInstance()->ThingNums(info.name + "_f");
+		m_progress->setValue(nums);
+	}
+	else
+	{
+		m_fragment->setVisibleNums(true);
+		m_progress->setMax(info.exp);
+		m_progress->setValue(info.curExp);
+	}
 }
 
 void TalismanLayer::updateDes(const std::string& name)
@@ -135,10 +147,65 @@ void TalismanLayer::onRightClickCallback(cocos2d::CCObject * sender)
 
 void TalismanLayer::onBattleClickCallback(cocos2d::CCObject * sender)
 {
+	auto info = TalismanManager::getInstance()->getTalismanInfo(m_curIndex);
+	if (!info.have)
+	{
+		Json::Value msg;
+		msg["content"] = StringValue("NoObtain");
+		SignalManager::getInstance()->dispatch(EVENT_TIPS, msg);
+		return;
+	}
+	if (info.isInBattle)
+	{
+		TalismanManager::getInstance()->battleTalisman(m_curIndex, 0);
+	}
+	else
+	{
+		TalismanManager::getInstance()->battleTalisman(m_curIndex, 1);
+	}
+	updateView();
 }
 
-void TalismanLayer::onSynthesisClickCallback(cocos2d::CCObject * sender)
+void TalismanLayer::onSynthesisOrUpClickCallback(cocos2d::CCObject * sender)
 {
+	auto info = TalismanManager::getInstance()->getTalismanInfo(m_curIndex);
+	Json::Value msg;
+	if (info.have)
+	{
+		int nums = BackPackManager::getInstance()->ThingNums(m_fragment->getId());
+		if (nums > 0)
+		{
+			TalismanManager::getInstance()->upTalisman(m_curIndex, nums * 30);
+			BackPackManager::getInstance()->removeBackPackThing(m_fragment->getId(), nums);
+			msg["content"] = StringValue("UpSuccess");
+		}
+		else
+		{
+			msg["content"] = StringValue("FragmentLess");
+			SignalManager::getInstance()->dispatch(EVENT_TIPS, msg);
+		}
+	}
+	else
+	{
+		int nums = BackPackManager::getInstance()->ThingNums(m_fragment->getId());
+		if (nums >= m_fragment->getSynthesis())
+		{
+			TalismanManager::getInstance()->synthesisTalisman(m_curIndex);
+			BackPackManager::getInstance()->removeBackPackThing(m_fragment->getId(), m_fragment->getSynthesis());
+			msg["content"] = StringValue("SynthesisSuccess");
+		}
+		else
+		{
+			msg["content"] = StringValue("FragmentLess");
+		}
+	}
+	SignalManager::getInstance()->dispatch(EVENT_TIPS, msg);
+	updateView();
+}
+
+void TalismanLayer::onFragmentClickCallback(cocos2d::CCObject * sender)
+{
+	m_fragment->showDetail(this);
 }
 
 void TalismanLayer::updateArrow()

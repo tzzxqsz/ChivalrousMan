@@ -29,7 +29,9 @@ public:
 
 	void onBattleClickCallback(cocos2d::CCObject* sender);
 
-	void onSynthesisClickCallback(cocos2d::CCObject* sender);
+	void onSynthesisOrUpClickCallback(cocos2d::CCObject* sender);
+
+	void onFragmentClickCallback(cocos2d::CCObject* sender);
 
 	void updateArrow();
 

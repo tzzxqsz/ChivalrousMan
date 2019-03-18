@@ -1,13 +1,13 @@
 send:
 {
 	"MessageId" : 101,
-	"attack" : 359.0,
-	"blood" : 1190.0,
+	"attack" : 524.0,
+	"blood" : 1820.0,
 	"curmap" : 4,
-	"defense" : 215.0,
+	"defense" : 380.0,
 	"fd" : -1,
-	"grade" : 14.0,
-	"mana" : 1290.0,
+	"grade" : 15.0,
+	"mana" : 1920.0,
 	"playername" : "aaa",
 	"playertype" : "Player2",
 	"rolename" : "sss"
@@ -17,34 +17,6 @@ send:
 	"MessageId" : 103,
 	"curmap" : 4,
 	"fd" : -1,
-	"x" : 1253.75,
-	"y" : 259.86300659179688
-}
-send:
-{
-	"MessageId" : 106,
-	"fd" : -1,
-	"x" : 1253.75,
-	"y" : 259.86300659179688
-}
-send:
-{
-	"MessageId" : 105,
-	"fd" : -1,
-	"less" : 0,
-	"x" : 1352.452880859375,
-	"y" : 562.6002197265625
-}
-send:
-{
-	"MessageId" : 105,
-	"fd" : -1,
-	"less" : 0,
-	"x" : 1187.723388671875,
-	"y" : 483.482421875
-}
-send:
-{
-	"MessageId" : 104,
-	"fd" : -1
+	"x" : 594.8590087890625,
+	"y" : 510.44500732421875
 }

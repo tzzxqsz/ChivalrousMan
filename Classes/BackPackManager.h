@@ -53,7 +53,7 @@ public:
 	*@param name：物品名称
 	*@return int：返回0表示没找到该物品，返回-1表示该物品减少一个，返回-2表示该物品减少到0
 	*/
-	int removeBackPackThing(const std::string& name);
+	int removeBackPackThing(const std::string& name, const int& count = 1);
 
 	/*
 	*getBackPackList()

@@ -171,8 +171,8 @@ void BackPackLayer::initBackPackThing()
 void BackPackLayer::onClickThingCallBack(cocos2d::CCObject* sender)
 {
 	Vec2 targetPos = dynamic_cast<Thing*>(sender)->getPosition();
-	targetPos.y -= 8;
-	targetPos.x -= 9;
+	targetPos.y -= 6;
+	targetPos.x -= 8;
 	auto move = MoveTo::create(0.2, targetPos);
 	m_selector->runAction(move);
 	dynamic_cast<Thing*>(sender)->showDetail(this);

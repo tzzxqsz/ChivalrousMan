@@ -14,6 +14,7 @@
 #include"TaskSystem.h"
 #include"SocketManager.h"
 #include"PlayerManager.h"
+#include"CameraPlayer.h"
 #include<functional>
 
 #define ARROW_H 0.28
@@ -119,6 +120,8 @@ void SelectLayer::initPlayerView()
 }
 void  SelectLayer::initPlayerData(PlayerInfo& info)
 {
+	GetPlayerData().setrolename(info.getroleName());
+	GetPlayerData().setroleType(info.getroleType());
 	GetPlayerData().setattack(std::stof(info.getattack()));
 	GetPlayerData().setblood(std::stof(info.getblood()));
 	GetPlayerData().setdefense(std::stof(info.getdefense()));

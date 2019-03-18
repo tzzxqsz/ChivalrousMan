@@ -329,6 +329,14 @@
   <string>合成</string>
   <key>UnloadBattleText</key>
   <string>下阵</string>
+  <key>FragmentLess</key>
+  <string>碎片不足</string>
+  <key>NoObtain</key>
+  <string>未获得</string>
+  <key>UpSuccess</key>
+  <string>升级成功</string>
+  <key>SynthesisSuccess</key>
+  <string>合成成功</string>
   <!-- 背景素材 -->
   <key>MsgItemBg</key>
   <string>MsgItemBg.png</string>

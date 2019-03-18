@@ -6,8 +6,11 @@
 #include"GameData.h"
 #include"jsonCpp\reader.h"
 #include"jsonCpp\value.h"
+#include"GameDynamicData.h"
 #include"DBDao.h"
 #include"Model.h"
+#include"CameraPlayer.h"
+#include<map>
 
 DEFINE_SINGLE_ATTRIBUTES(TalismanManager);
 
@@ -35,6 +38,66 @@ void TalismanManager::mergeTalismanInfo()
 		mergeInfo(var);
 	}
 	std::sort(m_talismanList.begin(), m_talismanList.end());
+}
+
+void TalismanManager::synthesisTalisman(const int & index)
+{
+	m_talismanList[index].have = true;
+	DBDao<Playermw> db;
+	Playermw mw;
+	mw.setplayername(GetPlayerData().getplayername());
+	mw.setrolename(GetPlayerData().getrolename());
+	mw.setcurexp("0");
+	mw.setexp(NTS(m_talismanList[index].grade * 200));
+	mw.setgrade("1");
+	mw.setIs_in_battle("0");
+	mw.setmw_name(m_talismanList[index].name);
+	db.setModel(mw);
+	db.insertModel();
+}
+
+void TalismanManager::upTalisman(const int & index, const int & value)
+{
+	upTalismanEx(index, value);
+	DBDao<Playermw> db;
+	Playermw mw;
+	mw.setcurexp(NTS(m_talismanList[index].curExp));
+	mw.setexp(NTS(m_talismanList[index].grade * 200));
+	mw.setgrade(NTS(m_talismanList[index].grade));
+	db.setModel(mw);
+	std::map<std::string, std::string> kvls;
+	kvls["playername"] = GetPlayerData().getplayername();
+	kvls["rolename"] = GetPlayerData().getrolename();
+	db.setModel(mw);
+	db.updateModel(kvls);
+}
+
+void TalismanManager::battleTalisman(const int & index, const int & isBattle)
+{
+	m_talismanList[index].isInBattle = isBattle;
+	DBDao<Playermw> db;
+	Playermw mw;
+	mw.setIs_in_battle(NTS(isBattle));
+	db.setModel(mw);
+	std::map<std::string, std::string> kvls;
+	kvls["playername"] = GetPlayerData().getplayername();
+	kvls["rolename"] = GetPlayerData().getrolename();
+	db.setModel(mw);
+	db.updateModel(kvls);
+}
+
+void TalismanManager::upTalismanEx(const int & index, const int & value)
+{
+	m_talismanList[index].curExp += value;
+	int curExp = m_talismanList[index].curExp;
+	int exp = m_talismanList[index].exp;
+	if (curExp > exp)
+	{
+		m_talismanList[index].grade++;
+		m_talismanList[index].curExp = 0;
+		m_talismanList[index].exp = m_talismanList[index].grade * (200 + m_talismanList[index].grade * 30);
+		upTalisman(index, curExp - exp);
+	}
 }
 
 void TalismanManager::initTalismanList()
@@ -72,7 +135,7 @@ void TalismanManager::mergeInfo(Playermw & info)
 			var.curExp = std::stof(info.getcurexp());
 			var.exp = std::stof(info.getexp());
 			var.isInBattle = std::stoi(info.getIs_in_battle());
-			var.have = true;
+			var.have = 1;
 		}
 	}
 }

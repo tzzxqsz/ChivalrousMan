@@ -53,13 +53,13 @@ void BackPackManager::addBackPackThing(ThingInfo thinginfo)
 	}
 }
 
-int BackPackManager::removeBackPackThing(const std::string& name)
+int BackPackManager::removeBackPackThing(const std::string& name, const int& count)
 {
 	for (auto it = m_backpackList.begin(); it != m_backpackList.end(); ++it)
 	{
 		if (it->name == name)
 		{
-			--(it->nums);
+			it->nums -= count;
 			if (it->nums == 0)
 			{
 				deleteBackpack(*it);
