@@ -198,7 +198,7 @@ void TalismanLayer::onSynthesisOrUpClickCallback(cocos2d::CCObject * sender)
 		{
 			msg["content"] = StringValue("FragmentLess");
 		}
-	}
+	} 
 	SignalManager::getInstance()->dispatch(EVENT_TIPS, msg);
 	updateView();
 }
