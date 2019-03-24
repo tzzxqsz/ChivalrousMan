@@ -55,5 +55,5 @@ void TalismanIcon::updateProperty()
 }
 
 TalismanIcon::~TalismanIcon()
-{
+{ 
 }
