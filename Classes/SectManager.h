@@ -7,6 +7,9 @@ class SectManager :public cocos2d::CCObject
 {
 	GET_SINGLE_OBJECT(SectManager);
 public:
+	static const int SECT_NUMS = 3;
+	static const int LIMIT_LEVEL = 30;
+
 	void joinSect(const std::string& name);
 
 

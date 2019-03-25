@@ -6,8 +6,6 @@
 class SectMainLayer :public CommonTouchLayer
 {
 public:
-	static const int LIMIT_LEVEL = 30;
-
 	CREATE_FUNC(SectMainLayer)
 
 	bool init() override;

@@ -39,7 +39,7 @@ bool SectMainLayer::init()
 		textdesc->setPosition(size.width*0.5, size.height - 70);
 
 		auto list = std::vector<std::string>{ "leishen","haishen","mingwang" };
-		for (int i = 0; i < 3; ++i) 
+		for (int i = 0; i < SectManager::SECT_NUMS; ++i)
 		{
 			auto rukou = SectRukou::create();
 			rukou->updateUI(list[i]);
@@ -60,7 +60,7 @@ void SectMainLayer::onBackClickCallback(cocos2d::CCObject * sender)
 void SectMainLayer::onClickJoinSectCallback(cocos2d::CCObject * sender)
 {
 	auto name = dynamic_cast<Node*>(sender)->getName();
-	if (GetPlayerData().getgrade() >= LIMIT_LEVEL)
+	if (GetPlayerData().getgrade() >= SectManager::LIMIT_LEVEL)
 	{
 		SectManager::getInstance()->joinSect(name);
 	}
