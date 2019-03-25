@@ -19,6 +19,7 @@
 #include"SocketManager.h"
 #include"TalkManager.h"
 #include"TalismanLayer.h"
+#include"SectMainLayer.h"
 #include"CommonButton.h"
 #include"Path.h"
 #include<string>
@@ -107,6 +108,11 @@ void GameUILayer::generateUserInterface()
 	this->addChild(talismanBtn);
 	talismanBtn->setPosition(friendBtn->getPositionX() - friendBtn->getContentSize().width - 15, friendBtn->getPositionY()+10);
 	talismanBtn->addClickCallback(CC_CALLBACK_1(GameUILayer::onTalismanClickCallback, this));
+
+	auto sectBtn = CommonButton::createCommonButton(getButtonPath("Sect_btn"));
+	this->addChild(sectBtn);
+	sectBtn->setPosition(talismanBtn->getPositionX() - talismanBtn->getContentSize().width - 10, talismanBtn->getPositionY()-10);
+	sectBtn->addClickCallback(CC_CALLBACK_1(GameUILayer::onSectClickCallback, this));
 
 	m_teamSpot = Sprite::create(StringValue("MsgTip"));
 	m_teamSpot->setPosition(teamIcon->getPositionX() + 20, teamIcon->getPositionY() + 10);
@@ -330,6 +336,11 @@ void GameUILayer::onFriendClickCallback(cocos2d::CCObject* sender)
 void GameUILayer::onTalismanClickCallback(cocos2d::CCObject * sender)
 {
 	SHOW_LAYER(TalismanLayer);
+}
+
+void GameUILayer::onSectClickCallback(cocos2d::CCObject * sender)
+{
+	SHOW_LAYER(SectMainLayer);
 }
 
 void GameUILayer::setRedSpot(bool b)

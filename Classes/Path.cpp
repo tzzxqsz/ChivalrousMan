@@ -39,3 +39,18 @@ std::string getCommonPath(std::string id)
 {
 	return std::string("Common/") + id + PNG;
 }
+
+std::string getSectUIPath(std::string id)
+{
+	return std::string("Sect/UI/") + id + PNG;
+}
+
+std::string getSectPath(std::string id)
+{
+	return std::string("Sect/") + id;
+}
+
+std::string getPlayerWaitPath(std::string type, std::string id)
+{
+	return type + std::string("/wait/") + id;
+}

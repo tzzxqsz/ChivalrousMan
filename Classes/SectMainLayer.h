@@ -1,10 +1,21 @@
 #pragma once
 #ifndef __SECT_MAIN_LAYER_H__
 #define __SECT_MAIN_LAYER_H__
-#include"PreProcess.h"
+#include"CommonTouchLayer.h"
 
-class SectMainLayer :public cocos2d::Layer
+class SectMainLayer :public CommonTouchLayer
 {
+public:
+	static const int LIMIT_LEVEL = 30;
+
+	CREATE_FUNC(SectMainLayer)
+
+	bool init() override;
+
+	void onBackClickCallback(cocos2d::CCObject* sender);
+
+	void onClickJoinSectCallback(cocos2d::CCObject* sender);
+private:
 	
 };
 

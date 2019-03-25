@@ -82,6 +82,7 @@ public:
 	GettingAndSetting_S(std::string, destx, destx);
 	GettingAndSetting_S(std::string, desty, desty);
 	GettingAndSetting_S(std::string, level, level);
+	GettingAndSetting_S(std::string, sect, sect);
 public:
 	std::string& operator[](const int& index)
 	{
@@ -117,6 +118,8 @@ public:
 			return desty;
 		case 15:
 			return level;
+		case 16:
+			return sect;
 		default:
 			return playerName;
 			break;
@@ -157,6 +160,8 @@ public:
 			return "desty";
 		case 15:
 			return "level";
+		case 16:
+			return "sect";
 		default:
 			break;
 		}
@@ -170,7 +175,7 @@ public:
 	
 	int getAttributeNums()
 	{
-		return 15;
+		return 16;
 	}
 };
 

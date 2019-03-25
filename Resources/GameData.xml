@@ -337,6 +337,14 @@
   <string>升级成功</string>
   <key>SynthesisSuccess</key>
   <string>合成成功</string>
+  <key>SectText</key>
+  <string>门派</string>
+  <key>JoinText</key>
+  <string>加入</string>
+  <key>GradeLack</key>
+  <string>等级不足</string>
+  <key>SectDesc</key>
+  <string>等级大于30级可加入门派</string>
   <!-- 背景素材 -->
   <key>MsgItemBg</key>
   <string>MsgItemBg.png</string>
@@ -415,53 +423,53 @@
   <string>Npc/NpcVallige.png</string>
   <!-- 玩家角色素材  -->
   <key>Player1WaitLeft</key>
-  <string>player2/wait/player2_2.png</string>
+  <string>player1/wait/player2_2.png</string>
   <key>Player1WaitRight</key>
-  <string>player2/wait/player2_3.png</string>
+  <string>player1/wait/player2_3.png</string>
   <key>Player1WaitUp</key>
-  <string>player2/wait/player2_4.png</string>
+  <string>player1/wait/player2_4.png</string>
   <key>Player1WaitDown</key>
-  <string>player2/wait/player2_1.png</string>
+  <string>player1/wait/player2_1.png</string>
   <key>Player1RunLeft</key>
-  <string>player2/run/player2_2.png</string>
+  <string>player1/run/player2_2.png</string>
   <key>Player1RunRight</key>
-  <string>player2/run/player2_3.png</string>
+  <string>player1/run/player2_3.png</string>
   <key>Player1RunUp</key>
-  <string>player2/run/player2_4.png</string>
+  <string>player1/run/player2_4.png</string>
   <key>Player1RunDown</key>
-  <string>player2/run/player2_1.png</string>
+  <string>player1/run/player2_1.png</string>
   <key>Player2WaitLeft</key>
-  <string>player3/wait/player3_2.png</string>
+  <string>player2/wait/player3_2.png</string>
   <key>Player2WaitRight</key>
-  <string>player3/wait/player3_3.png</string>
+  <string>player2/wait/player3_3.png</string>
   <key>Player2WaitUp</key>
-  <string>player3/wait/player3_4.png</string>
+  <string>player2/wait/player3_4.png</string>
   <key>Player2WaitDown</key>
-  <string>player3/wait/player3_1.png</string>
+  <string>player2/wait/player3_1.png</string>
   <key>Player2RunLeft</key>
-  <string>player3/run/player3_2.png</string>
+  <string>player2/run/player3_2.png</string>
   <key>Player2RunRight</key>
-  <string>player3/run/player3_3.png</string>
+  <string>player2/run/player3_3.png</string>
   <key>Player2RunUp</key>
-  <string>player3/run/player3_4.png</string>
+  <string>player2/run/player3_4.png</string>
   <key>Player2RunDown</key>
-  <string>player3/run/player3_1.png</string>
+  <string>player2/run/player3_1.png</string>
   <key>Player3WaitLeft</key>
-  <string>player4/wait/player4_2.png</string>
+  <string>player3/wait/player4_2.png</string>
   <key>Player3WaitRight</key>
-  <string>player4/wait/player4_3.png</string>
+  <string>player3/wait/player4_3.png</string>
   <key>Player3WaitUp</key>
-  <string>player4/wait/player4_4.png</string>
+  <string>player3/wait/player4_4.png</string>
   <key>Player3WaitDown</key>
-  <string>player4/wait/player4_1.png</string>
+  <string>player3/wait/player4_1.png</string>
   <key>Player3RunLeft</key>
-  <string>player4/run/player4_2.png</string>
+  <string>player3/run/player4_2.png</string>
   <key>Player3RunRight</key>
-  <string>player4/run/player4_3.png</string>
+  <string>player3/run/player4_3.png</string>
   <key>Player3RunUp</key>
-  <string>player4/run/player4_4.png</string>
+  <string>player3/run/player4_4.png</string>
   <key>Player3RunDown</key>
-  <string>player4/run/player4_1.png</string>
+  <string>player3/run/player4_1.png</string>
   <key>WaitLeft</key>
   <string>player1/wait/1_</string>
   <key>WaitDown</key>
@@ -479,11 +487,11 @@
   <key>RunUp</key>
   <string>player1/run/7_</string>
   <key>Player1Head</key>
-  <string>player2/player2_head.png</string>
+  <string>player1/player2_head.png</string>
   <key>Player2Head</key>
-  <string>player3/player3_head.png</string>
+  <string>player2/player3_head.png</string>
   <key>Player3Head</key>
-  <string>player4/player4_head.png</string>
+  <string>player3/player4_head.png</string>
   <key>Player1</key>
   <string>player1.png</string>
   <!-- 文件素材 -->

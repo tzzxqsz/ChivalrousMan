@@ -103,6 +103,8 @@ private:
 	void onFriendClickCallback(cocos2d::CCObject* sender);
 
 	void onTalismanClickCallback(cocos2d::CCObject* sender);
+
+	void onSectClickCallback(cocos2d::CCObject* sender);
 	
 	/*
 	*onTeamIconClick(cocos2d::CCObject* sender);
