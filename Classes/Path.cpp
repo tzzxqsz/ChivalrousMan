@@ -50,6 +50,11 @@ std::string getSectPath(std::string id)
 	return std::string("Sect/") + id;
 }
 
+std::string getSectBgPath(std::string id)
+{
+	return std::string("Sect/UI/") + id + std::string("_bg") + JPG;
+}
+
 std::string getPlayerWaitPath(std::string type, std::string id)
 {
 	return type + std::string("/wait/") + id;

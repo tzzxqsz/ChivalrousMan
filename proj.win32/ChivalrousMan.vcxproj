@@ -172,6 +172,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\MaxTopLayer.cpp" />
     <ClCompile Include="..\Classes\Path.cpp" />
     <ClCompile Include="..\Classes\PlayerManager.cpp" />
+    <ClCompile Include="..\Classes\SectActiveLayer.cpp" />
     <ClCompile Include="..\Classes\SectMainLayer.cpp" />
     <ClCompile Include="..\Classes\SectManager.cpp" />
     <ClCompile Include="..\Classes\SectRukou.cpp" />
@@ -242,6 +243,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\TeamMsgItem.cpp" />
     <ClCompile Include="..\Classes\Thing.cpp" />
     <ClCompile Include="..\Classes\TipLayer.cpp" />
+    <ClCompile Include="..\Classes\UIHelper.cpp" />
     <ClCompile Include="..\Classes\WorldMapLayer.cpp" />
     <ClCompile Include="..\Classes\NewGameLayer.cpp" />
     <ClCompile Include="..\Classes\NewGameScene.cpp" />
@@ -296,6 +298,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\MaxTopLayer.h" />
     <ClInclude Include="..\Classes\Path.h" />
     <ClInclude Include="..\Classes\RandomGenerator.h" />
+    <ClInclude Include="..\Classes\SectActiveLayer.h" />
     <ClInclude Include="..\Classes\SectMainLayer.h" />
     <ClInclude Include="..\Classes\SectManager.h" />
     <ClInclude Include="..\Classes\SectRukou.h" />
@@ -382,6 +385,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\TeamMsgItem.h" />
     <ClInclude Include="..\Classes\Thing.h" />
     <ClInclude Include="..\Classes\TipLayer.h" />
+    <ClInclude Include="..\Classes\UIHelper.h" />
     <ClInclude Include="..\Classes\WorldMapLayer.h" />
     <ClInclude Include="..\Classes\Model.h" />
     <ClInclude Include="..\Classes\NewGameLayer.h" />

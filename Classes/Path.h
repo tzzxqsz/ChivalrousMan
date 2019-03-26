@@ -27,6 +27,8 @@ std::string getSectUIPath(std::string id);
 
 std::string getSectPath(std::string id);
 
+std::string getSectBgPath(std::string id);
+
 std::string getPlayerWaitPath(std::string type, std::string id);
 
 

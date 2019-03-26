@@ -345,6 +345,10 @@
   <string>等级不足</string>
   <key>SectDesc</key>
   <string>等级大于30级可加入门派</string>
+  <key>XiulianText</key>
+  <string>修炼</string>
+  <key>GongfaText</key>
+  <string>功法</string>
   <!-- 背景素材 -->
   <key>MsgItemBg</key>
   <string>MsgItemBg.png</string>
