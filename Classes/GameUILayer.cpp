@@ -21,6 +21,7 @@
 #include"TalismanLayer.h"
 #include"SectMainLayer.h"
 #include"CommonButton.h"
+#include"SectActiveLayer.h"
 #include"Path.h"
 #include<string>
 
@@ -340,7 +341,15 @@ void GameUILayer::onTalismanClickCallback(cocos2d::CCObject * sender)
 
 void GameUILayer::onSectClickCallback(cocos2d::CCObject * sender)
 {
-	SHOW_LAYER(SectMainLayer);
+	if (GetPlayerData().getSect() == "")
+	{
+		SHOW_LAYER(SectMainLayer);
+	}
+	else
+	{
+		SHOW_LAYER(SectActiveLayer);
+		layer->updateUI(GetPlayerData().getSect());
+	}
 }
 
 void GameUILayer::setRedSpot(bool b)

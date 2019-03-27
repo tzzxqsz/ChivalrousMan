@@ -6,7 +6,7 @@ send:
 	"curmap" : 4,
 	"defense" : 380.0,
 	"fd" : -1,
-	"grade" : 15.0,
+	"grade" : 31.0,
 	"mana" : 1920.0,
 	"playername" : "aaa",
 	"playertype" : "Player2",
@@ -14,14 +14,23 @@ send:
 }
 send:
 {
-	"MessageId" : 103,
-	"curmap" : 4,
+	"MessageId" : 106,
 	"fd" : -1,
-	"x" : 604.0999755859375,
-	"y" : 709.67498779296875
+	"x" : 944.6829833984375,
+	"y" : 978.52099609375
 }
 send:
 {
-	"MessageId" : 104,
-	"fd" : -1
+	"MessageId" : 103,
+	"curmap" : 4,
+	"fd" : -1,
+	"x" : 944.6829833984375,
+	"y" : 978.52099609375
+}
+send:
+{
+	"MessageId" : 106,
+	"fd" : -1,
+	"x" : 944.6829833984375,
+	"y" : 978.52099609375
 }

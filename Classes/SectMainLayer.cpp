@@ -9,6 +9,7 @@
 #include"SignalManager.h"
 #include"CameraPlayer.h"
 #include"SectManager.h"
+#include"SectActiveLayer.h"
 
 bool SectMainLayer::init()
 {
@@ -62,7 +63,15 @@ void SectMainLayer::onClickJoinSectCallback(cocos2d::CCObject * sender)
 	auto name = dynamic_cast<Node*>(sender)->getName();
 	if (GetPlayerData().getgrade() >= SectManager::LIMIT_LEVEL)
 	{
-		SectManager::getInstance()->joinSect(name);
+		bool bret=SectManager::getInstance()->joinSect(name);
+		if (bret)
+		{
+			Json::Value msg;
+			msg["content"] = StringValue("JoinSectSuccess");
+			SignalManager::getInstance()->dispatch(EVENT_TIPS, msg);
+			GetPlayerData().setSect(name);
+			gotoSectActiveLayer();
+		}
 	}
 	else
 	{
@@ -70,4 +79,13 @@ void SectMainLayer::onClickJoinSectCallback(cocos2d::CCObject * sender)
 		msg["content"] = StringValue("GradeLack");
 		SignalManager::getInstance()->dispatch(EVENT_TIPS, msg);
 	}
+}
+
+void SectMainLayer::gotoSectActiveLayer()
+{
+	auto layer = SectActiveLayer::create();
+	layer->updateUI(GetPlayerData().getSect());
+	layer->setZOrder(this->getZOrder());
+	getParent()->addChild(layer);
+	removeFromParent();
 }

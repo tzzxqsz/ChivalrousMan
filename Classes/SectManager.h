@@ -10,7 +10,7 @@ public:
 	static const int SECT_NUMS = 3;
 	static const int LIMIT_LEVEL = 30;
 
-	void joinSect(const std::string& name);
+	bool joinSect(const std::string& name);
 
 
 private:

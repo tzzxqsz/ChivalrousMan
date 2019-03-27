@@ -14,7 +14,8 @@ public:
 
 	void onClickJoinSectCallback(cocos2d::CCObject* sender);
 private:
-	
+	void gotoSectActiveLayer();
+
 };
 
 #endif // !__SECT_MAIN_LAYER_H__

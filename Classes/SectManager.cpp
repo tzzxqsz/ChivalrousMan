@@ -5,14 +5,14 @@
 
 DEFINE_SINGLE_ATTRIBUTES(SectManager);
 
-void SectManager::joinSect(const std::string & name)
+bool SectManager::joinSect(const std::string & name)
 {
 	DBDao<PlayerInfo> db;
 	PlayerInfo pi;
 	pi.setsect(name);
-	db.setModel(pi);
+	db.setModel(pi); 
 	std::map<std::string, std::string> kvls;
 	kvls["playername"] = GetPlayerData().getplayername();
 	kvls["rolename"] = GetPlayerData().getrolename();
-	db.updateModel(kvls);
+	return db.updateModel(kvls);
  }
