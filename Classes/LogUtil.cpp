@@ -25,6 +25,7 @@ int LogUtil::log(const std::string& content)
 	m_log.flush();
 	return 0;
 }
+
 int LogUtil::log(const Json::Value & value)
 {
 	m_log << value.toStyledString();
