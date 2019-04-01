@@ -14,13 +14,6 @@ send:
 }
 send:
 {
-	"MessageId" : 106,
-	"fd" : -1,
-	"x" : 944.6829833984375,
-	"y" : 978.52099609375
-}
-send:
-{
 	"MessageId" : 103,
 	"curmap" : 4,
 	"fd" : -1,
@@ -30,6 +23,54 @@ send:
 send:
 {
 	"MessageId" : 106,
+	"fd" : -1,
+	"x" : 944.6829833984375,
+	"y" : 978.52099609375
+}
+send:
+{
+	"MessageId" : 106,
+	"fd" : -1,
+	"x" : 944.6829833984375,
+	"y" : 978.52099609375
+}
+send:
+{
+	"MessageId" : 106,
+	"fd" : -1,
+	"x" : 944.6829833984375,
+	"y" : 978.52099609375
+}
+send:
+{
+	"MessageId" : 104,
+	"fd" : -1
+}
+send:
+{
+	"MessageId" : 101,
+	"attack" : 524.0,
+	"blood" : 1820.0,
+	"curmap" : 4,
+	"defense" : 380.0,
+	"fd" : -1,
+	"grade" : 31.0,
+	"mana" : 1920.0,
+	"playername" : "aaa",
+	"playertype" : "Player2",
+	"rolename" : "sss"
+}
+send:
+{
+	"MessageId" : 106,
+	"fd" : -1,
+	"x" : 944.6829833984375,
+	"y" : 978.52099609375
+}
+send:
+{
+	"MessageId" : 103,
+	"curmap" : 4,
 	"fd" : -1,
 	"x" : 944.6829833984375,
 	"y" : 978.52099609375
