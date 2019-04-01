@@ -4,6 +4,8 @@
 #include"GameData.h"
 #include"UIHelper.h"
 #include"ConfigUtils.h"
+#include"GongfaLayer.h"
+#include"XiulianLayer.h"
 
 bool SectActiveLayer::init()
 {
@@ -19,12 +21,14 @@ bool SectActiveLayer::init()
 		m_xiulian->setTitleFontSize(32);
 		m_xiulian->setTitleFontName(getFontPath("font2"));
 		m_xiulian->setTitleText(StringValue("XiulianText"));
+		m_xiulian->addClickEventListener(CC_CALLBACK_1(SectActiveLayer::onXiulianClickCallback, this));
 		this->addChild(m_xiulian);
 
 		m_gongfa = cocos2d::ui::Button::create(getCommonPath("Effect"));
 		m_gongfa->setTitleFontSize(32);
 		m_gongfa->setTitleFontName(getFontPath("font2"));
 		m_gongfa->setTitleText(StringValue("GongfaText"));
+		m_gongfa->addClickEventListener(CC_CALLBACK_1(SectActiveLayer::onGongfaClickCallback, this));
 		this->addChild(m_gongfa);
 
 		m_nodeDec = cocos2d::Node::create();
@@ -59,10 +63,14 @@ void SectActiveLayer::onBackClickCallback(cocos2d::CCObject * sender)
 
 void SectActiveLayer::onXiulianClickCallback(cocos2d::CCObject * sender)
 {
+	auto layer = XiulianLayer::create();
+	this->addChild(layer);
 }
 
 void SectActiveLayer::onGongfaClickCallback(cocos2d::CCObject * sender)
 {
+	auto layer = GongFaLayer::create();
+	this->addChild(layer);
 }
 
 void SectActiveLayer::updateDec()

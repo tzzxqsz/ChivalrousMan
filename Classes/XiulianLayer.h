@@ -5,6 +5,16 @@
 
 class XiulianLayer :public CommonTouchLayer
 {
+public:
+	CREATE_FUNC(XiulianLayer)
+
+	bool init() override;
+
+	void onEnter() override;
+
+	void onExit() override;
+private:
+
 	
 };
 

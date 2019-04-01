@@ -510,6 +510,12 @@
     <ClCompile Include="..\Classes\UIHelper.cpp">
       <Filter>src\Tool\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GongfaLayer.cpp">
+      <Filter>src\Logic\Sect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\XiulianLayer.cpp">
+      <Filter>src\Logic\Sect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -943,6 +949,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\UIHelper.h">
       <Filter>src\Tool\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GongfaLayer.h">
+      <Filter>src\Logic\Sect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\XiulianLayer.h">
+      <Filter>src\Logic\Sect</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

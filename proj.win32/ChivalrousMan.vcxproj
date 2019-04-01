@@ -92,7 +92,7 @@
       <AdditionalDependencies>%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
@@ -171,6 +171,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\FriendItem.cpp" />
     <ClCompile Include="..\Classes\FriendLayer.cpp" />
     <ClCompile Include="..\Classes\FriendManager.cpp" />
+    <ClCompile Include="..\Classes\GongfaLayer.cpp" />
     <ClCompile Include="..\Classes\LogUtil.cpp" />
     <ClCompile Include="..\Classes\MaxTopLayer.cpp" />
     <ClCompile Include="..\Classes\Path.cpp" />
@@ -274,6 +275,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\TaskSystem.cpp" />
     <ClCompile Include="..\Classes\TCPClient.cpp" />
     <ClCompile Include="..\Classes\XBArrow.cpp" />
+    <ClCompile Include="..\Classes\XiulianLayer.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -297,6 +299,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\FriendItem.h" />
     <ClInclude Include="..\Classes\FriendLayer.h" />
     <ClInclude Include="..\Classes\FriendManager.h" />
+    <ClInclude Include="..\Classes\GongfaLayer.h" />
     <ClInclude Include="..\Classes\LogUtil.h" />
     <ClInclude Include="..\Classes\MaxTopLayer.h" />
     <ClInclude Include="..\Classes\Path.h" />
@@ -419,6 +422,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\TaskSystem.h" />
     <ClInclude Include="..\Classes\TCPClient.h" />
     <ClInclude Include="..\Classes\XBArrow.h" />
+    <ClInclude Include="..\Classes\XiulianLayer.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="SectManager.h" />
   </ItemGroup>
