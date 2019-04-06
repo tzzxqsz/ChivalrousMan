@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 47.93.235.6_3306
+ Source Server         : game
  Source Server Type    : MySQL
  Source Server Version : 50720
  Source Host           : 47.93.235.6:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50720
  File Encoding         : 65001
 
- Date: 16/03/2019 15:21:51
+ Date: 06/04/2019 14:47:16
 */
 
 SET NAMES utf8mb4;
@@ -106,12 +106,15 @@ CREATE TABLE `playerinfo`  (
   `mana` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
   `attack` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
   `defense` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
-  `speed` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `speed` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
   `exp` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
-  `maxexp` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `maxexp` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
   `destx` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
   `desty` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
-  `level` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `level` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
+  `sect` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
+  `gongfa` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
+  `jingjie` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
   PRIMARY KEY (`rolename`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 

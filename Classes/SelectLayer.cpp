@@ -132,6 +132,8 @@ void  SelectLayer::initPlayerData(PlayerInfo& info)
 	GetPlayerData().setmaxExp(std::stof(info.getmaxExp()));
 	GetPlayerData().setspeed(std::stof(info.getspeed()));
 	GetPlayerData().setSect(info.getsect());
+	GetPlayerData().setGongFa(info.getgongFa());
+	GetPlayerData().setJingJie(info.getjingJie());
 	CameraPlayer::getPlayerInstance()->setTeamStatus(P_STATUS_NORMAL);
 	BackPackManager::getInstance()->readBackpackInfo();
 	EquipmentManager::getInstance()->readEquipmentInfo();

@@ -64,3 +64,13 @@ std::string getSectSkillPath(std::string sect, std::string id)
 {
 	return std::string("Sect/Skill/") + sect + "/" + id + PNG;
 }
+
+std::string getSectSkillAttrPath(std::string sect, std::string id)
+{
+	return std::string("Sect/Skill/") + sect + "/" + id;
+}
+
+std::string getThingPath(std::string id)
+{
+	return std::string("Thing/") + id + PNG;
+}

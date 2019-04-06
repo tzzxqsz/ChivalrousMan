@@ -83,6 +83,8 @@ public:
 	GettingAndSetting_S(std::string, desty, desty);
 	GettingAndSetting_S(std::string, level, level);
 	GettingAndSetting_S(std::string, sect, sect);
+	GettingAndSetting_S(std::string, gongfa, gongFa);
+	GettingAndSetting_S(std::string, jingjie, jingJie);
 public:
 	std::string& operator[](const int& index)
 	{
@@ -120,6 +122,10 @@ public:
 			return level;
 		case 16:
 			return sect;
+		case 17:
+			return gongfa;
+		case 18:
+			return jingjie;
 		default:
 			return playerName;
 			break;
@@ -162,6 +168,10 @@ public:
 			return "level";
 		case 16:
 			return "sect";
+		case 17:
+			return "gongfa";
+		case 18:
+			return "jingjie";
 		default:
 			break;
 		}
@@ -175,7 +185,7 @@ public:
 	
 	int getAttributeNums()
 	{
-		return 16;
+		return 18;
 	}
 };
 

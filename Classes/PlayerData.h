@@ -72,6 +72,8 @@ public:
 	PROPERTY__REF(std::string,rolename, rolename)
 	PROPERTY__REF(std::string,roleType, roleType)
 	PROPERTY__REF(std::string, sect, Sect)
+	PROPERTY__REF(std::string, gongfa, GongFa)
+	PROPERTY__REF(std::string, jingjie, JingJie)
 };
 
 #endif // !__PLAYER_DATA_H__

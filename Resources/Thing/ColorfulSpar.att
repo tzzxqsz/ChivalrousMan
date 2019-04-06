@@ -1,3 +1,5 @@
-//五彩晶石
-buyglod 0
-sellglod 100
+//修炼石
+buyglod 600
+sellglod 300
+addblood 300
+addmana 0

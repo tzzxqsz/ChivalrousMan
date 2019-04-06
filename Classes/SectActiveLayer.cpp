@@ -1,6 +1,5 @@
 #include"SectActiveLayer.h"
 #include"Commen.h"
-#include"Path.h"
 #include"GameData.h"
 #include"UIHelper.h"
 #include"ConfigUtils.h"
@@ -8,7 +7,9 @@
 #include"CommonButton.h"
 #include"CameraPlayer.h"
 #include"LogUtil.h"
-
+#include"Medication.h"
+#include"Path.h"
+#include"BackPackManager.h"
 
 bool SectActiveLayer::init()
 {
@@ -126,7 +127,7 @@ void SectActiveLayer::initXiulian()
 	m_nodeXiulian->addChild(label1);
 	label1->setAnchorPoint(Vec2(0, 0.5));
 	label1->setPosition(-90, size.height*0.5 - 30);
-	m_gongfaName = UIHelper::getInstance()->createTTFConfigLabel(StringValue("GongfaText"), 30);
+	m_gongfaName = UIHelper::getInstance()->createTTFConfigLabel(GetPlayerData().getGongFa(), 30);
 	m_nodeXiulian->addChild(m_gongfaName);
 	m_gongfaName->setAnchorPoint(Vec2(0, 0.5));
 	m_gongfaName->setPosition(-10, size.height*0.5 - 30);
@@ -135,11 +136,22 @@ void SectActiveLayer::initXiulian()
 	m_nodeXiulian->addChild(label2);
 	label2->setAnchorPoint(Vec2(0, 0.5));
 	label2->setPosition(-90, size.height*0.5 - 70);
-	m_jingjie = UIHelper::getInstance()->createTTFConfigLabel(StringValue("JingJieText"), 30);
+	m_jingjie = UIHelper::getInstance()->createTTFConfigLabel(GetPlayerData().getJingJie(), 30);
 	m_nodeXiulian->addChild(m_jingjie);
 	m_jingjie->setAnchorPoint(Vec2(0, 0.5));
 	m_jingjie->setPosition(-10, size.height*0.5 - 70);
 
+	auto stone = Medication::createWithImage(getThingPath("ColorfulSpar"));
+	stone->addClickCallback([this,stone](cocos2d::Ref*) {
+		stone->showDetail(this);
+	});
+	int nums = BackPackManager::getInstance()->ThingNums("Thing/ColorfulSpar");
+	m_stoneNums = LabelTTF::create(NTS(nums), "¿¬Ìå", 20);
+	m_stoneNums->setPosition(-18, -14);
+	m_stoneNums->setColor(ccc3(255, 242, 0));
+	stone->addChild(m_stoneNums);
+	m_nodeXiulian->addChild(stone);
+	stone->setPosition(-size.width*0.5 + 60, -size.height*0.5 + 80);
 	m_curProcess = CommonProcessBar::create(getCommonPath("BarBG"), getCommonPath("bar"));
 	m_nodeXiulian->addChild(m_curProcess);
 	m_curProcess->setValue(30);
@@ -198,11 +210,12 @@ void SectActiveLayer::initGongfa()
 		layout->addChild(icon);
 		icon->setPosition(Vec2(70, 50));
 
-		auto name = UIHelper::getInstance()->createTTFConfigLabel(StringValue("GName"), 24);
+		auto dec = ConfigUtils::getInstance()->getConfigAttr(getSectSkillAttrPath(GetPlayerData().getSect(), "skill" + NTS(i)));
+		auto name = UIHelper::getInstance()->createTTFConfigLabel(StringValue("GName")+dec["textname"], 24);
 		layout->addChild(name);
 		name->setPosition(110, 70);
 		name->setAnchorPoint(Vec2(0, 0.5));
-		auto gold = UIHelper::getInstance()->createTTFConfigLabel(StringValue("GGold"), 24);
+		auto gold = UIHelper::getInstance()->createTTFConfigLabel(StringValue("GGold") + dec["gold"], 24);
 		layout->addChild(gold);
 		gold->setPosition(110, 35);
 		gold->setAnchorPoint(Vec2(0, 0.5));

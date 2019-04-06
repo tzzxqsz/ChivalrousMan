@@ -44,6 +44,7 @@ private:
 	cocos2d::Node* m_nodeXiulian;
 	cocos2d::Label* m_gongfaName;
 	cocos2d::Label* m_jingjie;
+	cocos2d::LabelTTF* m_stoneNums;
 	cocos2d::ui::ImageView* m_avatar;
 	CommonProcessBar* m_curProcess;
 	CommonButton* m_btnOnce;  //ÐÞÁ¶

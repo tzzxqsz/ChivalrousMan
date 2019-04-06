@@ -358,9 +358,9 @@
   <key>LearnText</key>
   <string>学习</string>
   <key>GName</key>
-  <string>名字：</string>
+  <string>名字:</string>
   <key>GGold</key>
-  <string>价格：</string>
+  <string>价格:</string>
   <!-- 背景素材 -->
   <key>MsgItemBg</key>
   <string>MsgItemBg.png</string>

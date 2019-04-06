@@ -66,6 +66,8 @@ void Medication::initProperty(const std::string& name)
 
 float Medication::beUse(cocos2d::CCObject* obj,cocos2d::CCObject* who,cocos2d::CCObject* towho)
 {
+	if (m_name == "Thing/ColorfulSpar")
+		return -1.0f;
 	GetPlayerData().addcurBlood(m_addblood);
 	GetPlayerData().addcurMana(m_addmana);
 	std::string tiptext = "";
