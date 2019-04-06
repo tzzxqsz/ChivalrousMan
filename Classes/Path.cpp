@@ -57,5 +57,10 @@ std::string getSectBgPath(std::string id)
 
 std::string getPlayerWaitPath(std::string type, std::string id)
 {
-	return type + std::string("/wait/") + id;
+	return type + std::string("/wait_1/") + id + PNG;
+}
+
+std::string getSectSkillPath(std::string sect, std::string id)
+{
+	return std::string("Sect/Skill/") + sect + "/" + id + PNG;
 }

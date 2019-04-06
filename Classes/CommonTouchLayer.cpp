@@ -55,3 +55,8 @@ void CommonTouchLayer::onEnter()
 	LayerColor::onEnter();
 }
 
+void  CommonTouchLayer::onClicked()
+{
+
+}
+

@@ -142,8 +142,8 @@
     <Filter Include="src\Thing\Talisman">
       <UniqueIdentifier>{b8d9f4cb-72f2-4ddd-969d-15823ed6ef47}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\Sect">
-      <UniqueIdentifier>{32f94100-0f7a-4831-b9f8-710f0783638f}</UniqueIdentifier>
+    <Filter Include="src\Sect">
+      <UniqueIdentifier>{27c8cafc-1fb0-4e71-870d-48106bb1f6d4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -495,27 +495,22 @@
     <ClCompile Include="..\Classes\MaxTopLayer.cpp">
       <Filter>src\Logic\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\SectMainLayer.cpp">
-      <Filter>src\Logic\Sect</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SectRukou.cpp">
-      <Filter>src\Logic\Sect</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SectManager.cpp">
-      <Filter>src\Logic\Sect</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SectActiveLayer.cpp">
-      <Filter>src\Logic\Sect</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\UIHelper.cpp">
       <Filter>src\Tool\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GongfaLayer.cpp">
-      <Filter>src\Logic\Sect</Filter>
+    <ClCompile Include="..\Classes\SectActiveLayer.cpp">
+      <Filter>src\Sect</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\XiulianLayer.cpp">
-      <Filter>src\Logic\Sect</Filter>
+    <ClCompile Include="..\Classes\SectMainLayer.cpp">
+      <Filter>src\Sect</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SectManager.cpp">
+      <Filter>src\Sect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SectRukou.cpp">
+      <Filter>src\Sect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SectXiulianLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -932,29 +927,23 @@
     <ClInclude Include="..\Classes\RandomGenerator.h">
       <Filter>src\Tool\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\SectMainLayer.h">
-      <Filter>src\Logic\Sect</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SectRukou.h">
-      <Filter>src\Logic\Sect</Filter>
-    </ClInclude>
     <ClInclude Include="SectManager.h">
       <Filter>src\Logic\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SectManager.h">
-      <Filter>src\Logic\Sect</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SectActiveLayer.h">
-      <Filter>src\Logic\Sect</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\UIHelper.h">
       <Filter>src\Tool\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GongfaLayer.h">
-      <Filter>src\Logic\Sect</Filter>
+    <ClInclude Include="..\Classes\SectActiveLayer.h">
+      <Filter>src\Sect</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\XiulianLayer.h">
-      <Filter>src\Logic\Sect</Filter>
+    <ClInclude Include="..\Classes\SectMainLayer.h">
+      <Filter>src\Sect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SectManager.h">
+      <Filter>src\Sect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SectRukou.h">
+      <Filter>src\Sect</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

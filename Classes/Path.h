@@ -31,6 +31,7 @@ std::string getSectBgPath(std::string id);
 
 std::string getPlayerWaitPath(std::string type, std::string id);
 
+std::string getSectSkillPath(std::string sect, std::string id);
 
 #endif // !1
 

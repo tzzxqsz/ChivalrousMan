@@ -347,10 +347,20 @@
   <string>等级大于30级可加入门派</string>
   <key>XiulianText</key>
   <string>修炼</string>
+  <key>OnceXiulianText</key>
+  <string>一键修炼</string>
   <key>GongfaText</key>
   <string>功法</string>
+  <key>JingJieText</key>
+  <string>境界</string>
   <key>JoinSectSuccess</key>
   <string>加入门派成功</string>
+  <key>LearnText</key>
+  <string>学习</string>
+  <key>GName</key>
+  <string>名字：</string>
+  <key>GGold</key>
+  <string>价格：</string>
   <!-- 背景素材 -->
   <key>MsgItemBg</key>
   <string>MsgItemBg.png</string>
