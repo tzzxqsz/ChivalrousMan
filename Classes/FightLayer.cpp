@@ -20,7 +20,9 @@
 #include"SignalConst.h"
 #include"SignalManager.h"
 #include"ConfigUtils.h"
+#include"TalismanManager.h"
 #include"Path.h"
+#include"TalismanIcon.h"
 #include<random>
 #include<functional>
 #include<algorithm>
@@ -176,6 +178,11 @@ bool FightLayer::init(const std::string& name,int nums)
 		m_timeLabel->setColor(Color3B::YELLOW);
 		m_timeLabel->setPosition(size.width*0.5, size.height - 30);
 		this->addChild(m_timeLabel);
+
+		m_nodeTalisman = cocos2d::Node::create();
+		m_nodeTalisman->setPosition(size.width*0.5 - 90, 50);
+		this->addChild(m_nodeTalisman);
+		initTalisman();
 		return true;
 	}
 	return false;
@@ -247,12 +254,12 @@ void FightLayer::onMedicationClickCallBack(cocos2d::CCObject* sender)
 					medication->setPosition(basePos);
 					medication->setTag(it->nums);    //使用tag存储药品数量
 					medication->setName(NumberToString(flag));       //使用Name存储索引
+					medication->addClickCallback(CC_CALLBACK_1(FightLayer::onMedication, this));
 					Vec2 Pos = ccp(basePos.x - 50 * (flag + 1), basePos.y);
 					medication->setPosition(basePos);
-					//medication->setTarget(this, menu_selector(FightLayer::onMedication));
 					auto move1 = MoveTo::create(0.1*(flag + 1), Pos);
 					auto move2 = MoveTo::create(0.1*(flag + 1), Pos);
-					m_menu->addChild(medication);
+					this->addChild(medication);
 					medication->runAction(move1);
 					LabelTTF* numlabel = LabelTTF::create(NumberToString(it->nums), "楷体", 20);
 					numlabel->setPosition(medication->getPosition());
@@ -879,4 +886,29 @@ std::string FightLayer::constructDropText()
 		buff = buff + config["textname"] + std::string(" x ") + NTS(var.second);
 	}
 	return buff;
+}
+
+void FightLayer::initTalisman()
+{
+	auto infos = TalismanManager::getInstance()->getBattleTalisman();
+	int size = infos.size();
+	for (int i = 0; i < size; ++i)
+	{
+		auto icon = TalismanIcon::createWithName();
+		icon->updateUI(infos[i].name);
+		m_nodeTalisman->addChild(icon);
+		icon->setPosition(i * 60, 0);
+		icon->addClickCallback([this,icon](cocos2d::Ref*) {
+	/*		if (this->m_isDie)
+				return;
+			if (this->m_isPlayer&&this->m_otherplayerEnd)
+			{
+				icon->beUse(this);
+			}
+			else
+			{
+				NoAction();
+			}*/
+		});
+	}
 }

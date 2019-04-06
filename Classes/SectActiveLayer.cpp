@@ -10,6 +10,7 @@
 #include"Medication.h"
 #include"Path.h"
 #include"BackPackManager.h"
+#include"SectManager.h"
 
 bool SectActiveLayer::init()
 {
@@ -71,13 +72,52 @@ void SectActiveLayer::onBackClickCallback(cocos2d::CCObject * sender)
 void SectActiveLayer::onXiulianClickCallback(cocos2d::CCObject * sender)
 {
 	if (!m_nodeGongfa->isVisible())
+	{
 		m_nodeXiulian->setVisible(true);
+		updateXiulianView();
+	}
 }
 
 void SectActiveLayer::onGongfaClickCallback(cocos2d::CCObject * sender)
 {
 	if (!m_nodeXiulian->isVisible())
 		m_nodeGongfa->setVisible(true);
+}
+
+void SectActiveLayer::onOnceXiulianClickCallback(cocos2d::CCObject * sender)
+{
+	int nums = BackPackManager::getInstance()->ThingNums("Thing/ColorfulSpar");
+	if (nums > 0)
+	{
+		auto attrs = ConfigUtils::getInstance()->getConfigAttr(getThingPurePath("ColorfulSpar"));
+		if (SectManager::getInstance()->addXiulianExp(std::stof(attrs["addblood"])*nums))
+		{
+			BackPackManager::getInstance()->removeBackPackThing("Thing/ColorfulSpar", nums);
+		}
+		updateXiulianView();
+	}
+	else
+	{
+		UIHelper::getInstance()->showTip(StringValue("XiulianLack"));
+	}
+}
+
+void SectActiveLayer::onOneXiulianClickCallback(cocos2d::CCObject * sender)
+{
+	int nums = BackPackManager::getInstance()->ThingNums("Thing/ColorfulSpar");
+	if (nums > 0)
+	{
+		auto attrs = ConfigUtils::getInstance()->getConfigAttr(getThingPurePath("ColorfulSpar"));
+		if (SectManager::getInstance()->addXiulianExp(std::stof(attrs["addblood"])))
+		{
+			BackPackManager::getInstance()->removeBackPackThing("Thing/ColorfulSpar", 1);
+		}
+		updateXiulianView();
+	}
+	else
+	{
+		UIHelper::getInstance()->showTip(StringValue("XiulianLack"));
+	}
 }
 
 void SectActiveLayer::onClicked()
@@ -127,7 +167,8 @@ void SectActiveLayer::initXiulian()
 	m_nodeXiulian->addChild(label1);
 	label1->setAnchorPoint(Vec2(0, 0.5));
 	label1->setPosition(-90, size.height*0.5 - 30);
-	m_gongfaName = UIHelper::getInstance()->createTTFConfigLabel(GetPlayerData().getGongFa(), 30);
+	auto gongfaName = SectManager::getInstance()->getGongfaName();
+	m_gongfaName = UIHelper::getInstance()->createTTFConfigLabel(gongfaName == "" ? StringValue("NoLearnGongfa") : gongfaName, 30);
 	m_nodeXiulian->addChild(m_gongfaName);
 	m_gongfaName->setAnchorPoint(Vec2(0, 0.5));
 	m_gongfaName->setPosition(-10, size.height*0.5 - 30);
@@ -136,7 +177,7 @@ void SectActiveLayer::initXiulian()
 	m_nodeXiulian->addChild(label2);
 	label2->setAnchorPoint(Vec2(0, 0.5));
 	label2->setPosition(-90, size.height*0.5 - 70);
-	m_jingjie = UIHelper::getInstance()->createTTFConfigLabel(GetPlayerData().getJingJie(), 30);
+	m_jingjie = UIHelper::getInstance()->createTTFConfigLabel(SectManager::getInstance()->getJingjieName(), 30);
 	m_nodeXiulian->addChild(m_jingjie);
 	m_jingjie->setAnchorPoint(Vec2(0, 0.5));
 	m_jingjie->setPosition(-10, size.height*0.5 - 70);
@@ -160,10 +201,12 @@ void SectActiveLayer::initXiulian()
 	m_btnOnce = CommonButton::createCommonButton(getButtonPath("CommonBtn"));
 	m_btnOnce->setFontSize(26);
 	m_btnOnce->setString(StringValue("XiulianText"));
+	m_btnOnce->addClickCallback(CC_CALLBACK_1(SectActiveLayer::onOneXiulianClickCallback, this));
 	m_nodeXiulian->addChild(m_btnOnce);
 	m_btnOnce->setPosition(-70, -size.height*0.5 + 40);
 	m_btnOneKey= CommonButton::createCommonButton(getButtonPath("CommonBtn"));
 	m_btnOneKey->setFontSize(26);
+	m_btnOneKey->addClickCallback(CC_CALLBACK_1(SectActiveLayer::onOnceXiulianClickCallback, this));
 	m_nodeXiulian->addChild(m_btnOneKey);
 	m_btnOneKey->setString(StringValue("OnceXiulianText"));
 	m_btnOneKey->setPosition(70, -size.height*0.5 + 40);
@@ -223,8 +266,23 @@ void SectActiveLayer::initGongfa()
 		auto btn = CommonButton::createCommonButton(getButtonPath("CommonBtn"));
 		btn->setString(StringValue("LearnText"));
 		btn->setFontSize(30);
+		btn->addClickCallback([i](cocos2d::Ref*) {
+			SectManager::getInstance()->learnGongfa("skill" + NTS(i));
+		});
 		layout->addChild(btn);
 		btn->setPosition(Vec2(360, 50));
 		m_listview->pushBackCustomItem(layout);
 	}
+}
+
+void SectActiveLayer::updateXiulianView()
+{
+	auto gongfaName = SectManager::getInstance()->getGongfaName();
+	m_gongfaName->setString(gongfaName == "" ? StringValue("NoLearnGongfa") : gongfaName);
+	int nums = BackPackManager::getInstance()->ThingNums("Thing/ColorfulSpar");
+	m_stoneNums->setString(NTS(nums));
+	auto data = SectManager::getInstance()->getJingjie();
+	m_curProcess->setMax(data.exp);
+	m_curProcess->setValue(data.curexp);
+	m_jingjie->setString(SectManager::getInstance()->getJingjieName());
 }

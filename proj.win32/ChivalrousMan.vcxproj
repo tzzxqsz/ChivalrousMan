@@ -420,7 +420,6 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\TCPClient.h" />
     <ClInclude Include="..\Classes\XBArrow.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="SectManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

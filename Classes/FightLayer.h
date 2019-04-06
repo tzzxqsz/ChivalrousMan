@@ -113,6 +113,8 @@ public:
 	void onExit();
 
 	std::string constructDropText();
+
+	void initTalisman();
 private:
 	/*
 	*calcActionOrder();
@@ -215,6 +217,7 @@ private:
 	*/
 	void initPlayer();
 	
+	cocos2d::Node* m_nodeTalisman;
 	std::string m_time = "10";   //行动时间
 	std::vector<Monster*> m_monsterList; 	//保存怪物信息链表
 	cocos2d::Sprite* m_player; 	//绘制玩家形象

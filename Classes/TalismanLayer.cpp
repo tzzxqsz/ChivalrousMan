@@ -13,6 +13,7 @@
 #include"BackPackManager.h"
 #include"SignalConst.h"
 #include"SignalManager.h"
+#include"UIHelper.h"
 
 bool TalismanLayer::init()
 {
@@ -93,6 +94,7 @@ void TalismanLayer::updateView()
 {
 	auto info = TalismanManager::getInstance()->getTalismanInfo(m_curIndex);
 	m_avatar->updateAvatar(info.name);
+	m_tilsmanGrade->setString(NTS(info.grade));
 	updateDes(info.name);
 	updateButton(info.isInBattle == 1);
 	m_synthesisBtn->setString(info.have ? StringValue("UpText") : StringValue("MergeText"));
@@ -158,10 +160,20 @@ void TalismanLayer::onBattleClickCallback(cocos2d::CCObject * sender)
 	if (info.isInBattle)
 	{
 		TalismanManager::getInstance()->battleTalisman(m_curIndex, 0);
+		UIHelper::getInstance()->showTip(StringValue("UnloadBattleSucess"));
 	}
 	else
 	{
-		TalismanManager::getInstance()->battleTalisman(m_curIndex, 1);
+		int count = TalismanManager::getInstance()->battleNums();
+		if (count < 3)
+		{
+			TalismanManager::getInstance()->battleTalisman(m_curIndex, 1);
+			UIHelper::getInstance()->showTip(StringValue("BattleSucess"));
+		}
+		else
+		{
+			UIHelper::getInstance()->showTip(StringValue("LimitMaxTalisman"));
+		}
 	}
 	updateView();
 }

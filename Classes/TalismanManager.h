@@ -28,7 +28,10 @@ struct TalismanInfo
 	{
 		if (have == info.have)
 		{
-			return sort < info.sort;
+			if (isInBattle == info.isInBattle)
+				return sort < info.sort;
+			else
+				return isInBattle > info.isInBattle;
 		}
 		else
 		{
@@ -56,6 +59,10 @@ public:
 	void upTalisman(const int& index, const int& value);
 
 	void battleTalisman(const int& index, const int& isBattle);
+
+	int battleNums();
+
+	std::vector<TalismanInfo> getBattleTalisman();
 private:
 	void upTalismanEx(const int& index, const int& value);
 

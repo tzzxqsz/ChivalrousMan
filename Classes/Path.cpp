@@ -74,3 +74,8 @@ std::string getThingPath(std::string id)
 {
 	return std::string("Thing/") + id + PNG;
 }
+
+std::string getThingPurePath(std::string id)
+{
+	return std::string("Thing/") + id;
+}

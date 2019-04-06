@@ -54,6 +54,9 @@ void TalismanManager::synthesisTalisman(const int & index)
 	mw.setmw_name(m_talismanList[index].name);
 	db.setModel(mw);
 	db.insertModel();
+	m_talismanList[index].isInBattle = 0;
+	m_talismanList[index].curExp = 0;
+	m_talismanList[index].exp = m_talismanList[index].grade * 200;
 }
 
 void TalismanManager::upTalisman(const int & index, const int & value)
@@ -82,8 +85,33 @@ void TalismanManager::battleTalisman(const int & index, const int & isBattle)
 	std::map<std::string, std::string> kvls;
 	kvls["playername"] = GetPlayerData().getplayername();
 	kvls["rolename"] = GetPlayerData().getrolename();
+	kvls["mw_name"] = m_talismanList[index].name;
 	db.setModel(mw);
 	db.updateModel(kvls);
+}
+
+int TalismanManager::battleNums()
+{
+	int count = 0;
+	for (auto& var : m_talismanList)
+	{
+		if (var.isInBattle)
+		{
+			++count;
+		}
+	}
+	return count;
+}
+
+std::vector<TalismanInfo> TalismanManager::getBattleTalisman()
+{
+	std::vector<TalismanInfo> infos;
+	for (const auto & var : m_talismanList)
+	{
+		if (var.isInBattle)
+			infos.push_back(var);
+	}
+	return infos;
 }
 
 void TalismanManager::upTalismanEx(const int & index, const int & value)
@@ -143,6 +171,7 @@ void TalismanManager::mergeInfo(Playermw & info)
 TalismanManager::TalismanManager()
 {
 	initTalismanList();
+	mergeTalismanInfo();
 }
 
 TalismanManager::~TalismanManager()

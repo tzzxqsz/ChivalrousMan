@@ -509,4 +509,114 @@ public:
 	}
 };
 
+class PlayerGongfa
+{
+public:
+	PlayerGongfa() {}
+	~PlayerGongfa() {}
+	GettingAndSetting_S(std::string, playername, playername);
+	GettingAndSetting_S(std::string, rolename, rolename);
+	GettingAndSetting_S(std::string, name, name);
+public:
+	std::string& operator[](const int& index)
+	{
+		switch (index)
+		{
+		case 1:
+			return playername;
+		case 2:
+			return rolename;
+		case 3:
+			return name;
+		default:
+			return playername;
+		}
+	}
+
+	std::string getAttributeName(const int& index)
+	{
+		switch (index)
+		{
+		case 1:
+			return "playername";
+		case 2:
+			return "rolename";
+		case 3:
+			return "name";
+		default:
+			return "playername";
+		}
+	}
+
+	std::string getName()
+	{
+		return "playergongfa";
+	}
+
+	int getAttributeNums()
+	{
+		return 3;
+	}
+};
+
+class PlayerJingjie
+{
+public:
+	PlayerJingjie() {}
+	~PlayerJingjie() {}
+	GettingAndSetting_S(std::string, playername, playername);
+	GettingAndSetting_S(std::string, rolename, rolename);
+	GettingAndSetting_S(std::string, jingjie, jingjie);
+	GettingAndSetting_S(std::string, curexp, curexp);
+	GettingAndSetting_S(std::string, exp, exp);
+public:
+	std::string& operator[](const int& index)
+	{
+		switch (index)
+		{
+		case 1:
+			return playername;
+		case 2:
+			return rolename;
+		case 3:
+			return jingjie;
+		case 4:
+			return curexp;
+		case 5:
+			return exp;
+		default:
+			return playername;
+		}
+	}
+
+	std::string getAttributeName(const int& index)
+	{
+		switch (index)
+		{
+		case 1:
+			return "playername";
+		case 2:
+			return "rolename";
+		case 3:
+			return "jingjie";
+		case 4:
+			return "curexp";
+		case 5:
+			return "exp";
+		default:
+			return "playername";
+		}
+	}
+
+	std::string getName()
+	{
+		return "playerjingjie";
+	}
+
+	int getAttributeNums()
+	{
+		return 5;
+	}
+};
+
 #endif // !__MODEL_H__

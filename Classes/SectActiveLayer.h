@@ -24,8 +24,13 @@ public:
 
 	void onGongfaClickCallback(cocos2d::CCObject* sender);
 
+	void onOneXiulianClickCallback(cocos2d::CCObject* sender);
+
+	void onOnceXiulianClickCallback(cocos2d::CCObject* sender);
+
 	void onClicked() override;
 private:
+
 	void updateDec();
 
 	void updateAttrs();
@@ -33,6 +38,8 @@ private:
 	void initXiulian();
 
 	void initGongfa();
+
+	void updateXiulianView();
 
 	cocos2d::ui::ImageView* m_imageBg;
 	cocos2d::Node* m_nodeDec;

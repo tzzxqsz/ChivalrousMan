@@ -37,5 +37,7 @@ std::string getSectSkillAttrPath(std::string sect, std::string id);
 
 std::string getThingPath(std::string id);
 
+std::string getThingPurePath(std::string id);
+
 #endif // !1
 

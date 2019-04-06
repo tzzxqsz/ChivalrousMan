@@ -361,6 +361,20 @@
   <string>名字:</string>
   <key>GGold</key>
   <string>价格:</string>
+  <key>HavedLeand</key>
+  <string>已经学习功法！</string>
+  <key>SuccessLearnedGongfa</key>
+  <string>成功学习功法！</string>
+  <key>NoLearnGongfa</key>
+  <string>暂未学习</string>
+  <key>XiulianLack</key>
+  <string>材料不足!</string>
+  <key>LimitMaxTalisman</key>
+  <string>上阵数已达上限！</string>
+  <key>BattleSucess</key>
+  <string>上阵成功！</string>
+  <key>UnloadBattleSucess</key>
+  <string>下阵成功！</string>
   <!-- 背景素材 -->
   <key>MsgItemBg</key>
   <string>MsgItemBg.png</string>
