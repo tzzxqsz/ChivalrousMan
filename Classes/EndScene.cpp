@@ -1,6 +1,6 @@
 #include"EndScene.h"
-#include"GameData.h"
-#include"Commen.h"
+#include"tool/GameData.h"
+#include"tool/Commen.h"
 
 bool EndScene::init()
 {

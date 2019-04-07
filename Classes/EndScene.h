@@ -1,7 +1,7 @@
 #pragma once
 #ifndef __END_SCENE_H__
 #define __END_SCENE_H__
-#include"PreProcess.h"
+#include"tool/PreProcess.h"
 
 /*
 *class EndScene

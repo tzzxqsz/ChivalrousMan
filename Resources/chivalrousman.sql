@@ -11,7 +11,7 @@
  Target Server Version : 50720
  File Encoding         : 65001
 
- Date: 06/04/2019 14:47:16
+ Date: 07/04/2019 15:10:18
 */
 
 SET NAMES utf8mb4;
@@ -93,6 +93,16 @@ CREATE TABLE `player`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Table structure for playergongfa
+-- ----------------------------
+DROP TABLE IF EXISTS `playergongfa`;
+CREATE TABLE `playergongfa`  (
+  `playername` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
+  `rolename` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
+  `name` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT ''
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
 -- Table structure for playerinfo
 -- ----------------------------
 DROP TABLE IF EXISTS `playerinfo`;
@@ -116,6 +126,18 @@ CREATE TABLE `playerinfo`  (
   `gongfa` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
   `jingjie` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
   PRIMARY KEY (`rolename`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for playerjingjie
+-- ----------------------------
+DROP TABLE IF EXISTS `playerjingjie`;
+CREATE TABLE `playerjingjie`  (
+  `playername` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
+  `rolename` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
+  `jingjie` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
+  `curexp` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
+  `exp` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT ''
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------

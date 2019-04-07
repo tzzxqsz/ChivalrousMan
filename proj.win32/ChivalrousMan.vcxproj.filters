@@ -10,936 +10,867 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Scene">
-      <UniqueIdentifier>{a50edfc1-3388-44ff-a763-0527dbd5912a}</UniqueIdentifier>
+    <Filter Include="src\backpack">
+      <UniqueIdentifier>{fd3bce83-054f-435e-b217-15333bbfed3b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Tool">
-      <UniqueIdentifier>{f87d0895-fdea-4161-9f24-8c1420dce9c4}</UniqueIdentifier>
+    <Filter Include="src\base">
+      <UniqueIdentifier>{ddefef9e-b671-4f7e-8cb6-aed187bf7b7f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Delegate">
-      <UniqueIdentifier>{17522a83-6a35-4fbb-b89f-0fb69ce16d05}</UniqueIdentifier>
+    <Filter Include="src\common">
+      <UniqueIdentifier>{44c3c9e5-bdec-4c14-aa1d-9ab4f9f9cdee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\State">
-      <UniqueIdentifier>{3ad7f657-3a4d-4f49-b7e4-30fe0cd90807}</UniqueIdentifier>
+    <Filter Include="src\dbconnect">
+      <UniqueIdentifier>{234079e0-b283-4974-afb0-b1f0f8f8e6e9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\DBConnect">
-      <UniqueIdentifier>{ba4b6466-82d7-4d45-bc50-276ed015d3a2}</UniqueIdentifier>
+    <Filter Include="src\equipment">
+      <UniqueIdentifier>{91ce1e69-970a-4085-ac6f-1f74b42a8cb4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Net">
-      <UniqueIdentifier>{e20cb19b-8318-4d47-9dd4-7d4f811ef6ae}</UniqueIdentifier>
+    <Filter Include="src\event">
+      <UniqueIdentifier>{091c7ef6-1c2a-4f06-9997-64dd32c3191a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Json">
-      <UniqueIdentifier>{d45b43f0-a260-4af3-86fe-c5c4ab6fed84}</UniqueIdentifier>
+    <Filter Include="src\fight">
+      <UniqueIdentifier>{8a496279-1a33-47b1-8033-919541873d92}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic">
-      <UniqueIdentifier>{5a4b3e03-7f10-45f7-bee9-980352b8f602}</UniqueIdentifier>
+    <Filter Include="src\friend">
+      <UniqueIdentifier>{9fe1745e-6440-4246-b60b-648dc25609c0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\BackPack">
-      <UniqueIdentifier>{05694341-0e95-4e54-be04-c8a173dd359f}</UniqueIdentifier>
+    <Filter Include="src\jsoncpp">
+      <UniqueIdentifier>{5713786e-58aa-4992-8925-ee61023dcae5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\Deal">
-      <UniqueIdentifier>{1d5c0ae1-4631-442c-bdb5-30525ad273b1}</UniqueIdentifier>
+    <Filter Include="src\login">
+      <UniqueIdentifier>{185bde9e-a786-4145-90df-5e6f033502c7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\Detail">
-      <UniqueIdentifier>{0472b6c0-44fd-4c72-bc87-c9850f57157f}</UniqueIdentifier>
+    <Filter Include="src\main">
+      <UniqueIdentifier>{831e2b64-6762-4656-8869-07e1ef546947}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\Fight">
-      <UniqueIdentifier>{13e3264d-5586-4c48-8852-f468ab452db3}</UniqueIdentifier>
+    <Filter Include="src\map">
+      <UniqueIdentifier>{01afd2fb-0d9e-42c3-a7c2-b8ae4a18d175}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\Main">
-      <UniqueIdentifier>{89640835-6129-434b-a641-ff1e81c8170a}</UniqueIdentifier>
+    <Filter Include="src\net">
+      <UniqueIdentifier>{2433995f-b014-48c1-a2b6-b3224b72f3e1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\Menu">
-      <UniqueIdentifier>{6f37205d-2f01-431e-8fa7-75c0cd790a3d}</UniqueIdentifier>
+    <Filter Include="src\npc">
+      <UniqueIdentifier>{f85f4a6c-04b9-4036-bf91-64a7b8a12779}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\Common">
-      <UniqueIdentifier>{8a468e55-0a6d-4ecb-9bac-a05dc6fbbae1}</UniqueIdentifier>
+    <Filter Include="src\player">
+      <UniqueIdentifier>{6f272b31-95fe-4092-b39d-cc16a4b2523e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\NewGame">
-      <UniqueIdentifier>{ce321c2c-3933-44b6-83e3-482e5f687504}</UniqueIdentifier>
+    <Filter Include="src\sect">
+      <UniqueIdentifier>{1e2275ab-64cc-436c-a859-aea6c0086654}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\Task">
-      <UniqueIdentifier>{1f63e37d-80bc-4c68-a771-9796633a1dbb}</UniqueIdentifier>
+    <Filter Include="src\skill">
+      <UniqueIdentifier>{b45cb8d3-8902-475e-b385-8711bbfb0e93}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\LoginAndSigOn">
-      <UniqueIdentifier>{cd8f8e2d-40fe-4631-8334-9efe396f3332}</UniqueIdentifier>
+    <Filter Include="src\skillitem">
+      <UniqueIdentifier>{d4261a5c-9e54-474e-9e3a-e39586d95016}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\Talk">
-      <UniqueIdentifier>{3c98143c-fee6-41ef-8b18-8ccb80b2c359}</UniqueIdentifier>
+    <Filter Include="src\start">
+      <UniqueIdentifier>{ee1f4fb0-3167-48b7-a5c1-f8c38ff5fa7f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\RoleInfo">
-      <UniqueIdentifier>{eab4eaa9-449d-476c-b5f5-d74473f4a1d8}</UniqueIdentifier>
+    <Filter Include="src\talisman">
+      <UniqueIdentifier>{b6f6902d-03fd-4c24-bbbb-2081c430874f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\Skill">
-      <UniqueIdentifier>{6e31f20e-1d5e-49b3-853b-11296c42b061}</UniqueIdentifier>
+    <Filter Include="src\talk">
+      <UniqueIdentifier>{40e449e6-84d4-428d-97db-ac81c7dc540c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\Map">
-      <UniqueIdentifier>{9e1410dc-9bc1-4aa8-a7d3-ff273b8a9a40}</UniqueIdentifier>
+    <Filter Include="src\task">
+      <UniqueIdentifier>{f737ade6-0311-471f-96d7-b5b3451374d6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Logic\Team">
-      <UniqueIdentifier>{f3ed09f2-d18b-421c-a082-cf4f248eb178}</UniqueIdentifier>
+    <Filter Include="src\team">
+      <UniqueIdentifier>{e4f3a5dd-dfbe-408e-b1bf-738289537874}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Data">
-      <UniqueIdentifier>{eea8e2dd-486c-4a8f-9a1c-ceed8edf16a2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Data\Player">
-      <UniqueIdentifier>{20e2e805-2c76-4ea3-b34f-6a5bc9763662}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Data\Base">
-      <UniqueIdentifier>{8a4db16e-d194-42c9-bcd9-866f4b3a3817}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Data\Npc">
-      <UniqueIdentifier>{9f49e8d8-5bf4-4326-b0e4-07f90fb23894}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Data\Door">
-      <UniqueIdentifier>{bc237f4a-be54-4f86-918d-fa0c25614861}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Data\Monster">
-      <UniqueIdentifier>{77c16e9b-fd20-4040-be16-dba19abba71b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Logic\Player">
-      <UniqueIdentifier>{1f1f9ad5-1ac0-40f6-bc34-563fd613f8fe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Thing">
-      <UniqueIdentifier>{8af80093-8aab-444a-acd3-1997c8360359}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Thing\Equipment">
-      <UniqueIdentifier>{5e6d56eb-7473-4923-b916-81eb126c2ff0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Thing\Medication">
-      <UniqueIdentifier>{47c3c5d9-d826-4fd4-a61c-b15d552e7965}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Tool\Audio">
-      <UniqueIdentifier>{f351f66d-4aec-403d-a6b5-b6d524000f5b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Tool\Utils">
-      <UniqueIdentifier>{adf79d3a-908b-468a-a2ff-981fea22aac1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Tool\Equipment">
-      <UniqueIdentifier>{6b482d09-1050-4a7f-896d-91282933490b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Tool\Npc">
-      <UniqueIdentifier>{669a079d-4f7a-4e11-8923-0d33af40a1a0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Tool\Skill">
-      <UniqueIdentifier>{36564535-7518-4e7a-a653-072da290402a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Thing\Skill">
-      <UniqueIdentifier>{d86e1c00-d77f-44cd-99f9-39260da76ddf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Logic\Friend">
-      <UniqueIdentifier>{3e86377f-016b-4527-a4e8-e8abf397f443}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Logic\Talisman">
-      <UniqueIdentifier>{0a083460-506d-40cd-9a28-cb0445d92cd3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Tool\GameData">
-      <UniqueIdentifier>{e92a1937-c80d-48d7-9b62-b821a79c3442}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Tool\Event">
-      <UniqueIdentifier>{ae1ff2b3-2527-4202-94f8-a3842a18e480}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Thing\Talisman">
-      <UniqueIdentifier>{b8d9f4cb-72f2-4ddd-969d-15823ed6ef47}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Logic\Sect">
-      <UniqueIdentifier>{27c8cafc-1fb0-4e71-870d-48106bb1f6d4}</UniqueIdentifier>
+    <Filter Include="src\tool">
+      <UniqueIdentifier>{8382ee2c-2ca1-496c-b56e-464db3dc955c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\EquipMent.cpp">
-      <Filter>src\Thing\Equipment</Filter>
+    <ClCompile Include="..\Classes\backpack\BackPackLayer.cpp">
+      <Filter>src\backpack</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Medication.cpp">
-      <Filter>src\Thing\Medication</Filter>
+    <ClCompile Include="..\Classes\backpack\BackPackManager.cpp">
+      <Filter>src\backpack</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\BackPackLayer.cpp">
-      <Filter>src\Logic\BackPack</Filter>
+    <ClCompile Include="..\Classes\base\Animal.cpp">
+      <Filter>src\base</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\DealLayer.cpp">
-      <Filter>src\Logic\Deal</Filter>
+    <ClCompile Include="..\Classes\base\Door.cpp">
+      <Filter>src\base</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\DetailLayer.cpp">
-      <Filter>src\Logic\Detail</Filter>
+    <ClCompile Include="..\Classes\base\Medication.cpp">
+      <Filter>src\base</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\BeginLayer.cpp">
-      <Filter>src\Logic\Main</Filter>
+    <ClCompile Include="..\Classes\base\Monster.cpp">
+      <Filter>src\base</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\FightLayer.cpp">
-      <Filter>src\Logic\Fight</Filter>
+    <ClCompile Include="..\Classes\base\Npc.cpp">
+      <Filter>src\base</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GameLogicLayer.cpp">
-      <Filter>src\Logic\Main</Filter>
+    <ClCompile Include="..\Classes\base\Thing.cpp">
+      <Filter>src\base</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GameUILayer.cpp">
-      <Filter>src\Logic\Main</Filter>
+    <ClCompile Include="..\Classes\common\CommonButton.cpp">
+      <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GameMenuLayer.cpp">
-      <Filter>src\Logic\Menu</Filter>
+    <ClCompile Include="..\Classes\common\CommonHead.cpp">
+      <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\LoadingLayer.cpp">
-      <Filter>src\Logic\Common</Filter>
+    <ClCompile Include="..\Classes\common\CommonProcessBar.cpp">
+      <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\LoginLayer.cpp">
-      <Filter>src\Logic\LoginAndSigOn</Filter>
+    <ClCompile Include="..\Classes\common\CommonTouchLayer.cpp">
+      <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\NewGameLayer.cpp">
-      <Filter>src\Logic\NewGame</Filter>
+    <ClCompile Include="..\Classes\common\CSBaseView.cpp">
+      <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\PickupTaskLayer.cpp">
-      <Filter>src\Logic\Task</Filter>
+    <ClCompile Include="..\Classes\common\DetailLayer.cpp">
+      <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\SigOnLayer.cpp">
-      <Filter>src\Logic\LoginAndSigOn</Filter>
+    <ClCompile Include="..\Classes\common\HurtValueLayer.cpp">
+      <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\PlayerListLayer.cpp">
-      <Filter>src\Logic\Player</Filter>
+    <ClCompile Include="..\Classes\common\LoadingLayer.cpp">
+      <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\PrivateTalkLayer.cpp">
-      <Filter>src\Logic\Talk</Filter>
+    <ClCompile Include="..\Classes\common\MaxTopLayer.cpp">
+      <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\RoleInfoLayer.cpp">
-      <Filter>src\Logic\RoleInfo</Filter>
+    <ClCompile Include="..\Classes\common\TipLayer.cpp">
+      <Filter>src\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\SkillLayer.cpp">
-      <Filter>src\Logic\Skill</Filter>
+    <ClCompile Include="..\Classes\equipment\EquipMent.cpp">
+      <Filter>src\equipment</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\TalkLayer.cpp">
-      <Filter>src\Logic\Talk</Filter>
+    <ClCompile Include="..\Classes\equipment\EquipmentManager.cpp">
+      <Filter>src\equipment</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\TaskLayer.cpp">
-      <Filter>src\Logic\Task</Filter>
+    <ClCompile Include="..\Classes\event\Event.cpp">
+      <Filter>src\event</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\TipLayer.cpp">
-      <Filter>src\Logic\Common</Filter>
+    <ClCompile Include="..\Classes\event\Signal.cpp">
+      <Filter>src\event</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GameMapLayer.cpp">
-      <Filter>src\Logic\Map</Filter>
+    <ClCompile Include="..\Classes\event\SignalManager.cpp">
+      <Filter>src\event</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\WorldMapLayer.cpp">
-      <Filter>src\Logic\Map</Filter>
+    <ClCompile Include="..\Classes\fight\FightLayer.cpp">
+      <Filter>src\fight</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\TeamLayer.cpp">
-      <Filter>src\Logic\Team</Filter>
+    <ClCompile Include="..\Classes\fight\FightManager.cpp">
+      <Filter>src\fight</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\CameraPlayer.cpp">
-      <Filter>src\Data\Player</Filter>
+    <ClCompile Include="..\Classes\friend\FriendItem.cpp">
+      <Filter>src\friend</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Player.cpp">
-      <Filter>src\Data\Player</Filter>
+    <ClCompile Include="..\Classes\friend\FriendLayer.cpp">
+      <Filter>src\friend</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\PlayerData.cpp">
-      <Filter>src\Data\Player</Filter>
+    <ClCompile Include="..\Classes\friend\FriendManager.cpp">
+      <Filter>src\friend</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Animal.cpp">
-      <Filter>src\Data\Base</Filter>
+    <ClCompile Include="..\Classes\jsoncpp\json_reader.cpp">
+      <Filter>src\jsoncpp</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Npc.cpp">
-      <Filter>src\Data\Base</Filter>
+    <ClCompile Include="..\Classes\jsoncpp\json_value.cpp">
+      <Filter>src\jsoncpp</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\NpcBlue.cpp">
-      <Filter>src\Data\Npc</Filter>
+    <ClCompile Include="..\Classes\jsoncpp\json_writer.cpp">
+      <Filter>src\jsoncpp</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\NpcEquip.cpp">
-      <Filter>src\Data\Npc</Filter>
+    <ClCompile Include="..\Classes\login\Login.cpp">
+      <Filter>src\login</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\NpcMamom.cpp">
-      <Filter>src\Data\Npc</Filter>
+    <ClCompile Include="..\Classes\login\LoginLayer.cpp">
+      <Filter>src\login</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\NpcMonk.cpp">
-      <Filter>src\Data\Npc</Filter>
+    <ClCompile Include="..\Classes\login\SignOn.cpp">
+      <Filter>src\login</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\NpcPink.cpp">
-      <Filter>src\Data\Npc</Filter>
+    <ClCompile Include="..\Classes\login\SigOnLayer.cpp">
+      <Filter>src\login</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\NpcSkill.cpp">
-      <Filter>src\Data\Npc</Filter>
+    <ClCompile Include="..\Classes\main\DealLayer.cpp">
+      <Filter>src\main</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\NpcVallige.cpp">
-      <Filter>src\Data\Npc</Filter>
+    <ClCompile Include="..\Classes\main\GameLogicLayer.cpp">
+      <Filter>src\main</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Door.cpp">
-      <Filter>src\Data\Door</Filter>
+    <ClCompile Include="..\Classes\main\GameMenuLayer.cpp">
+      <Filter>src\main</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Monster.cpp">
-      <Filter>src\Data\Monster</Filter>
+    <ClCompile Include="..\Classes\main\GameUILayer.cpp">
+      <Filter>src\main</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Lock.cpp">
-      <Filter>src\Net</Filter>
+    <ClCompile Include="..\Classes\main\ObjectLayer.cpp">
+      <Filter>src\main</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\NetWorkManager.cpp">
-      <Filter>src\Net</Filter>
+    <ClCompile Include="..\Classes\main\RoleInfoLayer.cpp">
+      <Filter>src\main</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\TCPClient.cpp">
-      <Filter>src\Net</Filter>
+    <ClCompile Include="..\Classes\main\WorldMapLayer.cpp">
+      <Filter>src\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\map\GameMapLayer.cpp">
+      <Filter>src\map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\map\MapInfo.cpp">
+      <Filter>src\map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\net\Lock.cpp">
+      <Filter>src\net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\net\NetWorkManager.cpp">
+      <Filter>src\net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\net\SocketManager.cpp">
+      <Filter>src\net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\net\TCPClient.cpp">
+      <Filter>src\net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\npc\NpcBlue.cpp">
+      <Filter>src\npc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\npc\NpcEquip.cpp">
+      <Filter>src\npc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\npc\NpcMamom.cpp">
+      <Filter>src\npc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\npc\NpcMonk.cpp">
+      <Filter>src\npc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\npc\NpcPink.cpp">
+      <Filter>src\npc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\npc\NpcSkill.cpp">
+      <Filter>src\npc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\npc\NpcVallige.cpp">
+      <Filter>src\npc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\player\CameraPlayer.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\player\Player.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\player\PlayerData.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\player\PlayerItem.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\player\PlayerListLayer.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\player\PlayerManager.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\player\PlayerRun.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\player\PlayerState.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\player\PlayerWait.cpp">
+      <Filter>src\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\sect\SectActiveLayer.cpp">
+      <Filter>src\sect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\sect\SectMainLayer.cpp">
+      <Filter>src\sect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\sect\SectManager.cpp">
+      <Filter>src\sect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\sect\SectRukou.cpp">
+      <Filter>src\sect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\skill\SkillLayer.cpp">
+      <Filter>src\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\skill\SkillManager.cpp">
+      <Filter>src\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\skillitem\CrackIt.cpp">
+      <Filter>src\skillitem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\skillitem\Danate.cpp">
+      <Filter>src\skillitem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\skillitem\DragonRoar.cpp">
+      <Filter>src\skillitem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\skillitem\LightStrike.cpp">
+      <Filter>src\skillitem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\skillitem\Long.cpp">
+      <Filter>src\skillitem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\skillitem\RealSkill.cpp">
+      <Filter>src\skillitem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\skillitem\RecallCountermand.cpp">
+      <Filter>src\skillitem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\skillitem\SealOfTheBlade.cpp">
+      <Filter>src\skillitem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\skillitem\Skill.cpp">
+      <Filter>src\skillitem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\skillitem\XBArrow.cpp">
+      <Filter>src\skillitem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\start\BeginLayer.cpp">
+      <Filter>src\start</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\start\BeginScene.cpp">
+      <Filter>src\start</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\start\NewGameLayer.cpp">
+      <Filter>src\start</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\start\NewGameScene.cpp">
+      <Filter>src\start</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\start\SelectLayer.cpp">
+      <Filter>src\start</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\start\SelectScene.cpp">
+      <Filter>src\start</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\start\StartMenu.cpp">
+      <Filter>src\start</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\talisman\TalismanAvatar.cpp">
+      <Filter>src\talisman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\talisman\TalismanFragment.cpp">
+      <Filter>src\talisman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\talisman\TalismanIcon.cpp">
+      <Filter>src\talisman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\talisman\TalismanLayer.cpp">
+      <Filter>src\talisman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\talisman\TalismanManager.cpp">
+      <Filter>src\talisman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\talk\MsgItem.cpp">
+      <Filter>src\talk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\talk\MsgListLayer.cpp">
+      <Filter>src\talk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\talk\PrivateTalkLayer.cpp">
+      <Filter>src\talk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\talk\TalkLayer.cpp">
+      <Filter>src\talk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\talk\TalkManager.cpp">
+      <Filter>src\talk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\task\PickupTaskLayer.cpp">
+      <Filter>src\task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\task\TaskItem.cpp">
+      <Filter>src\task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\task\TaskLayer.cpp">
+      <Filter>src\task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\task\TaskSystem.cpp">
+      <Filter>src\task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\team\MemberItem.cpp">
+      <Filter>src\team</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\team\TeamLayer.cpp">
+      <Filter>src\team</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\team\TeamManager.cpp">
+      <Filter>src\team</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\team\TeamMsgItem.cpp">
+      <Filter>src\team</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tool\AudioSystem.cpp">
+      <Filter>src\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tool\ConfigUtils.cpp">
+      <Filter>src\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tool\FindRoad.cpp">
+      <Filter>src\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tool\GameData.cpp">
+      <Filter>src\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tool\GameDynamicData.cpp">
+      <Filter>src\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tool\LogUtil.cpp">
+      <Filter>src\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tool\Path.cpp">
+      <Filter>src\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tool\ReflectNpc.cpp">
+      <Filter>src\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tool\SkillFactory.cpp">
+      <Filter>src\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tool\SynsTask.cpp">
+      <Filter>src\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tool\UIHelper.cpp">
+      <Filter>src\tool</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>src\Delegate</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\jsonCpp\json_reader.cpp">
-      <Filter>src\Json</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\jsonCpp\json_value.cpp">
-      <Filter>src\Json</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\jsonCpp\json_writer.cpp">
-      <Filter>src\Json</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\MsgItem.cpp">
-      <Filter>src\Logic\Talk</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\PlayerItem.cpp">
-      <Filter>src\Logic\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TaskItem.cpp">
-      <Filter>src\Logic\Task</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TeamMsgItem.cpp">
-      <Filter>src\Logic\Team</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\BeginScene.cpp">
-      <Filter>src\Scene</Filter>
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\EndScene.cpp">
-      <Filter>src\Scene</Filter>
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\ExcessiveScene.cpp">
-      <Filter>src\Scene</Filter>
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\GameScene.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Login.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\NewGameScene.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SelectScene.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SignOn.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\StartMenu.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\MemberItem.cpp">
-      <Filter>src\Logic\Team</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\PlayerRun.cpp">
-      <Filter>src\State</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\PlayerState.cpp">
-      <Filter>src\State</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\PlayerWait.cpp">
-      <Filter>src\State</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CrackIt.cpp">
-      <Filter>src\Thing\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Danate.cpp">
-      <Filter>src\Thing\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\DragonRoar.cpp">
-      <Filter>src\Thing\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\LightStrike.cpp">
-      <Filter>src\Thing\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Long.cpp">
-      <Filter>src\Thing\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\RealSkill.cpp">
-      <Filter>src\Thing\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\RecallCountermand.cpp">
-      <Filter>src\Thing\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SealOfTheBlade.cpp">
-      <Filter>src\Thing\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Skill.cpp">
-      <Filter>src\Thing\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\XBArrow.cpp">
-      <Filter>src\Thing\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Thing.cpp">
-      <Filter>src\Thing</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\AudioSystem.cpp">
-      <Filter>src\Tool\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\EquipmentManager.cpp">
-      <Filter>src\Tool\Equipment</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\ReflectNpc.cpp">
-      <Filter>src\Tool\Npc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SkillFactory.cpp">
-      <Filter>src\Tool\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TeamManager.cpp">
-      <Filter>src\Logic\Team</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TaskSystem.cpp">
-      <Filter>src\Logic\Task</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\MapInfo.cpp">
-      <Filter>src\Logic\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\FindRoad.cpp">
-      <Filter>src\Logic\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\BackPackManager.cpp">
-      <Filter>src\Logic\BackPack</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SkillManager.cpp">
-      <Filter>src\Logic\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SocketManager.cpp">
-      <Filter>src\Net</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\PlayerManager.cpp">
-      <Filter>src\Logic\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TalkManager.cpp">
-      <Filter>src\Logic\Talk</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\FightManager.cpp">
-      <Filter>src\Logic\Fight</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\LogUtil.cpp">
-      <Filter>src\Tool\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CommonTouchLayer.cpp">
-      <Filter>src\Logic\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\FriendLayer.cpp">
-      <Filter>src\Logic\Friend</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\FriendManager.cpp">
-      <Filter>src\Logic\Friend</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CSBaseView.cpp">
-      <Filter>src\Logic\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SynsTask.cpp">
-      <Filter>src\Tool\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\FriendItem.cpp">
-      <Filter>src\Logic\Friend</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CommonHead.cpp">
-      <Filter>src\Logic\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TalismanLayer.cpp">
-      <Filter>src\Logic\Talisman</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TalismanManager.cpp">
-      <Filter>src\Logic\Talisman</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameData.cpp">
-      <Filter>src\Tool\GameData</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameDynamicData.cpp">
-      <Filter>src\Tool\GameData</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Signal.cpp">
-      <Filter>src\Tool\Event</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SignalManager.cpp">
-      <Filter>src\Tool\Event</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Event.cpp">
-      <Filter>src\Tool\Event</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Path.cpp">
-      <Filter>src\Tool\GameData</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CommonButton.cpp">
-      <Filter>src\Logic\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TalismanIcon.cpp">
-      <Filter>src\Thing\Talisman</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TalismanFragment.cpp">
-      <Filter>src\Thing\Talisman</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TalismanAvatar.cpp">
-      <Filter>src\Thing\Talisman</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\ConfigUtils.cpp">
-      <Filter>src\Tool\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\ObjectLayer.cpp">
-      <Filter>src\Logic\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SelectLayer.cpp">
-      <Filter>src\Logic\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\MsgListLayer.cpp">
-      <Filter>src\Logic\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\HurtValueLayer.cpp">
-      <Filter>src\Logic\Fight</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CommonProcessBar.cpp">
-      <Filter>src\Logic\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\MaxTopLayer.cpp">
-      <Filter>src\Logic\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\UIHelper.cpp">
-      <Filter>src\Tool\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SectActiveLayer.cpp">
-      <Filter>src\Logic\Sect</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SectMainLayer.cpp">
-      <Filter>src\Logic\Sect</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SectManager.cpp">
-      <Filter>src\Logic\Sect</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SectRukou.cpp">
-      <Filter>src\Logic\Sect</Filter>
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\EquipMent.h">
-      <Filter>src\Thing\Equipment</Filter>
+    <ClInclude Include="..\Classes\backpack\BackPackLayer.h">
+      <Filter>src\backpack</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Medication.h">
-      <Filter>src\Thing\Medication</Filter>
+    <ClInclude Include="..\Classes\backpack\BackPackManager.h">
+      <Filter>src\backpack</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\BackPackLayer.h">
-      <Filter>src\Logic\BackPack</Filter>
+    <ClInclude Include="..\Classes\base\Animal.h">
+      <Filter>src\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\DealLayer.h">
-      <Filter>src\Logic\Deal</Filter>
+    <ClInclude Include="..\Classes\base\Door.h">
+      <Filter>src\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\DetailLayer.h">
-      <Filter>src\Logic\Detail</Filter>
+    <ClInclude Include="..\Classes\base\Medication.h">
+      <Filter>src\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\BeginLayer.h">
-      <Filter>src\Logic\Main</Filter>
+    <ClInclude Include="..\Classes\base\Monster.h">
+      <Filter>src\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\FightLayer.h">
-      <Filter>src\Logic\Fight</Filter>
+    <ClInclude Include="..\Classes\base\Npc.h">
+      <Filter>src\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GameLogicLayer.h">
-      <Filter>src\Logic\Main</Filter>
+    <ClInclude Include="..\Classes\base\Thing.h">
+      <Filter>src\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GameUILayer.h">
-      <Filter>src\Logic\Main</Filter>
+    <ClInclude Include="..\Classes\common\CommonButton.h">
+      <Filter>src\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GameMenuLayer.h">
-      <Filter>src\Logic\Menu</Filter>
+    <ClInclude Include="..\Classes\common\CommonHead.h">
+      <Filter>src\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\LoadingLayer.h">
-      <Filter>src\Logic\Common</Filter>
+    <ClInclude Include="..\Classes\common\CommonProcessBar.h">
+      <Filter>src\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\LoginLayer.h">
-      <Filter>src\Logic\LoginAndSigOn</Filter>
+    <ClInclude Include="..\Classes\common\CommonTouchLayer.h">
+      <Filter>src\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\NewGameLayer.h">
-      <Filter>src\Logic\NewGame</Filter>
+    <ClInclude Include="..\Classes\common\CSBaseView.h">
+      <Filter>src\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\PickupTaskLayer.h">
-      <Filter>src\Logic\Task</Filter>
+    <ClInclude Include="..\Classes\common\DetailLayer.h">
+      <Filter>src\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\SigOnLayer.h">
-      <Filter>src\Logic\LoginAndSigOn</Filter>
+    <ClInclude Include="..\Classes\common\HurtValueLayer.h">
+      <Filter>src\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\PlayerListLayer.h">
-      <Filter>src\Logic\Player</Filter>
+    <ClInclude Include="..\Classes\common\LoadingLayer.h">
+      <Filter>src\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\PrivateTalkLayer.h">
-      <Filter>src\Logic\Talk</Filter>
+    <ClInclude Include="..\Classes\common\MaxTopLayer.h">
+      <Filter>src\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\RoleInfoLayer.h">
-      <Filter>src\Logic\RoleInfo</Filter>
+    <ClInclude Include="..\Classes\common\TipLayer.h">
+      <Filter>src\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\SkillLayer.h">
-      <Filter>src\Logic\Skill</Filter>
+    <ClInclude Include="..\Classes\dbconnect\DBDao.h">
+      <Filter>src\dbconnect</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\TalkLayer.h">
-      <Filter>src\Logic\Talk</Filter>
+    <ClInclude Include="..\Classes\dbconnect\Model.h">
+      <Filter>src\dbconnect</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\TaskLayer.h">
-      <Filter>src\Logic\Task</Filter>
+    <ClInclude Include="..\Classes\equipment\EquipMent.h">
+      <Filter>src\equipment</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GameMapLayer.h">
-      <Filter>src\Logic\Map</Filter>
+    <ClInclude Include="..\Classes\equipment\EquipmentManager.h">
+      <Filter>src\equipment</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\WorldMapLayer.h">
-      <Filter>src\Logic\Map</Filter>
+    <ClInclude Include="..\Classes\event\Event.h">
+      <Filter>src\event</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\TipLayer.h">
-      <Filter>src\Logic\Common</Filter>
+    <ClInclude Include="..\Classes\event\Signal.h">
+      <Filter>src\event</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\TeamLayer.h">
-      <Filter>src\Logic\Team</Filter>
+    <ClInclude Include="..\Classes\event\SignalConst.h">
+      <Filter>src\event</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\CameraPlayer.h">
-      <Filter>src\Data\Player</Filter>
+    <ClInclude Include="..\Classes\event\SignalManager.h">
+      <Filter>src\event</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Player.h">
-      <Filter>src\Data\Player</Filter>
+    <ClInclude Include="..\Classes\event\SlotListener.h">
+      <Filter>src\event</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\PlayerData.h">
-      <Filter>src\Data\Player</Filter>
+    <ClInclude Include="..\Classes\fight\FightLayer.h">
+      <Filter>src\fight</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Animal.h">
-      <Filter>src\Data\Base</Filter>
+    <ClInclude Include="..\Classes\fight\FightManager.h">
+      <Filter>src\fight</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Npc.h">
-      <Filter>src\Data\Base</Filter>
+    <ClInclude Include="..\Classes\friend\FriendItem.h">
+      <Filter>src\friend</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\NpcBlue.h">
-      <Filter>src\Data\Npc</Filter>
+    <ClInclude Include="..\Classes\friend\FriendLayer.h">
+      <Filter>src\friend</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\NpcEquip.h">
-      <Filter>src\Data\Npc</Filter>
+    <ClInclude Include="..\Classes\friend\FriendManager.h">
+      <Filter>src\friend</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\NpcManmom.h">
-      <Filter>src\Data\Npc</Filter>
+    <ClInclude Include="..\Classes\jsoncpp\allocator.h">
+      <Filter>src\jsoncpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\NpcMonk.h">
-      <Filter>src\Data\Npc</Filter>
+    <ClInclude Include="..\Classes\jsoncpp\assertions.h">
+      <Filter>src\jsoncpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\NpcPink.h">
-      <Filter>src\Data\Npc</Filter>
+    <ClInclude Include="..\Classes\jsoncpp\autolink.h">
+      <Filter>src\jsoncpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\NpcSkill.h">
-      <Filter>src\Data\Npc</Filter>
+    <ClInclude Include="..\Classes\jsoncpp\config.h">
+      <Filter>src\jsoncpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\NpcVallige.h">
-      <Filter>src\Data\Npc</Filter>
+    <ClInclude Include="..\Classes\jsoncpp\features.h">
+      <Filter>src\jsoncpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Door.h">
-      <Filter>src\Data\Door</Filter>
+    <ClInclude Include="..\Classes\jsoncpp\forwards.h">
+      <Filter>src\jsoncpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Monster.h">
-      <Filter>src\Data\Monster</Filter>
+    <ClInclude Include="..\Classes\jsoncpp\json.h">
+      <Filter>src\jsoncpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\MessageConst.h">
-      <Filter>src\Net</Filter>
+    <ClInclude Include="..\Classes\jsoncpp\json_tool.h">
+      <Filter>src\jsoncpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Lock.h">
-      <Filter>src\Net</Filter>
+    <ClInclude Include="..\Classes\jsoncpp\reader.h">
+      <Filter>src\jsoncpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\NetWorkManager.h">
-      <Filter>src\Net</Filter>
+    <ClInclude Include="..\Classes\jsoncpp\value.h">
+      <Filter>src\jsoncpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\public.h">
-      <Filter>src\Net</Filter>
+    <ClInclude Include="..\Classes\jsoncpp\version.h">
+      <Filter>src\jsoncpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ShareData.h">
-      <Filter>src\Net</Filter>
+    <ClInclude Include="..\Classes\jsoncpp\writer.h">
+      <Filter>src\jsoncpp</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\TCPClient.h">
-      <Filter>src\Net</Filter>
+    <ClInclude Include="..\Classes\login\Login.h">
+      <Filter>src\login</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\DBDao.h">
-      <Filter>src\DBConnect</Filter>
+    <ClInclude Include="..\Classes\login\LoginLayer.h">
+      <Filter>src\login</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Model.h">
-      <Filter>src\DBConnect</Filter>
+    <ClInclude Include="..\Classes\login\SignOn.h">
+      <Filter>src\login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\login\SigOnLayer.h">
+      <Filter>src\login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\main\DealLayer.h">
+      <Filter>src\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\main\GameLogicLayer.h">
+      <Filter>src\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\main\GameMenuLayer.h">
+      <Filter>src\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\main\GameUILayer.h">
+      <Filter>src\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\main\ObjectLayer.h">
+      <Filter>src\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\main\RoleInfoLayer.h">
+      <Filter>src\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\main\WorldMapLayer.h">
+      <Filter>src\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\map\GameMapLayer.h">
+      <Filter>src\map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\map\MapInfo.h">
+      <Filter>src\map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\net\Lock.h">
+      <Filter>src\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\net\MessageConst.h">
+      <Filter>src\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\net\NetWorkManager.h">
+      <Filter>src\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\net\ShareData.h">
+      <Filter>src\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\net\SocketManager.h">
+      <Filter>src\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\net\TCPClient.h">
+      <Filter>src\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\npc\NpcBlue.h">
+      <Filter>src\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\npc\NpcEquip.h">
+      <Filter>src\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\npc\NpcManmom.h">
+      <Filter>src\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\npc\NpcMonk.h">
+      <Filter>src\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\npc\NpcPink.h">
+      <Filter>src\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\npc\NpcSkill.h">
+      <Filter>src\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\npc\NpcVallige.h">
+      <Filter>src\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\player\CameraPlayer.h">
+      <Filter>src\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\player\Player.h">
+      <Filter>src\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\player\PlayerData.h">
+      <Filter>src\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\player\PlayerItem.h">
+      <Filter>src\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\player\PlayerListLayer.h">
+      <Filter>src\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\player\PlayerManager.h">
+      <Filter>src\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\player\PlayerRun.h">
+      <Filter>src\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\player\PlayerState.h">
+      <Filter>src\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\player\PlayerWait.h">
+      <Filter>src\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sect\SectActiveLayer.h">
+      <Filter>src\sect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sect\SectMainLayer.h">
+      <Filter>src\sect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sect\SectManager.h">
+      <Filter>src\sect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sect\SectRukou.h">
+      <Filter>src\sect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\skill\SkillLayer.h">
+      <Filter>src\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\skill\SkillManager.h">
+      <Filter>src\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\skillitem\CrackIt.h">
+      <Filter>src\skillitem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\skillitem\Danate.h">
+      <Filter>src\skillitem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\skillitem\DragonRoar.h">
+      <Filter>src\skillitem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\skillitem\LightStrike.h">
+      <Filter>src\skillitem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\skillitem\Long.h">
+      <Filter>src\skillitem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\skillitem\RealSkill.h">
+      <Filter>src\skillitem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\skillitem\RecallCountermand.h">
+      <Filter>src\skillitem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\skillitem\SealOfTheBlade.h">
+      <Filter>src\skillitem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\skillitem\Skill.h">
+      <Filter>src\skillitem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\skillitem\XBArrow.h">
+      <Filter>src\skillitem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\start\BeginLayer.h">
+      <Filter>src\start</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\start\BeginScene.h">
+      <Filter>src\start</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\start\NewGameLayer.h">
+      <Filter>src\start</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\start\NewGameScene.h">
+      <Filter>src\start</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\start\SelectLayer.h">
+      <Filter>src\start</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\start\SelectScene.h">
+      <Filter>src\start</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\start\StartMenu.h">
+      <Filter>src\start</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\talisman\TalismanAvatar.h">
+      <Filter>src\talisman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\talisman\TalismanFragment.h">
+      <Filter>src\talisman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\talisman\TalismanIcon.h">
+      <Filter>src\talisman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\talisman\TalismanLayer.h">
+      <Filter>src\talisman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\talisman\TalismanManager.h">
+      <Filter>src\talisman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\talk\MsgItem.h">
+      <Filter>src\talk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\talk\MsgListLayer.h">
+      <Filter>src\talk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\talk\PrivateTalkLayer.h">
+      <Filter>src\talk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\talk\TalkLayer.h">
+      <Filter>src\talk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\talk\TalkManager.h">
+      <Filter>src\talk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\task\PickupTaskLayer.h">
+      <Filter>src\task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\task\TaskItem.h">
+      <Filter>src\task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\task\TaskLayer.h">
+      <Filter>src\task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\task\TaskSystem.h">
+      <Filter>src\task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\team\MemberItem.h">
+      <Filter>src\team</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\team\TeamLayer.h">
+      <Filter>src\team</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\team\TeamManager.h">
+      <Filter>src\team</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\team\TeamMsgItem.h">
+      <Filter>src\team</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\AudioSystem.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\Colors.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\Commen.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\ConfigUtils.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\FindRoad.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\GameData.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\GameDynamicData.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\LogUtil.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\Path.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\PreProcess.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\public.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\RandomGenerator.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\ReflectNpc.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\SkillFactory.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\SynsTask.h">
+      <Filter>src\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tool\UIHelper.h">
+      <Filter>src\tool</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>src\Delegate</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\jsonCpp\allocator.h">
-      <Filter>src\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\jsonCpp\assertions.h">
-      <Filter>src\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\jsonCpp\autolink.h">
-      <Filter>src\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\jsonCpp\config.h">
-      <Filter>src\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\jsonCpp\features.h">
-      <Filter>src\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\jsonCpp\forwards.h">
-      <Filter>src\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\jsonCpp\json.h">
-      <Filter>src\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\jsonCpp\json_tool.h">
-      <Filter>src\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\jsonCpp\reader.h">
-      <Filter>src\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\jsonCpp\value.h">
-      <Filter>src\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\jsonCpp\version.h">
-      <Filter>src\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\jsonCpp\writer.h">
-      <Filter>src\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MsgItem.h">
-      <Filter>src\Logic\Talk</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\PlayerItem.h">
-      <Filter>src\Logic\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TaskItem.h">
-      <Filter>src\Logic\Task</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TeamMsgItem.h">
-      <Filter>src\Logic\Team</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\StartMenu.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SignOn.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SelectScene.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\NewGameScene.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Login.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameScene.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ExcessiveScene.h">
-      <Filter>src\Scene</Filter>
+      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\EndScene.h">
-      <Filter>src\Scene</Filter>
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\BeginScene.h">
-      <Filter>src\Scene</Filter>
+    <ClInclude Include="..\Classes\ExcessiveScene.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\MemberItem.h">
-      <Filter>src\Logic\Team</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\PlayerRun.h">
-      <Filter>src\State</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\PlayerState.h">
-      <Filter>src\State</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\PlayerWait.h">
-      <Filter>src\State</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CrackIt.h">
-      <Filter>src\Thing\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Danate.h">
-      <Filter>src\Thing\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\DragonRoar.h">
-      <Filter>src\Thing\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\LightStrike.h">
-      <Filter>src\Thing\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Long.h">
-      <Filter>src\Thing\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\RealSkill.h">
-      <Filter>src\Thing\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\RecallCountermand.h">
-      <Filter>src\Thing\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SealOfTheBlade.h">
-      <Filter>src\Thing\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Skill.h">
-      <Filter>src\Thing\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\XBArrow.h">
-      <Filter>src\Thing\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Thing.h">
-      <Filter>src\Thing</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\AudioSystem.h">
-      <Filter>src\Tool\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\cHas.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\cHash_Map.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Commen.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\EquipmentManager.h">
-      <Filter>src\Tool\Equipment</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\PreProcess.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ReflectNpc.h">
-      <Filter>src\Tool\Npc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SkillFactory.h">
-      <Filter>src\Tool\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TeamManager.h">
-      <Filter>src\Logic\Team</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TaskSystem.h">
-      <Filter>src\Logic\Task</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MapInfo.h">
-      <Filter>src\Logic\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\FindRoad.h">
-      <Filter>src\Logic\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\BackPackManager.h">
-      <Filter>src\Logic\BackPack</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SkillManager.h">
-      <Filter>src\Logic\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\PlayerManager.h">
-      <Filter>src\Logic\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SocketManager.h">
-      <Filter>src\Net</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TalkManager.h">
-      <Filter>src\Logic\Talk</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\FightManager.h">
-      <Filter>src\Logic\Fight</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\LogUtil.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CommonTouchLayer.h">
-      <Filter>src\Logic\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\FriendLayer.h">
-      <Filter>src\Logic\Friend</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\FriendManager.h">
-      <Filter>src\Logic\Friend</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CSBaseView.h">
-      <Filter>src\Logic\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SynsTask.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\FriendItem.h">
-      <Filter>src\Logic\Friend</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CommonHead.h">
-      <Filter>src\Logic\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TalismanLayer.h">
-      <Filter>src\Logic\Talisman</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TalismanManager.h">
-      <Filter>src\Logic\Talisman</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameData.h">
-      <Filter>src\Tool\GameData</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameDynamicData.h">
-      <Filter>src\Tool\GameData</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Signal.h">
-      <Filter>src\Tool\Event</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SignalConst.h">
-      <Filter>src\Tool\Event</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SignalManager.h">
-      <Filter>src\Tool\Event</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Event.h">
-      <Filter>src\Tool\Event</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SlotListener.h">
-      <Filter>src\Tool\Event</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Path.h">
-      <Filter>src\Tool\GameData</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CommonButton.h">
-      <Filter>src\Logic\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Colors.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TalismanIcon.h">
-      <Filter>src\Thing\Talisman</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TalismanFragment.h">
-      <Filter>src\Thing\Talisman</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TalismanAvatar.h">
-      <Filter>src\Thing\Talisman</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ConfigUtils.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ObjectLayer.h">
-      <Filter>src\Logic\Main</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SelectLayer.h">
-      <Filter>src\Logic\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MsgListLayer.h">
-      <Filter>src\Logic\Main</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HurtValueLayer.h">
-      <Filter>src\Logic\Fight</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CommonProcessBar.h">
-      <Filter>src\Logic\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MaxTopLayer.h">
-      <Filter>src\Logic\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\RandomGenerator.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\UIHelper.h">
-      <Filter>src\Tool\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SectActiveLayer.h">
-      <Filter>src\Logic\Sect</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SectMainLayer.h">
-      <Filter>src\Logic\Sect</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SectManager.h">
-      <Filter>src\Logic\Sect</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SectRukou.h">
-      <Filter>src\Logic\Sect</Filter>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -956,11 +887,11 @@
     <Image Include="res\game.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Classes\jsonCpp\version.h.in">
-      <Filter>src\Json</Filter>
+    <None Include="..\Classes\jsoncpp\json_valueiterator.inl">
+      <Filter>src\jsoncpp</Filter>
     </None>
-    <None Include="..\Classes\jsonCpp\json_valueiterator.inl">
-      <Filter>src\Json</Filter>
+    <None Include="..\Classes\jsoncpp\version.h.in">
+      <Filter>src\jsoncpp</Filter>
     </None>
   </ItemGroup>
 </Project>

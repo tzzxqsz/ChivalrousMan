@@ -1,8 +1,8 @@
 #include"ExcessiveScene.h"
-#include"GameData.h"
+#include"tool/GameData.h"
 #include"GameScene.h"
-#include"LoadingLayer.h"
-#include"Commen.h"
+#include"common/LoadingLayer.h"
+#include"tool/Commen.h"
 
 ExcessiveScene* ExcessiveScene::createExcessice(int level, std::function<bool(void)>& callfunc, float delay)
 {
