@@ -183,6 +183,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\event\Signal.cpp" />
     <ClCompile Include="..\Classes\event\SignalManager.cpp" />
     <ClCompile Include="..\Classes\ExcessiveScene.cpp" />
+    <ClCompile Include="..\Classes\fight\Buff.cpp" />
     <ClCompile Include="..\Classes\fight\FightLayer.cpp" />
     <ClCompile Include="..\Classes\fight\FightManager.cpp" />
     <ClCompile Include="..\Classes\friend\FriendItem.cpp" />
@@ -310,6 +311,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\event\SignalManager.h" />
     <ClInclude Include="..\Classes\event\SlotListener.h" />
     <ClInclude Include="..\Classes\ExcessiveScene.h" />
+    <ClInclude Include="..\Classes\fight\Buff.h" />
     <ClInclude Include="..\Classes\fight\FightLayer.h" />
     <ClInclude Include="..\Classes\fight\FightManager.h" />
     <ClInclude Include="..\Classes\friend\FriendItem.h" />

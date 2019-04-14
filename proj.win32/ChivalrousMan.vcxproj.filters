@@ -447,6 +447,9 @@
     <ClCompile Include="..\Classes\GameScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\fight\Buff.cpp">
+      <Filter>src\fight</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -871,6 +874,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameScene.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\fight\Buff.h">
+      <Filter>src\fight</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
