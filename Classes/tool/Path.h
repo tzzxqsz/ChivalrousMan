@@ -39,5 +39,9 @@ std::string getThingPath(std::string id);
 
 std::string getThingPurePath(std::string id);
 
+std::string getBuffPath(std::string id);
+
+std::string getBuffPurePath(std::string id);
+
 #endif // !1
 

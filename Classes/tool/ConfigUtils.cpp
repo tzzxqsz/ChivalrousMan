@@ -3,7 +3,7 @@
 #include<regex>
 DEFINE_SINGLE_ATTRIBUTES(ConfigUtils);
 
-std::map<std::string, std::string>  ConfigUtils::getConfigAttr(const std::string& pathname)
+std::map<std::string, std::string>  ConfigUtils::getConfigAttr(const std::string& pathname,const bool& isNeed)
 {
 	std::map<std::string, std::string> attrmaps;
 	std::string realname = pathname;
@@ -14,9 +14,12 @@ std::map<std::string, std::string>  ConfigUtils::getConfigAttr(const std::string
 	{
 		return attrmaps;
 	}
-	std::string tmp;
-	fin >> tmp;
-	attrmaps["textname"] = tmp;
+	if (isNeed)
+	{
+		std::string tmp;
+		fin >> tmp;
+		attrmaps["textname"] = tmp;
+	}
 	std::string name;
 	std::string value;
 	while (!fin.eof())

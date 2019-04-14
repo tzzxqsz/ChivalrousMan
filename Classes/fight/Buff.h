@@ -1,8 +1,10 @@
 #pragma once
 #ifndef __BUFF_H__
 #define __BUFF_H__
-#include"2d/CCNode.h"
+#include<2d/CCNode.h>
+#include<2d/CCSprite.h>
 #include<string>
+#include<unordered_map>
 
 class Buff :public cocos2d::Node
 {
@@ -21,7 +23,9 @@ public:
 protected:
 	virtual void decodeAttr(const std::string& name);
 
-	int times;
+	cocos2d::Sprite* m_buffFaces;
+	int m_times;
+	std::unordered_map<std::string, int> m_buffAttr;
 };
 
 #endif // !__BUFF_H__

@@ -11,7 +11,7 @@ class ConfigUtils
 {
 	GET_SINGLE_OBJECT(ConfigUtils)
 public:
-	std::map<std::string, std::string> getConfigAttr(const std::string& pathname);
+	std::map<std::string, std::string> getConfigAttr(const std::string& pathname, const bool& isNeed = true);
 
 	std::vector<std::string> getConfigDec(const std::string& pathname);
 

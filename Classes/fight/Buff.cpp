@@ -1,4 +1,6 @@
 #include"Buff.h"
+#include"tool/Path.h"
+#include"tool/ConfigUtils.h"
 
 Buff::~Buff()
 {
@@ -12,7 +14,7 @@ void Buff::attachTo(cocos2d::Node * node)
 
 void Buff::setTimes(const int & times)
 {
-	this->times = times;
+	this->m_times = times;
 }
 
 void Buff::play()
@@ -30,14 +32,19 @@ bool Buff::init()
 
 void Buff::decTimes()
 {
-	if (this->times <= 0)
+	if (this->m_times <= 0)
 	{
 		this->removeFromParent();
 		return;
 	}
-	--this->times;
+	--this->m_times;
 }
 
 void Buff::decodeAttr(const std::string & name)
 {
+	auto attrs = ConfigUtils::getInstance()->getConfigAttr(getBuffPurePath(name), false);
+	for (auto& var : attrs)
+	{
+		m_buffAttr[var.first] = std::stoi(var.second);
+	}
 }

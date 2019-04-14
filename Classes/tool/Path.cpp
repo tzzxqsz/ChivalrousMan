@@ -79,3 +79,13 @@ std::string getThingPurePath(std::string id)
 {
 	return std::string("Thing/") + id;
 }
+
+std::string getBuffPath(std::string id)
+{
+	return std::string("buff/") + id + PNG;
+}
+
+std::string getBuffPurePath(std::string id)
+{
+	return std::string("buff/") + id;
+}
